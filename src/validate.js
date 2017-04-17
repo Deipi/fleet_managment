@@ -15,6 +15,13 @@ const validate = values => {
   if (!values.get('number_of_passengers')) {
     errors.number_of_passengers = 'Required'
   }
+  if(!values.get('label')){
+    errors.label='Required'
+  }
+
+  if(!values.get('type')){
+    errors.type='Required'
+  }
   return errors
 }
 
