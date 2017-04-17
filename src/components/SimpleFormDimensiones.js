@@ -45,7 +45,7 @@ const people = value => {
 const SimpleFormD = (props) => {
 	const { handleSubmit } = props
 	return (
-		<form onSubmit = {handleSubmit}>
+		<div>
 		<br/>
 			<div>
 			<center>
@@ -71,11 +71,8 @@ const SimpleFormD = (props) => {
 				<Field name="number_of_passengers" component={ renderField } format={ people } type="text" normalize={ minimo }/>
 			</div>
 			</div>
-		</form>
+		</div>
 	)
 }
 
-export default reduxForm({
-  form: 'simpleDimen',  // a unique identifier for this form
-  validate
-})(SimpleFormD)
+export default SimpleFormD
