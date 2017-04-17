@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable'
 
 
-import SimpleFormDimensiones from './components/SimpleFormDimensiones';
+import FormUnidad from './components/FormUnidad';
 
 
 import {
@@ -51,14 +51,14 @@ ReactDOM.render(
   		<Router>
 	    <div>
 	      <ul id="menu">
-	        <li><Link to='dimensiones'>Dimensiones</Link></li>
+	        <li><Link to='formulario'>Unidades</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
 
 	      <hr/>
 	      <Switch>
-	      	<Route path="/dimensiones" component={ props => <Component {...props}><SimpleFormDimensiones/></Component> } />
+	      	<Route path="/formulario" component={ props => <Component {...props}><FormUnidad/></Component> } />
 	      </Switch>
 	    </div>
   </Router>
