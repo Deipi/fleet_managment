@@ -6,38 +6,153 @@ import 'react-select/dist/react-select.css';
 import SimpleFormD from './SimpleFormDimensiones';
 
 	
-		 var Selected = require('react-select');
+		 
 
-		 var optionsTY = [
-		 	{ value: 'car', label: 'Car'},
-		 	{ value: 'bus', label: 'Bus'},
-		 	{ value: 'special', label: 'Special'}
+var CreatableTY = React.createClass({
+  displayName: 'CreatableTY',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState () {
+    return {
+       options: [
+          { value: 'car', label: 'Car'},
+          { value: 'bus', label: 'Bus'},
+          { value: 'special', label: 'Special'}
+       ]
+    };
+  },
+  handleOnChange (value) {
+    const { options } = this.setState({ value });
+    
+  },
+  render () {
+    const { options, value } = this.state;
+    return (
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select.Creatable
+          options={options}
+          onChange={this.handleOnChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
 
-		 ];
+var CreatableTR = React.createClass({
+  displayName: 'CreatableTR',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState () {
+    return {
+       optionsTR: [
+      { value: 'no tracker', label: 'No Tracker'},
+      { value: 'pepe', label: 'Pepe'},
+      { value: 'luis', label: 'Luis'},
+      { value: 'martin', label: 'Martin'}
+     ]
+    };
+  },
+  handleOnChange (value) {
+    const { optionsTR } = this.setState({ value });
+    
+  },
+  render () {
+    const { optionsTR, value } = this.state;
+    return (
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select.Creatable
+          options={optionsTR}
+          onChange={this.handleOnChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
 
-		 var optionsTR = [
-		 	{ value: 'no tracker', label: 'No Tracker'},
-		 	{ value: 'pepe', label: 'Pepe'},
-		 	{ value: 'luis', label: 'Luis'},
-		 	{ value: 'martin', label: 'Martin'}
+var CreatableGA = React.createClass({
+  displayName: 'CreatableGA',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState () {
+    return {
+      optionsGA: [
+      { value: 'garage', label: 'Garage'},
+      { value: 'no garage', label: 'No Garage'}
+     ]
+    };
+  },
+  handleOnChange (value) {
+    const { optionsGA } = this.setState({ value });
+    
+  },
+  render () {
+    const { optionsGA, value } = this.state;
+    return (
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select.Creatable
+          options={optionsGA}
+          onChange={this.handleOnChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
+		
 
-		 ];
+		  
 
-		  var optionsGR = [
-		 	{ value: 'garage', label: 'Garage'},
-		 	{ value: 'no garage', label: 'No Garage'}
-		 ];
+		 
+ var CreatableDemo = React.createClass({
+  displayName: 'CreatableDemo',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState () {
+    return {
+      multi: true,
+      multiValue: [],
+      value: undefined
+    };
+  },
+  handleOnChange (value) {
+    const { multi } = this.state;
+    if (multi) {
+      this.setState({ multiValue: value });
+    } else {
+      this.setState({ value });
+    }
+  },
+  render () {
+    const { multi, multiValue, value } = this.state;
+    return (
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select.Creatable
+          multi={multi}
+          onChange={this.handleOnChange}
+          value={multi ? multiValue : value}
+        />
+      </div>
+    );
+  }
+});
 
-		  var optionsTG = [
-		 	{ value: 'new', label: 'New'},
-		 	{ value: 'old', label: 'Old'}
-		 ];
 
- function logChange(value){
- 	return(
- 		value
- 	)
- }
+
+const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value : -1 * parseFloat(value.split(' ')[0])
 
 const format = value => {
 	if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
@@ -71,24 +186,16 @@ const FormUnidad = (props) => {
       <div>
         <label>Tracker</label>
         <div>
-          <Field name="tracker" component="Selected"/>
-          <Selected
-          	name="form-field-name"
-          	value="no tracker"
-          	options={optionsTR}
-          	onChange={logChange}/>
+          <Field name="tracker" component={ CreatableTR }/>
+          
         </div>
       </div>
 
       <div>
         <label>Garage</label>
         <div>
-          <Field name="garage" component="Selected"/>
-          	<Selected
-          	name="form-field-name"
-          	value="garage"
-          	options={optionsGR}
-          	onChange={logChange}/>
+          <Field name="garage" component={ CreatableGA }/>
+          	
  
         </div>
       </div>
@@ -103,12 +210,7 @@ const FormUnidad = (props) => {
       <div>
         <label>Type*</label>
         <div>
-          <Field name="type" component="Selected"/>
-         	<Selected
-          	name="form-field-name"
-          	value="car"
-          	options={optionsTY}
-          	onChange={logChange}/>
+          <Field name="type" component={ CreatableTY }/>
         </div>
       </div>
 
@@ -136,20 +238,15 @@ const FormUnidad = (props) => {
       <div>
         <label>Permited speed</label>
         <div>
-          <Field name="permited_speed" component={renderField} format={format}/>
+          <Field name="permited_speed" component={renderField} type="text" format={format}/>
         </div>
       </div>
 
       <div>
         <label>Tags</label>
-        <div>
-          <Field name="tags" component="Selected"/>
-          <Selected
-          	name="form-field-name"
-          	value="new"
-          	options={optionsTG}
-          	onChange={logChange}/>
-        </div>
+          <div>
+            <Field name="tags" component={ CreatableDemo }/>
+          </div>
       </div>
 
       <SimpleFormD/>
