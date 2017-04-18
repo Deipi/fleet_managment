@@ -14,6 +14,8 @@ import { reducer as formReducer } from 'redux-form/immutable'
 
 import FormUnidad from './components/FormUnidad';
 
+import SimpleFormFlotilla from './components/SimpleFormFlotilla';
+
 
 import {
   BrowserRouter as Router,
@@ -52,6 +54,7 @@ ReactDOM.render(
 	    <div>
 	      <ul id="menu">
 	        <li><Link to='formulario'>Unidades</Link></li>
+	        <li><Link to='flotilla'>Flotilla</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
@@ -59,6 +62,7 @@ ReactDOM.render(
 	      <hr/>
 	      <Switch>
 	      	<Route path="/formulario" component={ props => <Component {...props}><FormUnidad/></Component> } />
+	      	<Route path="/flotilla" component={ props => <Component {...props}><SimpleFormFlotilla initialValues={ { nombre: 'Andrea', supervisor: 'Andres', garage: 'no garage' } } /></Component> } />
 	      </Switch>
 	    </div>
   </Router>
