@@ -4,6 +4,7 @@ import Select from 'react-select';
 import validate from '../validate'
 import 'react-select/dist/react-select.css';
 import SimpleFormD from './SimpleFormDimensiones';
+import FormCombustible from './FormCombustible';
 
 	
 		 
@@ -250,6 +251,7 @@ const FormUnidad = (props) => {
       </div>
 
       <SimpleFormD/>
+      <FormCombustible/>
 
        <div>
         <button type="submit" disabled={pristine || submitting}>Submit</button>
