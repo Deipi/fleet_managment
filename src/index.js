@@ -61,8 +61,12 @@ ReactDOM.render(
 
 	      <hr/>
 	      <Switch>
-	      	<Route path="/formulario" component={ props => <Component {...props}><FormUnidad/></Component> } />
-	      	<Route path="/flotilla" component={ props => <Component {...props}><SimpleFormFlotilla initialValues={ { nombre: 'Andrea', supervisor: 'Andres', garage: 'no garage' } } /></Component> } />
+	      	<Route path="/formulario" component={ props => 
+	      		<Component {...props}>
+	      		<FormUnidad initialValues={{label: 'Car', model: 'Ford Focus', vehicle_registration_plate: 'SBA 1234A', vin: 'JMZMA18P200411817', chassis_number: 'LJCPCBLCXI1000237'}}/></Component> } />
+	      	<Route path="/flotilla" component={ props => 
+	      		<Component {...props}>
+	      		<SimpleFormFlotilla initialValues={ { nombre: 'Andrea', supervisor: 'Andres', garage: 'no garage' } } /></Component> } />
 	      </Switch>
 	    </div>
   </Router>
