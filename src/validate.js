@@ -22,6 +22,9 @@ const validate = values => {
   if(!values.get('type')){
     errors.type='Required'
   }
+  if (!values.get('nombre')) {
+    errors.nombre = 'Required'
+  }
   return errors
 }
 
