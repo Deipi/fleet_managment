@@ -1,0 +1,37 @@
+{
+  "vehicles": [
+    {
+      "label": "Volkswagen",
+      "model": "А21R32",
+      "tracker": "Ann (Volkswagen)",
+      "reg_plate": "TG654FA",
+      "type": "Truck",
+      "id": 1
+    },
+    {
+      "label": "Man truck",
+      "model": "MAN TGA 33.480",
+      "tracker": "Paul (Man truck)",
+      "reg_plate": "D028N4",
+      "type": "Truck",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
