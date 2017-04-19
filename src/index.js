@@ -16,6 +16,10 @@ import FormUnidad from './components/FormUnidad';
 
 import SimpleFormFlotilla from './components/SimpleFormFlotilla';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
+import VehiclesList from './containers/VehiclesList';
 
 import {
   BrowserRouter as Router,
@@ -35,14 +39,14 @@ const Component = (props) => {
 	);
 }
 
-// import VehiclesReducer from './reducers/VehiclesDim';
+import vehicles from './reducers/VehiclesList';
 
 
 const initialState = immutable.Map();
 
 const rootReducer = combineReducers({
 	form: formReducer,
-	//VehiclesDim: VehiclesReducer,
+	VehiclesList: vehicles,
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
@@ -55,6 +59,7 @@ ReactDOM.render(
 	      <ul id="menu">
 	        <li><Link to='formulario'>Unidades</Link></li>
 	        <li><Link to='flotilla'>Flotilla</Link></li>
+	        <li><Link to='vehicles'>Vehicles</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
@@ -67,6 +72,10 @@ ReactDOM.render(
 	      	<Route path="/flotilla" component={ props => 
 	      		<Component {...props}>
 	      		<SimpleFormFlotilla initialValues={ { nombre: 'Andrea', supervisor: 'Andres', garage: 'no garage' } } /></Component> } />
+	      	<Route path="/vehicles" component={ props => 
+	      		<Component {...props}><VehiclesList/></Component>
+	      		}
+	      	/>
 	      </Switch>
 	    </div>
   </Router>
