@@ -60,6 +60,7 @@ ReactDOM.render(
 	        <li><Link to='flotilla'>Flotilla</Link></li>
 	        <li><Link to='vehicles'>Vehicles</Link></li>
 	        <li><Link to='conductores'>Conductores</Link></li>
+	        <li><Link to='monitoreo'>Monitoreo</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
