@@ -18,7 +18,29 @@
     }
   ],
   "unidades": [
-    
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "insurance_2_policy_number": "ghjk",
+      "wheel_front": "2",
+      "cargo_h": "12 mm ",
+      "wheel_rear": "2",
+      "tyre_size": "24",
+      "cargo_l": "12 mm ",
+      "model": "Ford Focus",
+      "number_of_passengers": "4 people ",
+      "tyres_number": "4",
+      "fuel_grade": "rtyu",
+      "tank_capacity": "200 L ",
+      "insurance_policy_number": "dfghj",
+      "fuel_consumption": "12 L ",
+      "cargo_w": "12 mm ",
+      "label": "Car",
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "200 kg ",
+      "id": 1
+    }
   ],
   "posts": [
     {
