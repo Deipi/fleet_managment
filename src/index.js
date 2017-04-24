@@ -14,6 +14,7 @@ import Unidad from './containers/Unidad';
 
 import SimpleFormFlotilla from './components/SimpleFormFlotilla';
 import FormConductor from './components/FormConductor';
+import MapContainer from './components/MapContainer';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -84,7 +85,9 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<FormConductor initialValues={{last_name: 'Cartens', first_name: 'Jose', middle_name: 'Luis', hardware_key: 'JMZMA18P200411817', phone: '7861161212', email:'alf@g.com', driver_license_number: '123', driver_license_class: 'abc', expiration_date: '2017-04-21'}}/></Component> } />
 
-
+	      	<Route path="/monitoreo" component={ props =>
+	      		<Component {...props}>
+	      		<MapContainer /></Component> } />
 
 	      </Switch>
 	    </div>
