@@ -91,4 +91,4 @@ const FormCombustible=(props)=>{
 		</div>
 	)
 }
-export default FormCombustible
+export default FormCombustible;
