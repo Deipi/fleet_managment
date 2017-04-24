@@ -75,4 +75,4 @@ const SimpleFormD = (props) => {
 	)
 }
 
-export default SimpleFormD
+export default SimpleFormD;
