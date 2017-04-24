@@ -33,7 +33,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance valid</label>
 			<div>
-				<Field name="insurance_valid" component="input" type="text"/>
+				<Field name="insurance_valid" component="input" type="date"/>
 			</div>
 
 			<label>Insurance 2 policy number</label>
@@ -43,10 +43,10 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance 2 valid</label>
 			<div>
-				<Field name="insurance_2_valid" component="input" type="text"/>
+				<Field name="insurance_2_valid" component="input" type="date"/>
 			</div>
 			</div>
 		</div>
 	)
 }
-export default FormSeguro
+export default FormSeguro;
