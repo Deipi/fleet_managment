@@ -2,14 +2,14 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import Select from 'react-select';
 import validate from '../validate'
-import 'react-select/dist/react-select.css';
+import 'react-select/dist/react-select.css'
 import SimpleFormD from './SimpleFormDimensiones';
 import FormCombustible from './FormCombustible';
 import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
-	
-		 
+  
+     
 
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
@@ -112,11 +112,7 @@ var CreatableGA = React.createClass({
     );
   }
 });
-		
-
-		  
-
-		 
+         
  var CreatableDemo = React.createClass({
   displayName: 'CreatableDemo',
   propTypes: {
@@ -153,17 +149,15 @@ var CreatableGA = React.createClass({
   }
 });
 
-
-
 const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value : -1 * parseFloat(value.split(' ')[0])
 
 const format = value => {
-	if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
-		return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
-	}
-	if(value){
-		return value + ' Km/h ';
-	}
+  if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
+    return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
+  }
+  if(value){
+    return value + ' Km/h ';
+  }
 }
  
  const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
@@ -177,10 +171,11 @@ const format = value => {
 )
 
 const FormUnidad = (props) => {
-	const { handleSubmit, pristine,  reset, submitting } = props
-	return (
-		<form onSubmit = {handleSubmit}>
-		<div>
+  const { handleSubmit, pristine,  reset, submitting } = props
+  return (
+  
+    <form onSubmit = {handleSubmit}>
+    <div>
         <label>Label*</label>
         <div>
           <Field name="label" component={renderField} type="text"/>
@@ -190,7 +185,6 @@ const FormUnidad = (props) => {
         <label>Tracker</label>
         <div>
           <Field name="tracker" component={ CreatableTR }/>
-          
         </div>
       </div>
 
@@ -198,8 +192,6 @@ const FormUnidad = (props) => {
         <label>Garage</label>
         <div>
           <Field name="garage" component={ CreatableGA }/>
-          	
- 
         </div>
       </div>
 
@@ -258,15 +250,16 @@ const FormUnidad = (props) => {
       <FormSeguro/>
 
        <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+        <button type="submit" disabled={pristine || submitting}>Guardar</button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>Restab</button>
       </div>
 
-	</form>
-	)
+  </form>
+  
+  )
 }
 
 export default reduxForm({
-	form: 'simpleInidad',
-	validate
+  form: 'simpleInidad',
+  validate
 })(FormUnidad)
