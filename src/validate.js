@@ -25,6 +25,9 @@ const validate = values => {
   if (!values.get('nombre')) {
     errors.nombre = 'Required'
   }
+  if (!values.get('first_name')) {
+    errors.first_name = 'Required*'
+  }
   return errors
 }
 
