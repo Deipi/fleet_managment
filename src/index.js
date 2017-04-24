@@ -9,7 +9,8 @@ import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable'
 
 
-import FormUnidad from './components/FormUnidad';
+// import FormUnidad from './components/FormUnidad';
+import Unidad from './containers/Unidad';
 
 import SimpleFormFlotilla from './components/SimpleFormFlotilla';
 import FormConductor from './components/FormConductor';
@@ -29,7 +30,7 @@ import {
 
 
 const Component = (props) => {
-	
+
 	return (
 		<div>
 			{ props.children }
@@ -45,7 +46,7 @@ const initialState = immutable.Map();
 const rootReducer = combineReducers({
 	form: formReducer,
 	VehiclesList: vehicles,
-	
+
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
@@ -67,23 +68,23 @@ ReactDOM.render(
 
 	      <hr/>
 	      <Switch>
-	      	<Route path="/formulario" component={ props => 
+	      	<Route path="/formulario" component={ props =>
 	      		<Component {...props}>
-	      		<FormUnidad initialValues={{label: 'Car', model: 'Ford Focus', vehicle_registration_plate: 'SBA 1234A', vin: 'JMZMA18P200411817', chassis_number: 'LJCPCBLCXI1000237'}}/></Component> } />
-	      	
-	      	<Route path="/flotilla" component={ props => 
+	      		<Unidad /></Component> } />
+
+	      	<Route path="/flotilla" component={ props =>
 	      		<Component {...props}>
 	      		<SimpleFormFlotilla initialValues={ { nombre: 'Andrea', supervisor: 'Andres', garage: 'no garage' } } /></Component> } />
-	      	
-	      	<Route path="/vehicles" component={ props => 
+
+	      	<Route path="/vehicles" component={ props =>
 	      		<Component {...props}>
 	      		<VehiclesList/></Component> } />
-	      	
-	      	<Route path="/conductores" component={ props => 
+
+	      	<Route path="/conductores" component={ props =>
 	      		<Component {...props}>
 	      		<FormConductor initialValues={{last_name: 'Cartens', first_name: 'Jose', middle_name: 'Luis', hardware_key: 'JMZMA18P200411817', phone: '7861161212', email:'alf@g.com', driver_license_number: '123', driver_license_class: 'abc', expiration_date: '2017-04-21'}}/></Component> } />
-	      	
-	      	
+
+
 
 	      </Switch>
 	    </div>

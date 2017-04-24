@@ -9,7 +9,7 @@ import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
 
-  
+
 
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
@@ -28,7 +28,7 @@ var CreatableTY = React.createClass({
   },
   handleOnChange (value) {
     const { options } = this.setState({ value });
-    
+
   },
   render () {
     const { options, value } = this.state;
@@ -63,7 +63,7 @@ var CreatableTR = React.createClass({
   },
   handleOnChange (value) {
     const { optionsTR } = this.setState({ value });
-    
+
   },
   render () {
     const { optionsTR, value } = this.state;
@@ -96,7 +96,7 @@ var CreatableGA = React.createClass({
   },
   handleOnChange (value) {
     const { optionsGA } = this.setState({ value });
-    
+
   },
   render () {
     const { optionsGA, value } = this.state;
@@ -112,7 +112,7 @@ var CreatableGA = React.createClass({
     );
   }
 });
-         
+
  var CreatableDemo = React.createClass({
   displayName: 'CreatableDemo',
   propTypes: {
@@ -159,7 +159,7 @@ const format = value => {
     return value + ' Km/h ';
   }
 }
- 
+
  const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
   <div>
     <label>{label}</label>
@@ -170,11 +170,13 @@ const format = value => {
   </div>
 )
 
-const FormUnidad = (props) => {
-  const { handleSubmit, pristine,  reset, submitting } = props
+
+const FormUnidadComponent = (props) => {
+  const { handleSubmit, pristine,  reset, submitting, actionSubmit } = props
+  debugger;
   return (
-  
-    <form onSubmit = {handleSubmit}>
+
+    <form onSubmit={ handleSubmit(actionSubmit) }>
     <div>
         <label>Label*</label>
         <div>
@@ -201,7 +203,7 @@ const FormUnidad = (props) => {
           <Field name="model" component="input" type="text" placeholder="Model"/>
         </div>
       </div>
-      
+
       <div>
         <label>Type*</label>
         <div>
@@ -255,11 +257,17 @@ const FormUnidad = (props) => {
       </div>
 
   </form>
-  
+
   )
 }
 
 export default reduxForm({
   form: 'simpleInidad',
   validate
-})(FormUnidad)
+})(FormUnidadComponent);
+
+export const FormUnidad = reduxForm({
+  form: 'simpleInidad',
+  validate
+})(FormUnidadComponent);
+
