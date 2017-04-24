@@ -12,6 +12,7 @@
     "react": "^15.5.4",
     "react-addons-css-transition-group": "15.5.2",
     "react-addons-transition-group": "15.5.2",
+    "react-datepicker": "^0.46.0",
     "react-dom": "^15.5.4",
     "react-redux": "5.0.4",
     "react-router-dom": "4.0.0",
@@ -19,6 +20,7 @@
     "reactstrap": "4.5.0",
     "redux": "3.6.0",
     "redux-form": "6.5.0",
+    "redux-form-material-ui": "^4.2.0",
     "redux-immutablejs": "0.0.8",
     "redux-thunk": "2.2.0"
   },
