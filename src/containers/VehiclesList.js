@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const NewLayout = ({ Table,Filter,Pagination }) => (
 	<div>
 		<Filter/>
-		<Link className="btn" tag={Link} color="info" to='/hola'> Add Vehicle </Link>
-		<Link className="btn" tag={Link} color="info" to='/vehicles'> New Group </Link>
+		<Link className="btn" tag={Link} color="info" to='/formulario'> Add Vehicle </Link>
+		<Link className="btn" tag={Link} color="info" to='/flotilla'> New Group </Link>
 		<Table/>
 		<Pagination/>
 	</div>
