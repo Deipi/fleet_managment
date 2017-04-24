@@ -3,6 +3,34 @@ import { Field, reduxForm } from 'redux-form/immutable'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 
+import DatePicker from 'react-datepicker'
+import moment from 'moment'
+import 'react-datepicker/dist/react-datepicker.css'
+
+  
+class Example extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      startDate: moment()
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
+  render() {
+    return <DatePicker
+        selected={this.state.startDate}
+        onChange={this.handleChange}
+    />;
+  }
+}
+
 
 const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
   <div>
@@ -33,7 +61,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance valid</label>
 			<div>
-				<Field name="insurance_valid" component="input" type="date"/>
+				<Field name="insurance_valid" component={Example}/>
 			</div>
 
 			<label>Insurance 2 policy number</label>
@@ -43,7 +71,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance 2 valid</label>
 			<div>
-				<Field name="insurance_2_valid" component="input" type="date"/>
+				<Field name="insurance_2_valid" component={Example}/>
 			</div>
 			</div>
 		</div>
