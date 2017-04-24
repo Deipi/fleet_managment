@@ -173,7 +173,7 @@ const format = value => {
 
 const FormUnidadComponent = (props) => {
   const { handleSubmit, pristine,  reset, submitting, actionSubmit } = props
-  debugger;
+  
   return (
 
     <form onSubmit={ handleSubmit(actionSubmit) }>
@@ -263,11 +263,11 @@ const FormUnidadComponent = (props) => {
 
 export default reduxForm({
   form: 'simpleInidad',
-  validate
+  
 })(FormUnidadComponent);
 
 export const FormUnidad = reduxForm({
   form: 'simpleInidad',
-  validate
+  
 })(FormUnidadComponent);
 
