@@ -9,7 +9,7 @@ export const Driver = props => (
 		<div> <center>{ props.phone }</center> </div>
 		<div> <center>{ props.email }</center> </div>
 		<div> <center>{ props.hardware_key }</center> </div>
-		<div> <center>{ props.license }</center> </div>
+		<div> <center>{ props.driver_license_number }</center> </div>
 	</div>
 );
 
