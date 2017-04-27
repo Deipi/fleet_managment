@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
- import { fetchDrivers } from '../actions/IndexDrivers';
+import { fetchDrivers } from '../actions/IndexDrivers';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
 import { Driver } from '../components/Driver';
 import createDriver from '../actions/IndexDrivers';
 
@@ -33,7 +32,6 @@ class DriversListComponent extends Component {
 		super(props);
 
 		this.showDescription = this.showDescription.bind(this);
-		this.actionSubmit = this.actionSubmit.bind(this);
 
 		this.state = {
 			show: false,
@@ -43,12 +41,6 @@ class DriversListComponent extends Component {
 			remove: false,
 			group: true,
 		};
-	}
-
-	actionSubmit(values) {
-		const { dispatch } = this.props;
-
-		dispatch(createDriver(values.toJS()));
 	}
 
 	componentWillMount() {
@@ -125,10 +117,10 @@ class DriversListComponent extends Component {
 
 		return (
 			<div>
-				{ btnCreate },
-				{ btnEdit },
-				{ btnRemove },
-				{ btnGroup },
+				{ btnCreate }
+				{ btnEdit }
+				{ btnRemove }
+				{ btnGroup }
 				<Griddle data={ drivers ? drivers.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
 				styleConfig={{
@@ -164,5 +156,4 @@ class DriversListComponent extends Component {
 	}
 }
 
-export const DriversList = connect(selector)(DriversListComponent);
 export default connect(selector)(DriversListComponent);
