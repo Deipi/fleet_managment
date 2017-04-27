@@ -55,8 +55,6 @@ class DriversListComponent extends Component {
 	render() {
 		const { props: { conductores } } = this;
 		const { show, edit, create, remove, group } = this.state;
-
-		debugger;
 		const descriptionDrivers = conductores.filter(obj => obj.id === this.state.data).toJS()[0]
 
 
@@ -147,7 +145,7 @@ class DriversListComponent extends Component {
 					<Driver
 						last_name = { descriptionDrivers.last_name }
 						first_name = { descriptionDrivers.first_name }
-						tracker = { descriptionDrivers.tracker }
+						tracker = { descriptionDrivers.tracker.label }
 						phone = { descriptionDrivers.phone }
 						email = { descriptionDrivers.email }
 						hardware_key = { descriptionDrivers.hardware_key }
