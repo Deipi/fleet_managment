@@ -9,11 +9,12 @@ import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable'
 
 
-// import FormUnidad from './components/FormUnidad';
+
 import Unidad from './containers/Unidad';
+import Conductor from './containers/Conductor';
 
 import SimpleFormFlotilla from './components/SimpleFormFlotilla';
-import FormConductor from './components/FormConductor';
+//import FormConductor from './components/FormConductor';
 import MapContainer from './components/MapContainer';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -40,7 +41,7 @@ const Component = (props) => {
 }
 
 import vehicles from './reducers/VehiclesList';
-import unidades from './reducers/UnidadesList';
+
 
 const initialState = immutable.Map();
 
@@ -83,7 +84,7 @@ ReactDOM.render(
 
 	      	<Route path="/conductores" component={ props =>
 	      		<Component {...props}>
-	      		<FormConductor initialValues={{last_name: 'Cartens', first_name: 'Jose', middle_name: 'Luis', hardware_key: 'JMZMA18P200411817', phone: '7861161212', email:'alf@g.com', driver_license_number: '123', driver_license_class: 'abc', expiration_date: '2017-04-21'}}/></Component> } />
+	      		<Conductor /></Component> } />
 
 	      	<Route path="/monitoreo" component={ props =>
 	      		<Component {...props}>
