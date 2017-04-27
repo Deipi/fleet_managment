@@ -20,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import VehiclesList from './containers/VehiclesList';
+import DriversList from './containers/DriversList';
 
 import {
   BrowserRouter as Router,
@@ -41,12 +42,14 @@ const Component = (props) => {
 
 import vehicles from './reducers/VehiclesList';
 import unidades from './reducers/UnidadesList';
+import drivers from './reducers/DriversList';
 
 const initialState = immutable.Map();
 
 const rootReducer = combineReducers({
 	form: formReducer,
 	VehiclesList: vehicles,
+	DriversList: drivers,
 
 });
 
@@ -63,6 +66,7 @@ ReactDOM.render(
 	        <li><Link to='vehicles'>Vehicles</Link></li>
 	        <li><Link to='conductores'>Conductores</Link></li>
 	        <li><Link to='monitoreo'>Monitoreo</Link></li>
+	        <li><Link to='drivers'>Drivers</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
@@ -88,6 +92,11 @@ ReactDOM.render(
 	      	<Route path="/monitoreo" component={ props =>
 	      		<Component {...props}>
 	      		<MapContainer /></Component> } />
+
+	      	<Route
+	      		path="/drivers" component={ props =>
+	      			<Component {...props}>
+	      			<DriversList/></Component> } />
 
 	      </Switch>
 	    </div>
