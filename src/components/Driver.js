@@ -1,7 +1,6 @@
 import React from 'react';
 
-export const Driver = props => {
-	debugger; return (
+export const Driver = props => (
 	<div><br/><br/>
 		<div> <center><label>DESCRIPTION</label></center> </div>
 		<div> <center>{ props.last_name }</center> </div>
@@ -13,6 +12,5 @@ export const Driver = props => {
 		<div> <center>{ props.driver_license_number }</center> </div>
 	</div>
 );
-}
 
 export default Driver;
