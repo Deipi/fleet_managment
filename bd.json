@@ -135,6 +135,55 @@
       "email": "feyo@gmail.com",
       "driver_license_number": "234455466",
       "id": 2
+    },
+    {
+      "driver_license_class": "hm",
+      "phone": "44",
+      "department": {
+        "value": "des",
+        "label": "Desarrollo"
+      },
+      "last_name": "TUYI",
+      "middle_name": "UYIK",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "first_name": "FGHJ",
+      "email": "al@j.com",
+      "driver_license_number": "12",
+      "id": 3
+    },
+    {
+      "driver_license_class": "abcaa",
+      "hardware_key": "JMZMA18P200411817",
+      "phone": "11",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "Cartens",
+      "middle_name": "Luis",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        {
+          "value": "tag1",
+          "label": "tag1",
+          "className": "Select-create-option-placeholder"
+        },
+        {
+          "value": "tag2",
+          "label": "tag2",
+          "className": "Select-create-option-placeholder"
+        }
+      ],
+      "first_name": "Jose",
+      "email": "alf@gmail.com",
+      "driver_license_number": "2",
+      "id": 4
     }
   ],
   "drivers": [
