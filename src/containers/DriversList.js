@@ -132,7 +132,8 @@ class DriversListComponent extends Component {
 						Layout: NewLayout
 				}}>
 					<RowDefinition>
-					  <ColumnDefinition id="name" visible/>
+					  <ColumnDefinition id="last_name" visible/>
+					  <ColumnDefinition id="first_name" visible/>
 				      <ColumnDefinition id="tracker" visible/>
 				      <ColumnDefinition id="phone" visible/>
 				      <ColumnDefinition id="email" visible/>
@@ -143,7 +144,8 @@ class DriversListComponent extends Component {
 				</Griddle>
 				{ show && descriptionDrivers ? (
 					<Driver
-						name = { descriptionDrivers.name }
+						last_name = { descriptionDrivers.last_name }
+						first_name = { descriptionDrivers.first_name }
 						tracker = { descriptionDrivers.tracker }
 						phone = { descriptionDrivers.phone }
 						email = { descriptionDrivers.email }
