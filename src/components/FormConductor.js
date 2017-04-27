@@ -22,17 +22,16 @@ var CreatableTR=React.createClass({
 			]
 		};
 	},
-	handleOnChange (value) {
-		const { optionsTR } = this.setState({value});
-	},
 	render (){
-		const { optionsTR, value } = this.state;
+		const { props: { input : { onChange, value, name } } } = this;
+		const { optionsTR } = this.state;
 		return(
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
 				<Select.Creatable
 					options={optionsTR}
-					onChange={this.handleOnChange}
+					name={name}
+					onChange={onChange}
 					value={value}
 				/>
 			</div>
@@ -55,17 +54,16 @@ var CreatableDEP=React.createClass({
 			]
 		};
 	},
-	handleOnChange (value){
-		const { optionsDEP } = this.setState({value});
-	},
 	render (){
-		const { optionsDEP, value } = this.state;
+		const { props: { input : { onChange, value, name } } } = this;
+		const { optionsDEP } = this.state;
 		return(
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
 				<Select.Creatable
 					options={optionsDEP}
-					onChange={this.handleOnChange}
+					name={name}
+					onChange={onChange}
 					value={value}
 				/>
 			</div>
@@ -120,10 +118,10 @@ const renderField = ({ input, label, type, meta: { asyncValidating, touched, err
   </div>
 )
 
-const FormConductor = (props) => {
-	const { handleSubmit, pristine, reset, submitting } = props
+const FormConductorComponent = (props) => {
+	const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return(
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit(actionSubmit)}>
 			<div>
 			<br/>
 			<div>
@@ -134,49 +132,74 @@ const FormConductor = (props) => {
 
 				<label>Last name</label>
 				<div>
-					<Field name="last_name" component="input" type="text"/>
+					<Field
+						name="last_name"
+						component="input"
+						type="text"
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>First name*</label>
 				<div>
-					<Field name="first_name" component={ renderField } type="text"/>
+					<Field
+						name="first_name"
+						component={ renderField }
+						type="text"
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>Middle name</label>
 				<div>
-					<Field name="middle_name" component="input" type="text"/>
+					<Field
+						name="middle_name"
+						component="input"
+						type="text"
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>Tracker</label>
 				<div>
-					<Field name="tracker" component={ CreatableTR } />
+					<Field
+						name="tracker"
+						component={ CreatableTR }
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>Department</label>
 				<div>
-					<Field name="department" component={ CreatableDEP } />
+					<Field
+						name="department"
+						component={ CreatableDEP }
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>Hardware key</label>
 				<div>
-					<Field name="hardware_key" component="input" type="text"/>
+					<Field
+						name="hardware_key"
+						component="input"
+						type="text"
+					/>
 				</div>
 			</div>
 
 			<div>
 				<label>Tags</label>
 				<div>
-					<Field name="tags" component={ CreatableTAG }/>
+					<Field
+						name="tags"
+						component={ CreatableTAG }
+					/>
 				</div>
 			</div>
 			<FormInfocontacto/>
@@ -191,5 +214,9 @@ const FormConductor = (props) => {
 }
 export default reduxForm ({
 	form: 'simple',
-	validate
-})(FormConductor);
+	
+})(FormConductorComponent);
+
+export const FormConductor = reduxForm({
+	form: 'simpleInidad',
+})(FormConductorComponent)
