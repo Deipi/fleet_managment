@@ -18,4 +18,3 @@ const Map = withGoogleMap((props) =>{
   );
 });
 export default Map;
-
