@@ -125,8 +125,8 @@
       "tracker": "Ann (Volkswagen)",
       "phone": "4567891253",
       "email": "ann.beckett@gmail.com",
-      "Hardware_key": "",
-      "license": "EEMD394HDEW",
+      "hardware_key": "",
+      "driver_license_number": "EEMD394HDEW",
       "id": 1
     },
     {
@@ -135,8 +135,8 @@
       "tracker": "Paul (Man truck)",
       "phone": "4567891252",
       "email": "paul.anderson@gmail.com",
-      "Hardware_key": "",
-      "license": "EEMD388HDEW",
+      "hardware_key": "",
+      "driver_license_number": "EEMD388HDEW",
       "id": 2
     }
   ],
