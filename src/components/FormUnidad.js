@@ -307,4 +307,3 @@ export const FormUnidad = reduxForm({
   form: 'simpleInidad',
 
 })(FormUnidadComponent);
-

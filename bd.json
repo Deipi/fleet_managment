@@ -217,6 +217,28 @@
       "id": 5
     }
   ],
+  "drivers": [
+    {
+      "last_name": "Beckett",
+      "first_name": "Ann",
+      "tracker": "Ann (Volkswagen)",
+      "phone": "4567891253",
+      "email": "ann.beckett@gmail.com",
+      "hardware_key": "",
+      "driver_license_number": "EEMD394HDEW",
+      "id": 1
+    },
+    {
+      "last_name": "Anderson",
+      "first_name": "Paul",
+      "tracker": "Paul (Man truck)",
+      "phone": "4567891252",
+      "email": "paul.anderson@gmail.com",
+      "hardware_key": "",
+      "driver_license_number": "EEMD388HDEW",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
