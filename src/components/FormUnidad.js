@@ -300,10 +300,10 @@ const FormUnidadComponent = (props) => {
 
 export default reduxForm({
   form: 'simpleInidad',
-
+  validate,
 })(FormUnidadComponent);
 
 export const FormUnidad = reduxForm({
   form: 'simpleInidad',
-
+  validate,
 })(FormUnidadComponent);
