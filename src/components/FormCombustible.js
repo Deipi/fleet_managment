@@ -18,17 +18,16 @@ var CreatableComb= React.createClass({
 			]
 		};
 	},
-	handleOnChange(value){
-		const { options } = this.setState({ value });
-	},
 	render (){
-		const { options, value } = this.state;
+		const { props: { input : { onChange, value, name } } } = this;
+		const { options } = this.state;
 		return(
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
 				<Select.Creatable
 					options={options}
-					onChange={this.handleOnChange}
+					name={name}
+					onChange={onChange}
 					value={value}
 				/>
 			</div>
