@@ -138,7 +138,7 @@ class DriversListComponent extends Component {
 				      <ColumnDefinition id="phone" visible/>
 				      <ColumnDefinition id="email" visible/>
 				      <ColumnDefinition id="hardware_key" visible/>
-				      <ColumnDefinition id="license" visible/>
+				      <ColumnDefinition id="driver_license_number" visible/>
 				      <ColumnDefinition id="id" title="description" visible customComponent={ CustomColumn(this.showDescription) }/>
 				 	</RowDefinition>
 				</Griddle>
@@ -150,7 +150,7 @@ class DriversListComponent extends Component {
 						phone = { descriptionDrivers.phone }
 						email = { descriptionDrivers.email }
 						hardware_key = { descriptionDrivers.hardware_key }
-						license = { descriptionDrivers.license }
+						driver_license_number = { descriptionDrivers.driver_license_number }
 					/> ) : null
 				}
 			</div>
