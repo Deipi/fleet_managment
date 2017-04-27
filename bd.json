@@ -120,7 +120,8 @@
   ],
   "drivers": [
     {
-      "name": "Beckett Ann",
+      "last_name": "Beckett",
+      "first_name": "Ann",
       "tracker": "Ann (Volkswagen)",
       "phone": "4567891253",
       "email": "ann.beckett@gmail.com",
@@ -129,7 +130,8 @@
       "id": 1
     },
     {
-      "name": "Anderson Paul",
+      "last_name": "Anderson",
+      "first_name": "Paul",
       "tracker": "Paul (Man truck)",
       "phone": "4567891252",
       "email": "paul.anderson@gmail.com",
