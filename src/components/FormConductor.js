@@ -86,6 +86,9 @@ var CreatableTAG=React.createClass({
 	},
 	handleOnChange (value){
 		const { multi } = this.state;
+		const { onChangeAction } = this.props;
+
+		onChangeAction(value);
 		if (multi) {
 			this.setState({multiValue: value});
 		}else{
@@ -119,7 +122,7 @@ const renderField = ({ input, label, type, meta: { asyncValidating, touched, err
 )
 
 const FormConductorComponent = (props) => {
-	const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
+	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return(
 		<form onSubmit={handleSubmit(actionSubmit)}>
 			<div>
@@ -199,6 +202,7 @@ const FormConductorComponent = (props) => {
 					<Field
 						name="tags"
 						component={ CreatableTAG }
+						onChangeAction={ onChangeAction }
 					/>
 				</div>
 			</div>
@@ -213,10 +217,10 @@ const FormConductorComponent = (props) => {
 	)
 }
 export default reduxForm ({
-	form: 'simple',
+	form: 'formDriver',
 	
 })(FormConductorComponent);
 
 export const FormConductor = reduxForm({
-	form: 'simpleInidad',
+	form: 'formDriver',
 })(FormConductorComponent)
