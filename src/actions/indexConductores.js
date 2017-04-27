@@ -1,7 +1,7 @@
 export const POSTED_CONDUCTOR = 'POSTED_CONDUCTOR';
 export const FETCHED_CONDUCTORES = 'FETCHED_CONDUCTORES';
 
-export default data => (dispatch, getStore) => fetch('http://localhost:3007/conductores', {
+export default data => (dispatch, getStore) => fetch('http://localhost:3004/conductores', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3007/cond
 	payload:conductor
 })));
 
-export const fetchConductores=()=>(dispatch, getStore)=>fetch('http://localhost:3007/conductores', {
+export const fetchConductores=()=>(dispatch, getStore)=>fetch('http://localhost:3004/conductores', {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
