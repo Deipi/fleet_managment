@@ -8,9 +8,6 @@ import FormCombustible from './FormCombustible';
 import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
-
-
-
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
   propTypes: {
@@ -26,18 +23,16 @@ var CreatableTY = React.createClass({
        ]
     };
   },
-  handleOnChange (value) {
-    const { options } = this.setState({ value });
-
-  },
   render () {
-    const { options, value } = this.state;
+    const { props: { input : { onChange, value, name } } } = this;
+    const { options } = this.state;
     return (
       <div className="section">
         <h3 className="section-heading">{this.props.label}</h3>
         <Select.Creatable
           options={options}
-          onChange={this.handleOnChange}
+          name={name}
+          onChange={onChange}
           value={value}
         />
       </div>
@@ -61,18 +56,16 @@ var CreatableTR = React.createClass({
      ]
     };
   },
-  handleOnChange (value) {
-    const { optionsTR } = this.setState({ value });
-
-  },
   render () {
-    const { optionsTR, value } = this.state;
+    const { props: { input : { onChange, value, name } } } = this;
+    const { optionsTR } = this.state;
     return (
       <div className="section">
         <h3 className="section-heading">{this.props.label}</h3>
         <Select.Creatable
           options={optionsTR}
-          onChange={this.handleOnChange}
+          name={name}
+          onChange={onChange}
           value={value}
         />
       </div>
@@ -94,18 +87,16 @@ var CreatableGA = React.createClass({
      ]
     };
   },
-  handleOnChange (value) {
-    const { optionsGA } = this.setState({ value });
-
-  },
   render () {
-    const { optionsGA, value } = this.state;
+    const { props : { input : { onChange, value, name } } } = this;
+    const { optionsGA } = this.state;
     return (
       <div className="section">
         <h3 className="section-heading">{this.props.label}</h3>
         <Select.Creatable
           options={optionsGA}
-          onChange={this.handleOnChange}
+          name={name}
+          onChange={onChange}
           value={value}
         />
       </div>
@@ -173,76 +164,118 @@ const format = value => {
 
 const FormUnidadComponent = (props) => {
   const { handleSubmit, pristine,  reset, submitting, actionSubmit } = props
-  
+
   return (
 
     <form onSubmit={ handleSubmit(actionSubmit) }>
     <div>
         <label>Label*</label>
         <div>
-          <Field name="label" component={renderField} type="text"/>
+          <Field
+            name="label"
+            component={renderField}
+            type="text"
+          />
         </div>
       </div>
+
       <div>
         <label>Tracker</label>
         <div>
-          <Field name="tracker" component={ CreatableTR }/>
+          <Field
+            name="tracker"
+            component={ CreatableTR }
+          />
         </div>
       </div>
 
       <div>
         <label>Garage</label>
         <div>
-          <Field name="garage" component={ CreatableGA }/>
+          <Field
+            name="garage"
+            component={ CreatableGA }
+          />
         </div>
       </div>
 
       <div>
         <label>Model</label>
         <div>
-          <Field name="model" component="input" type="text" placeholder="Model"/>
+          <Field
+            name="model"
+            component="input"
+            type="text"
+            placeholder="Model"
+          />
         </div>
       </div>
 
       <div>
         <label>Type*</label>
         <div>
-          <Field name="type" component={ CreatableTY }/>
+          <Field
+            name="type"
+            component={ CreatableTY }
+          />
         </div>
       </div>
 
       <div>
         <label>Vehicle registration plate</label>
         <div>
-          <Field name="vehicle_registration_plate" component="input" type="text" placeholder="Vehicle"/>
+          <Field
+            name="vehicle_registration_plate"
+            component="input"
+            type="text"
+            placeholder="Vehicle"
+          />
         </div>
       </div>
 
       <div>
         <label>VIN</label>
         <div>
-          <Field name="vin" component="input" type="text" placeholder="VIN"/>
+          <Field
+            name="vin"
+            component="input"
+            type="text"
+            placeholder="VIN"
+          />
         </div>
       </div>
 
       <div>
         <label>Chassis number</label>
         <div>
-          <Field name="chassis_number" component="input" type="text" placeholder="Chassis number"/>
+          <Field
+            name="chassis_number"
+            component="input"
+            type="text"
+            placeholder="Chassis number"
+          />
         </div>
       </div>
 
       <div>
         <label>Permited speed</label>
         <div>
-          <Field name="permited_speed" component={renderField} type="text" format={format}/>
+          <Field
+            name="permited_speed"
+            component={renderField}
+            type="text"
+            format={format}
+          />
         </div>
       </div>
 
       <div>
         <label>Tags</label>
           <div>
-            <Field name="tags" component={ CreatableDemo }/>
+            <Field
+              name="tags"
+              component={ CreatableDemo }
+            />
           </div>
       </div>
 
@@ -252,8 +285,12 @@ const FormUnidadComponent = (props) => {
       <FormSeguro/>
 
        <div>
-        <button type="submit" disabled={pristine || submitting}>Guardar</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Restab</button>
+        <button
+          type="submit"
+          disabled={pristine || submitting}>Guardar</button>
+        <button
+          type="button"
+          disabled={pristine || submitting} onClick={reset}>Restab</button>
       </div>
 
   </form>
@@ -263,11 +300,11 @@ const FormUnidadComponent = (props) => {
 
 export default reduxForm({
   form: 'simpleInidad',
-  
+
 })(FormUnidadComponent);
 
 export const FormUnidad = reduxForm({
   form: 'simpleInidad',
-  
+
 })(FormUnidadComponent);
 
