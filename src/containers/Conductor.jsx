@@ -19,19 +19,7 @@ class ConductorComponent extends React.Component {
 		return (
 			<FormConductor 
 				actionSubmit={ this.actionSubmit }
-				initialValues={
-					{
-						last_name: 'Cartens',
-						first_name: 'Jose',
-						middle_name: 'Luis',
-						hardware_key: 'JMZMA18P200411817',
-						phone: '7861161212',
-						email:'alf@g.com',
-						driver_license_number: '123',
-						driver_license_class: 'abc',
-						expiration_date: '2017-04-21'
-					}
-				}
+				
 			/>
 		);
 	}
