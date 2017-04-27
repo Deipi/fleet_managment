@@ -22,7 +22,7 @@ const CustomColumn = showDescription => ({value}) =>
 
 const selector = state => {
 	return {
-		drivers: state.get('DriversList'),
+		conductores: state.get('DriversList'),
 	}
 };
 
@@ -53,10 +53,11 @@ class DriversListComponent extends Component {
 	}
 
 	render() {
-		const { props: { drivers } } = this;
+		const { props: { conductores } } = this;
 		const { show, edit, create, remove, group } = this.state;
 
-		const descriptionDrivers = drivers.filter(obj => obj.id === this.state.data).toJS()[0]
+		debugger;
+		const descriptionDrivers = conductores.filter(obj => obj.id === this.state.data).toJS()[0]
 
 
 		let btnCreate = (
@@ -121,7 +122,7 @@ class DriversListComponent extends Component {
 				{ btnEdit }
 				{ btnRemove }
 				{ btnGroup }
-				<Griddle data={ drivers ? drivers.toJS() : [] }
+				<Griddle data={ conductores ? conductores.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
 				styleConfig={{
 					classNames: {
