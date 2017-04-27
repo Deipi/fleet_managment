@@ -1,7 +1,7 @@
 export const POSTED_UNIDAD =  'POSTED_UNIDAD';
 export const FETCHED_UNIDADES = 'FETCHED_UNIDADES';
 
-export default data => (dispatch, getStore) => fetch('http://localhost:3006/unidades', {
+export default data => (dispatch, getStore) => fetch('http://localhost:3004/unidades', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3006/unid
 	payload: unidad
 })));
 
-export const fetchUnidades=()=>(dispatch, getStore)=>fetch('http://localhost:3006/unidades', {
+export const fetchUnidades=()=>(dispatch, getStore)=>fetch('http://localhost:3004/unidades', {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
