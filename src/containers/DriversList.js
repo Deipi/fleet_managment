@@ -131,14 +131,14 @@ class DriversListComponent extends Component {
 						Layout: NewLayout
 				}}>
 					<RowDefinition>
-					  <ColumnDefinition id="last_name" visible/>
-					  <ColumnDefinition id="first_name" visible/>
-				      <ColumnDefinition id="tracker" visible/>
-				      <ColumnDefinition id="phone" visible/>
-				      <ColumnDefinition id="email" visible/>
-				      <ColumnDefinition id="hardware_key" visible/>
-				      <ColumnDefinition id="driver_license_number" visible/>
-				      <ColumnDefinition id="id" title="description" visible customComponent={ CustomColumn(this.showDescription) }/>
+					  <ColumnDefinition id="last_name" title="Last Name" visible/>
+					  <ColumnDefinition id="first_name" title="First Name" visible/>
+				      <ColumnDefinition id="tracker.label" title="Tracker" visible/>
+				      <ColumnDefinition id="phone" title="Phone" visible/>
+				      <ColumnDefinition id="email" title="Email" visible/>
+				      <ColumnDefinition id="hardware_key" title="Hardware key" visible/>
+				      <ColumnDefinition id="driver_license_number" title="License" visible/>
+				      <ColumnDefinition id="id" title="Description" visible customComponent={ CustomColumn(this.showDescription) }/>
 				 	</RowDefinition>
 				</Griddle>
 				{ show && descriptionDrivers ? (
