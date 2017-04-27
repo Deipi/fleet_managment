@@ -1,7 +1,7 @@
 export const POSTED_VEHICLE = 'POSTED_VEHICLE';
 export const FETCHED_VEHICLES = 'FETCHED_VEHICLES';
 
-export default data => (dispatch, getStore) => fetch('http://localhost:3005/vehicles', {
+export default data => (dispatch, getStore) => fetch('http://localhost:3004/vehicles', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3005/vehi
 	payload: vehicle
 })));
 
-export const fetchVehicles = () => (dispatch, getStore) => fetch('http://localhost:3005/vehicles', {
+export const fetchVehicles = () => (dispatch, getStore) => fetch('http://localhost:3004/vehicles', {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
