@@ -97,10 +97,27 @@
       "id": 2
     }
   ],
-<<<<<<< HEAD
   "conductores": [
-
-==],
+    {
+      "driver_license_class": "as",
+      "hardware_key": "ERTY",
+      "phone": "123",
+      "department": {
+        "value": "des",
+        "label": "Desarrollo"
+      },
+      "last_name": "Camacho",
+      "middle_name": "Lizbeth",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "first_name": "Andrea",
+      "email": "ak@g.com",
+      "driver_license_number": "123",
+      "id": 1
+    }
+  ],
   "drivers": [
     {
       "name": "Beckett Ann",
@@ -120,7 +137,6 @@
       "license": "EEMD388HDEW",
       "id": 2
     }
->>>>>>> 2dccbde3ff2670ff7c0db168beba9d075874df8a
   ],
   "posts": [
     {
