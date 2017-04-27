@@ -43,14 +43,15 @@ const Component = (props) => {
 
 import vehicles from './reducers/VehiclesList';
 import unidades from './reducers/UnidadesList';
-import drivers from './reducers/DriversList';
+import conductores from './reducers/DriversList';
+
 
 const initialState = immutable.Map();
 
 const rootReducer = combineReducers({
 	form: formReducer,
 	VehiclesList: vehicles,
-	DriversList: drivers,
+	DriversList: conductores,
 
 });
 
