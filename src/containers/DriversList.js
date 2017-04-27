@@ -131,9 +131,9 @@ class DriversListComponent extends Component {
 						Layout: NewLayout
 				}}>
 					<RowDefinition>
-					  <ColumnDefinition id="last_name" visible/>
+					  <ColumnDefinition id="last_name"  visible/>
 					  <ColumnDefinition id="first_name" visible/>
-				      <ColumnDefinition id="tracker" visible/>
+				      <ColumnDefinition id="tracker.label" title="Tracker" visible/>
 				      <ColumnDefinition id="phone" visible/>
 				      <ColumnDefinition id="email" visible/>
 				      <ColumnDefinition id="hardware_key" visible/>
