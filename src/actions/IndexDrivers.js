@@ -1,7 +1,7 @@
 export const POSTED_DRIVER = 'POSTED_DRIVER';
 export const FETCHED_DRIVERS = 'FETCHED_DRIVERS';
 
-export default data => (dispatch, getStore) => fetch('http://localhost:3005/drivers', {
+export default data => (dispatch, getStore) => fetch('http://localhost:3007/conductores', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json'
@@ -12,12 +12,12 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3005/driv
 	payload: driver
 })));
 
-export const fetchDrivers = () => (dispatch, getStore) => fetch('http://localhost:3005/drivers', {
+export const fetchDrivers = () => (dispatch, getStore) => fetch('http://localhost:3007/conductores', {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
 	},
-}).then( result => result.json().then( drivers => dispatch({
+}).then( result => result.json().then( conductores => dispatch({
 	type: FETCHED_DRIVERS,
-	payload: drivers
+	payload: conductores
 })));
