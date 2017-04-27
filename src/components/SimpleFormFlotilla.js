@@ -22,7 +22,7 @@ const SimpleFormF = (props) => {
 			<tr>FLOTILLA</tr><br/>
 			</center>
 			</div>
-			
+
 			<div>
 			<label>Name</label>
 			<div>
