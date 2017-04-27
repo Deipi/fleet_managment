@@ -131,7 +131,7 @@ class DriversListComponent extends Component {
 						Layout: NewLayout
 				}}>
 					<RowDefinition>
-<<<<<<< HEAD
+
 					  <ColumnDefinition id="last_name"  visible/>
 					  <ColumnDefinition id="first_name" visible/>
 				      <ColumnDefinition id="tracker.label" title="Tracker" visible/>
@@ -140,7 +140,7 @@ class DriversListComponent extends Component {
 				      <ColumnDefinition id="hardware_key" visible/>
 				      <ColumnDefinition id="driver_license_number" visible/>
 				      <ColumnDefinition id="id" title="description" visible customComponent={ CustomColumn(this.showDescription) }/>
-=======
+
 					  <ColumnDefinition id="last_name" title="Last Name" visible/>
 					  <ColumnDefinition id="first_name" title="First Name" visible/>
 				      <ColumnDefinition id="tracker.label" title="Tracker" visible/>
@@ -149,7 +149,7 @@ class DriversListComponent extends Component {
 				      <ColumnDefinition id="hardware_key" title="Hardware key" visible/>
 				      <ColumnDefinition id="driver_license_number" title="License" visible/>
 				      <ColumnDefinition id="id" title="Description" visible customComponent={ CustomColumn(this.showDescription) }/>
->>>>>>> b81910639bd5b24d1b1f19b36d30ad9f2d629c5c
+
 				 	</RowDefinition>
 				</Griddle>
 				{ show && descriptionDrivers ? (
