@@ -215,28 +215,37 @@
       "email": "compa@gmail.com",
       "driver_license_number": "2",
       "id": 5
-    }
-  ],
-  "drivers": [
-    {
-      "last_name": "Beckett",
-      "first_name": "Ann",
-      "tracker": "Ann (Volkswagen)",
-      "phone": "4567891253",
-      "email": "ann.beckett@gmail.com",
-      "hardware_key": "",
-      "driver_license_number": "EEMD394HDEW",
-      "id": 1
     },
     {
-      "last_name": "Anderson",
-      "first_name": "Paul",
-      "tracker": "Paul (Man truck)",
-      "phone": "4567891252",
-      "email": "paul.anderson@gmail.com",
-      "hardware_key": "",
-      "driver_license_number": "EEMD388HDEW",
-      "id": 2
+      "driver_license_class": "de233",
+      "hardware_key": "q3w56",
+      "phone": "12345680",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "medina",
+      "middle_name": "liz",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        {
+          "value": "sw",
+          "label": "sw",
+          "className": "Select-create-option-placeholder"
+        },
+        {
+          "value": "hw",
+          "label": "hw",
+          "className": "Select-create-option-placeholder"
+        }
+      ],
+      "first_name": "liz",
+      "email": "sddsf@sjndj.cni",
+      "driver_license_number": "323342",
+      "id": 6
     }
   ],
   "posts": [
