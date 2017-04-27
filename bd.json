@@ -22,25 +22,83 @@
       "permited_speed": "100 Km/h ",
       "chassis_number": "LJCPCBLCXI1000237",
       "vehicle_registration_plate": "SBA 1234A",
-      "insurance_2_policy_number": "ghjk",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "fgh",
       "wheel_front": "2",
-      "cargo_h": "12 mm ",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
       "wheel_rear": "2",
-      "tyre_size": "24",
-      "cargo_l": "12 mm ",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
       "model": "Ford Focus",
-      "number_of_passengers": "4 people ",
-      "tyres_number": "4",
-      "fuel_grade": "rtyu",
-      "tank_capacity": "200 L ",
-      "insurance_policy_number": "dfghj",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "6",
+      "fuel_grade": "hggh",
+      "tank_capacity": "120 L ",
+      "insurance_policy_number": "fgh",
       "fuel_consumption": "12 L ",
       "cargo_w": "12 mm ",
       "label": "Car",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "type": {
+        "value": "bus",
+        "label": "Bus"
+      },
       "vin": "JMZMA18P200411817",
-      "cargo_capacity": "200 kg ",
+      "cargo_capacity": "100 kg ",
       "id": 1
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "fuel_type": {
+        "value": "petrol",
+        "label": "Petrol"
+      },
+      "insurance_2_policy_number": "hj",
+      "wheel_front": "2",
+      "cargo_h": "1 mm ",
+      "garage": {
+        "value": "no garage",
+        "label": "No Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "1",
+      "cargo_l": "1 mm ",
+      "model": "Ford Focus",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "2",
+      "fuel_grade": "qw",
+      "tank_capacity": "200 L ",
+      "insurance_policy_number": "ghj",
+      "fuel_consumption": "12 L ",
+      "cargo_w": "1 mm ",
+      "label": "Car",
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "type": {
+        "value": "special",
+        "label": "Special"
+      },
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "2000 kg ",
+      "id": 2
     }
+  ],
+  "conductores": [
+
   ],
   "posts": [
     {
