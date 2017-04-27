@@ -42,6 +42,26 @@
       "id": 1
     }
   ],
+  "drivers": [
+    {
+      "name": "Beckett Ann",
+      "tracker": "Ann (Volkswagen)",
+      "phone": "4567891253",
+      "email": "ann.beckett@gmail.com",
+      "Hardware_key": "",
+      "license": "EEMD394HDEW",
+      "id": 1
+    },
+    {
+      "name": "Anderson Paul",
+      "tracker": "Paul (Man truck)",
+      "phone": "4567891252",
+      "email": "paul.anderson@gmail.com",
+      "Hardware_key": "",
+      "license": "EEMD388HDEW",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
