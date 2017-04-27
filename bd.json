@@ -116,6 +116,25 @@
       "email": "ak@g.com",
       "driver_license_number": "123",
       "id": 1
+    },
+    {
+      "driver_license_class": "ere676778tr",
+      "hardware_key": "sdddfd3",
+      "phone": "2156485484",
+      "department": {
+        "value": "dis",
+        "label": "Diseño"
+      },
+      "last_name": "correa",
+      "middle_name": "pepe",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "first_name": "alfredo",
+      "email": "feyo@gmail.com",
+      "driver_license_number": "234455466",
+      "id": 2
     }
   ],
   "drivers": [
