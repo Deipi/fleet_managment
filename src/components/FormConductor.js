@@ -6,6 +6,7 @@ import validate from '../validate'
 import FormInfocontacto from './FromInfoContacto'
 import FormLicenciaConductor from './FormLicenciaConductor'
 
+
 var CreatableTR=React.createClass({
 	displayName: 'CreatableTY',
 	propTypes: {
@@ -218,9 +219,13 @@ const FormConductorComponent = (props) => {
 }
 export default reduxForm ({
 	form: 'formDriver',
-	
+	// initial: {
+
+	// }
+
 })(FormConductorComponent);
 
 export const FormConductor = reduxForm({
 	form: 'formDriver',
 })(FormConductorComponent)
+
