@@ -24,7 +24,6 @@ class ConductorComponent extends React.Component {
 
 	render() {
 		const { info } = this.props;
-		debugger;
 		return (
 			<FormConductor
 				actionSubmit={ this.actionSubmit }
@@ -35,5 +34,5 @@ class ConductorComponent extends React.Component {
 	}
 }
 
-export const Conductor = connect( (state) => { debugger; return {info: state.conductoresEdit} })(ConductorComponent);
-export default connect( (state) => { debugger; return {info: state.get('conductoresInfo')} })(ConductorComponent);
+export const Conductor = connect( (state) => {return {info: state.conductoresEdit} })(ConductorComponent);
+export default connect( (state) => {return {info: state.get('conductoresInfo')} })(ConductorComponent);
