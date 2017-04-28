@@ -1,6 +1,7 @@
 import React from 'react'
 import FormUnidad from '../components/FormUnidad';
 import { connect } from 'react-redux';
+import { change } from 'redux-form/immutable';
 
 import createUnidad from '../actions/indexUnidad';
 
@@ -11,6 +12,7 @@ class UnidadComponent extends React.Component {
     super(props);
 
     this.actionSubmit = this.actionSubmit.bind(this);
+    this.onChangeAction = this.onChangeAction.bind(this);
   }
 
   actionSubmit(values) {
@@ -19,9 +21,15 @@ class UnidadComponent extends React.Component {
     dispatch(createUnidad(values.toJS()));
   }
 
+  onChangeAction(value){
+    const { dispatch } = this.props;
+    dispatch(change('formUnidad', 'tags', value, true));
+  }
+
   render() {
     return (
       <FormUnidad
+        onChangeAction={ this.onChangeAction }
         actionSubmit={ this.actionSubmit }
         initialValues={
           {
