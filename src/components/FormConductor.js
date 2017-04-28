@@ -228,8 +228,6 @@ export default reduxForm ({
 
 export const FormConductor = reduxForm({
 	form: 'formDriver',
-})(FormConductorComponent)
-
 	validate,
 })(FormConductorComponent)
 
