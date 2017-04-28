@@ -23,7 +23,8 @@ class UnidadComponent extends React.Component {
 
   onChangeAction(value){
     const { dispatch } = this.props;
-    dispatch(change('formUnidad', 'tags', value, true));
+    const w=value.map(obj=>obj.label)
+    dispatch(change('formUnidad', 'tags', w, true));
   }
 
   render() {
