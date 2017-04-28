@@ -134,6 +134,52 @@
       "vin": "JMZMA18P200411817",
       "cargo_capacity": "100 kg ",
       "id": 3
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "fgh",
+      "wheel_front": "2",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Ford Focus",
+      "number_of_passengers": "3 people ",
+      "tyres_number": "6",
+      "fuel_grade": "etry",
+      "tank_capacity": "222 L ",
+      "insurance_policy_number": "fgh",
+      "fuel_consumption": "12 L ",
+      "cargo_w": "12 mm ",
+      "label": "Transformer",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        {
+          "value": "ok",
+          "label": "ok",
+          "className": "Select-create-option-placeholder"
+        }
+      ],
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "100 kg ",
+      "id": 4
     }
   ],
   "conductores": [
