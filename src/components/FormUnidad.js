@@ -104,30 +104,33 @@ var CreatableGA = React.createClass({
   }
 });
 
- var CreatableDemo = React.createClass({
-  displayName: 'CreatableDemo',
+ var CreatableTAG=React.createClass({
+  displayName: 'CreatableTAG',
   propTypes: {
     hint: React.PropTypes.string,
     label: React.PropTypes.string
   },
-  getInitialState () {
+  getInitialState (){
     return {
       multi: true,
       multiValue: [],
       value: undefined
     };
   },
-  handleOnChange (value) {
+  handleOnChange (value){
     const { multi } = this.state;
+    const { onChangeAction } = this.props;
+
+    onChangeAction(value);
     if (multi) {
-      this.setState({ multiValue: value });
-    } else {
-      this.setState({ value });
+      this.setState({multiValue: value});
+    }else{
+      this.setState({value});
     }
   },
-  render () {
+  render (){
     const { multi, multiValue, value } = this.state;
-    return (
+    return(
       <div className="section">
         <h3 className="section-heading">{this.props.label}</h3>
         <Select.Creatable
@@ -163,7 +166,7 @@ const format = value => {
 
 
 const FormUnidadComponent = (props) => {
-  const { handleSubmit, pristine,  reset, submitting, actionSubmit } = props
+  const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 
   return (
 
@@ -274,7 +277,8 @@ const FormUnidadComponent = (props) => {
           <div>
             <Field
               name="tags"
-              component={ CreatableDemo }
+              component={ CreatableTAG }
+              onChangeAction={ onChangeAction }
             />
           </div>
       </div>
@@ -299,11 +303,11 @@ const FormUnidadComponent = (props) => {
 }
 
 export default reduxForm({
-  form: 'simpleInidad',
+  form: 'formUnidad',
   validate,
 })(FormUnidadComponent);
 
 export const FormUnidad = reduxForm({
-  form: 'simpleInidad',
+  form: 'formUnidad',
   validate,
 })(FormUnidadComponent);
