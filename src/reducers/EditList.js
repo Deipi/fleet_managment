@@ -6,7 +6,7 @@ export default (state=Immutable.List(), action) => {
 		case POSTED_EDIT:
 			return state.merge(Immutable.List(action.payload));
 		case FETCHED_EDITED:
-			return Immutable.List(action.payload);
+			return Immutable.Map(action.payload);
 		default:
 			return state;
 	}
