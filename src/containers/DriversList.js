@@ -50,7 +50,6 @@ class DriversListComponent extends Component {
 
 	showDescription(value) {
 		const { props: { conductores, dispatch } } = this;
-		debugger;
 		const descriptionDriver = conductores.filter(obj => obj.id === value).toJS()[0];
 
 		dispatch({
