@@ -23,14 +23,16 @@ class ConductorComponent extends React.Component {
 	}
 
 	render() {
+		const { info } = this.props;
 		return (
-			<FormConductor 
+			<FormConductor
 				actionSubmit={ this.actionSubmit }
 				onChangeAction={ this.onChangeAction }
+				conductorInfo={ info }
 			/>
 		);
 	}
 }
 
-export const Conductor = connect()(ConductorComponent);
+export const Conductor = connect( (state) => { info: state.conductoresEdit })(ConductorComponent);
 export default connect()(ConductorComponent);
