@@ -95,6 +95,91 @@
       "vin": "JMZMA18P200411817",
       "cargo_capacity": "2000 kg ",
       "id": 2
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "fuel_type": {
+        "value": "petrol",
+        "label": "Petrol"
+      },
+      "insurance_2_policy_number": "fgh",
+      "wheel_front": "2",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "no garage",
+        "label": "No Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Ford Focus",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "10",
+      "fuel_grade": "etry",
+      "tank_capacity": "222 L ",
+      "insurance_policy_number": "fgh",
+      "fuel_consumption": "12 L ",
+      "cargo_w": "12 mm ",
+      "label": "Car",
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "100 kg ",
+      "id": 3
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "fgh",
+      "wheel_front": "2",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Ford Focus",
+      "number_of_passengers": "3 people ",
+      "tyres_number": "6",
+      "fuel_grade": "etry",
+      "tank_capacity": "222 L ",
+      "insurance_policy_number": "fgh",
+      "fuel_consumption": "12 L ",
+      "cargo_w": "12 mm ",
+      "label": "Transformer",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        {
+          "value": "ok",
+          "label": "ok",
+          "className": "Select-create-option-placeholder"
+        }
+      ],
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "100 kg ",
+      "id": 4
     }
   ],
   "conductores": [
@@ -246,6 +331,32 @@
       "email": "sddsf@sjndj.cni",
       "driver_license_number": "323342",
       "id": 6
+    },
+    {
+      "driver_license_class": "abc",
+      "hardware_key": "JMZMA18P200411817",
+      "phone": "123456",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "Mora",
+      "middle_name": "Che",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "tags": [
+        {
+          "value": "ok",
+          "label": "ok",
+          "className": "Select-create-option-placeholder"
+        }
+      ],
+      "first_name": "Jose",
+      "email": "ruf@adm.com",
+      "driver_license_number": "12345",
+      "id": 7
     }
   ],
   "posts": [

@@ -223,9 +223,13 @@ export default reduxForm ({
 
 	// }
 
+	validate,
 })(FormConductorComponent);
 
 export const FormConductor = reduxForm({
 	form: 'formDriver',
+})(FormConductorComponent)
+
+	validate,
 })(FormConductorComponent)
 
