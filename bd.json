@@ -30,25 +30,29 @@
       "wheel_front": "2",
       "cargo_h": "122 mm ",
       "garage": {
-        "value": "garage",
-        "label": "Garage"
+        "value": "no garage",
+        "label": "No Garage"
       },
       "wheel_rear": "2",
       "tyre_size": "23",
       "cargo_l": "122 mm ",
       "model": "Ford Focus",
-      "number_of_passengers": "2 people ",
-      "tyres_number": "6",
-      "fuel_grade": "hggh",
-      "tank_capacity": "120 L ",
+      "number_of_passengers": "4 people ",
+      "tyres_number": "5",
+      "fuel_grade": "High",
+      "tank_capacity": "222 L ",
       "insurance_policy_number": "fgh",
       "fuel_consumption": "12 L ",
-      "cargo_w": "12 mm ",
+      "cargo_w": "122 mm ",
       "label": "Car",
       "tracker": {
-        "value": "martin",
-        "label": "Martin"
+        "value": "pepe",
+        "label": "Pepe"
       },
+      "tags": [
+        "lujo",
+        "caro"
+      ],
       "type": {
         "value": "bus",
         "label": "Bus"
@@ -56,196 +60,42 @@
       "vin": "JMZMA18P200411817",
       "cargo_capacity": "100 kg ",
       "id": 1
-    },
-    {
-      "permited_speed": "100 Km/h ",
-      "chassis_number": "LJCPCBLCXI1000237",
-      "vehicle_registration_plate": "SBA 1234A",
-      "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
-      },
-      "insurance_2_policy_number": "hj",
-      "wheel_front": "2",
-      "cargo_h": "1 mm ",
-      "garage": {
-        "value": "no garage",
-        "label": "No Garage"
-      },
-      "wheel_rear": "2",
-      "tyre_size": "1",
-      "cargo_l": "1 mm ",
-      "model": "Ford Focus",
-      "number_of_passengers": "2 people ",
-      "tyres_number": "2",
-      "fuel_grade": "qw",
-      "tank_capacity": "200 L ",
-      "insurance_policy_number": "ghj",
-      "fuel_consumption": "12 L ",
-      "cargo_w": "1 mm ",
-      "label": "Car",
-      "tracker": {
-        "value": "luis",
-        "label": "Luis"
-      },
-      "type": {
-        "value": "special",
-        "label": "Special"
-      },
-      "vin": "JMZMA18P200411817",
-      "cargo_capacity": "2000 kg ",
-      "id": 2
-    },
-    {
-      "permited_speed": "100 Km/h ",
-      "chassis_number": "LJCPCBLCXI1000237",
-      "vehicle_registration_plate": "SBA 1234A",
-      "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
-      },
-      "insurance_2_policy_number": "fgh",
-      "wheel_front": "2",
-      "cargo_h": "122 mm ",
-      "garage": {
-        "value": "no garage",
-        "label": "No Garage"
-      },
-      "wheel_rear": "2",
-      "tyre_size": "23",
-      "cargo_l": "122 mm ",
-      "model": "Ford Focus",
-      "number_of_passengers": "2 people ",
-      "tyres_number": "10",
-      "fuel_grade": "etry",
-      "tank_capacity": "222 L ",
-      "insurance_policy_number": "fgh",
-      "fuel_consumption": "12 L ",
-      "cargo_w": "12 mm ",
-      "label": "Car",
-      "tracker": {
-        "value": "luis",
-        "label": "Luis"
-      },
-      "type": {
-        "value": "car",
-        "label": "Car"
-      },
-      "vin": "JMZMA18P200411817",
-      "cargo_capacity": "100 kg ",
-      "id": 3
-    },
-    {
-      "permited_speed": "100 Km/h ",
-      "chassis_number": "LJCPCBLCXI1000237",
-      "vehicle_registration_plate": "SBA 1234A",
-      "fuel_type": {
-        "value": "diesel",
-        "label": "Diesel"
-      },
-      "insurance_2_policy_number": "fgh",
-      "wheel_front": "2",
-      "cargo_h": "122 mm ",
-      "garage": {
-        "value": "garage",
-        "label": "Garage"
-      },
-      "wheel_rear": "2",
-      "tyre_size": "23",
-      "cargo_l": "122 mm ",
-      "model": "Ford Focus",
-      "number_of_passengers": "3 people ",
-      "tyres_number": "6",
-      "fuel_grade": "etry",
-      "tank_capacity": "222 L ",
-      "insurance_policy_number": "fgh",
-      "fuel_consumption": "12 L ",
-      "cargo_w": "12 mm ",
-      "label": "Transformer",
-      "tracker": {
-        "value": "martin",
-        "label": "Martin"
-      },
-      "tags": [
-        {
-          "value": "ok",
-          "label": "ok",
-          "className": "Select-create-option-placeholder"
-        }
-      ],
-      "type": {
-        "value": "car",
-        "label": "Car"
-      },
-      "vin": "JMZMA18P200411817",
-      "cargo_capacity": "100 kg ",
-      "id": 4
     }
   ],
   "conductores": [
     {
-      "driver_license_class": "as",
-      "hardware_key": "ERTY",
-      "phone": "123",
+      "driver_license_class": "abcaa",
+      "hardware_key": "JMZMA18P200411817",
+      "phone": "12",
       "department": {
         "value": "des",
         "label": "Desarrollo"
       },
-      "last_name": "Camacho",
-      "middle_name": "Lizbeth",
+      "last_name": "Cartens",
+      "middle_name": "Che",
       "tracker": {
         "value": "pepe",
         "label": "Pepe"
       },
-      "first_name": "Andrea",
-      "email": "ak@g.com",
-      "driver_license_number": "123",
+      "tags": [
+        "ok",
+        "bien",
+        "todo",
+        "al",
+        "100"
+      ],
+      "first_name": "Jose",
+      "email": "alf@gmail.com",
+      "driver_license_number": "5",
       "id": 1
-    },
-    {
-      "driver_license_class": "ere676778tr",
-      "hardware_key": "sdddfd3",
-      "phone": "2156485484",
-      "department": {
-        "value": "dis",
-        "label": "Diseño"
-      },
-      "last_name": "correa",
-      "middle_name": "pepe",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "first_name": "alfredo",
-      "email": "feyo@gmail.com",
-      "driver_license_number": "234455466",
-      "id": 2
-    },
-    {
-      "driver_license_class": "hm",
-      "phone": "44",
-      "department": {
-        "value": "des",
-        "label": "Desarrollo"
-      },
-      "last_name": "TUYI",
-      "middle_name": "UYIK",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "first_name": "FGHJ",
-      "email": "al@j.com",
-      "driver_license_number": "12",
-      "id": 3
     },
     {
       "driver_license_class": "abcaa",
       "hardware_key": "JMZMA18P200411817",
-      "phone": "11",
+      "phone": "1234",
       "department": {
-        "value": "ven",
-        "label": "Ventas"
+        "value": "des",
+        "label": "Desarrollo"
       },
       "last_name": "Cartens",
       "middle_name": "Luis",
@@ -254,109 +104,13 @@
         "label": "Martin"
       },
       "tags": [
-        {
-          "value": "tag1",
-          "label": "tag1",
-          "className": "Select-create-option-placeholder"
-        },
-        {
-          "value": "tag2",
-          "label": "tag2",
-          "className": "Select-create-option-placeholder"
-        }
+        "ok",
+        "oc"
       ],
       "first_name": "Jose",
       "email": "alf@gmail.com",
-      "driver_license_number": "2",
-      "id": 4
-    },
-    {
-      "driver_license_class": "ere676778tr",
-      "hardware_key": "sdddfd3",
-      "phone": "10",
-      "department": {
-        "value": "dis",
-        "label": "Diseño"
-      },
-      "last_name": "correa",
-      "middle_name": "pepe",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "tags": [
-        {
-          "value": "admskfdjn",
-          "label": "admskfdjn",
-          "className": "Select-create-option-placeholder"
-        },
-        {
-          "value": "cnjskjnkfn",
-          "label": "cnjskjnkfn",
-          "className": "Select-create-option-placeholder"
-        }
-      ],
-      "first_name": "Andrea",
-      "email": "compa@gmail.com",
-      "driver_license_number": "2",
-      "id": 5
-    },
-    {
-      "driver_license_class": "de233",
-      "hardware_key": "q3w56",
-      "phone": "12345680",
-      "department": {
-        "value": "ven",
-        "label": "Ventas"
-      },
-      "last_name": "medina",
-      "middle_name": "liz",
-      "tracker": {
-        "value": "martin",
-        "label": "Martin"
-      },
-      "tags": [
-        {
-          "value": "sw",
-          "label": "sw",
-          "className": "Select-create-option-placeholder"
-        },
-        {
-          "value": "hw",
-          "label": "hw",
-          "className": "Select-create-option-placeholder"
-        }
-      ],
-      "first_name": "liz",
-      "email": "sddsf@sjndj.cni",
-      "driver_license_number": "323342",
-      "id": 6
-    },
-    {
-      "driver_license_class": "abc",
-      "hardware_key": "JMZMA18P200411817",
-      "phone": "123456",
-      "department": {
-        "value": "ven",
-        "label": "Ventas"
-      },
-      "last_name": "Mora",
-      "middle_name": "Che",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "tags": [
-        {
-          "value": "ok",
-          "label": "ok",
-          "className": "Select-create-option-placeholder"
-        }
-      ],
-      "first_name": "Jose",
-      "email": "ruf@adm.com",
-      "driver_license_number": "12345",
-      "id": 7
+      "driver_license_number": "4",
+      "id": 2
     }
   ],
   "posts": [

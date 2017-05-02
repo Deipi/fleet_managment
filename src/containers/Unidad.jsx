@@ -17,7 +17,6 @@ class UnidadComponent extends React.Component {
 
   actionSubmit(values) {
     const { dispatch } = this.props;
-
     dispatch(createUnidad(values.toJS()));
   }
 

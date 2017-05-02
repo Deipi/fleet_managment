@@ -19,7 +19,8 @@ class ConductorComponent extends React.Component {
 
 	onChangeAction(value) {
 		const { dispatch } = this.props;
-		dispatch(change('formDriver', 'tags', value, true));
+		const w=value.map(obj=>obj.label)
+		dispatch(change('formDriver', 'tags', w, true));
 	}
 
 	render() {
