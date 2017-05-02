@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchDrivers } from '../actions/IndexDrivers';
+import { fetchDrivers, FETCHED_EDITED } from '../actions/IndexDrivers';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Driver } from '../components/Driver';
@@ -49,13 +49,21 @@ class DriversListComponent extends Component {
 	}
 
 	showDescription(value) {
+		const { props: { conductores, dispatch } } = this;
+		const descriptionDriver = conductores.filter(obj => obj.id === value).toJS()[0];
+
+		dispatch({
+			type: FETCHED_EDITED,
+			payload: descriptionDriver,
+		});
+
 		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
 	}
 
 	render() {
 		const { props: { conductores } } = this;
 		const { show, edit, create, remove, group } = this.state;
-		const descriptionDrivers = conductores.filter(obj => obj.id === this.state.data).toJS()[0]
+		const descriptionDrivers = conductores.filter(obj => obj.id === this.state.data).toJS()[0];
 
 
 		let btnCreate = (
