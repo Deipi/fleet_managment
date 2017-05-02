@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchVehicles } from '../actions/index';
+import { fetchVehicles, FETCHED_EDITED } from '../actions/index';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Vehicles } from '../components/Vehicles';
+import createVehicle from '../actions/index';
 
 const NewLayout = ({ Table,Filter,Pagination }) => (
 	<div>
@@ -50,7 +51,7 @@ class VehiclesListComponent extends Component {
 		const descriptionVehicle = unidades.filter(obj => obj.id === value).toJS()[0];
 
 		dispatch({
-			type: fetchVehicles,
+			type: FETCHED_EDITED,
 			payload: descriptionVehicle,
 		});
 
@@ -147,9 +148,9 @@ class VehiclesListComponent extends Component {
 					<Vehicles
 						label = { descriptionVehicles.label }
 						model = { descriptionVehicles.model }
-						tracker = { descriptionVehicles.tracker }
+						tracker = { descriptionVehicles.tracker.label }
 						vehicle_registration_plate = { descriptionVehicles.vehicle_registration_plate }
-						type = { descriptionVehicles.type }
+						type = { descriptionVehicles.type.label }
 					/> ) : null
 				}
 			</div>
