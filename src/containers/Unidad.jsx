@@ -31,15 +31,6 @@ class UnidadComponent extends React.Component {
       <FormUnidad
         onChangeAction={ this.onChangeAction }
         actionSubmit={ this.actionSubmit }
-        initialValues={
-          {
-            label: 'Car',
-            model: 'Ford Focus',
-            vehicle_registration_plate: 'SBA 1234A',
-            vin: 'JMZMA18P200411817',
-            chassis_number: 'LJCPCBLCXI1000237'
-          }
-        }
       />
     );
   }
