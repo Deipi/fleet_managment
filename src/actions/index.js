@@ -1,5 +1,6 @@
 export const POSTED_VEHICLE = 'POSTED_VEHICLE';
 export const FETCHED_VEHICLES = 'FETCHED_VEHICLES';
+export const FETCHED_EDITED = 'FETCHED_EDITED';
 
 export default data => (dispatch, getStore) => fetch('http://localhost:3004/unidades', {
 	method: 'POST',
