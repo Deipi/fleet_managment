@@ -5,12 +5,9 @@ import { change } from 'redux-form/immutable';
 
 import createUnidad from '../actions/indexUnidad';
 
-
-// Container
 class UnidadComponent extends React.Component {
   constructor(props) {
     super(props);
-
     this.actionSubmit = this.actionSubmit.bind(this);
     this.onChangeAction = this.onChangeAction.bind(this);
   }
@@ -27,14 +24,16 @@ class UnidadComponent extends React.Component {
   }
 
   render() {
+    const { info } = this.props;
     return (
       <FormUnidad
-        onChangeAction={ this.onChangeAction }
         actionSubmit={ this.actionSubmit }
+        onChangeAction={ this.onChangeAction }
+        initialValues={ info }
       />
     );
   }
 }
 
-export const Unidad = connect()(UnidadComponent);
-export default connect()(UnidadComponent);
+export const Unidad = connect((state) => {return {info: state.vehiclesEdit} })(UnidadComponent);
+export default connect((state) => {return {info: state.get('vehiclesInfo')} })(UnidadComponent);
