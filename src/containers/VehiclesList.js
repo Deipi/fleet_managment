@@ -1,41 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchVehicles } from '../actions';
+import { fetchVehicles } from '../actions/index';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import { Vehicles } from '../components/Vehicles';
+
 const NewLayout = ({ Table,Filter,Pagination }) => (
 	<div>
 		<Filter/>
-		<Link className="btn" tag={Link} color="info" to='/formulario'> Add Vehicle </Link>
-		<Link className="btn" tag={Link} color="info" to='/flotilla'> New Group </Link>
 		<Table/>
 		<Pagination/>
 	</div>
 );
 
-      		// <Link className="btn" tag={Link} to='/description'/>
 const CustomColumn = showDescription => ({value}) =>
-		<button type="button" className="btn btn-default" onClick={ () => showDescription(value) }>
-      		<span className="glyphicon glyphicon-align-justify"></span>
-    	</button>;
+	<button type="button" className="btn btn-default" onClick={ () => showDescription(value) }>
+		<span className="glyphicon glyphicon-align-justify"></span>
+	</button>;
 
 
 const selector = state => {
 	return {
-		vehicles: state.get('VehiclesList'),
+		unidades: state.get('VehiclesList'),
 	}
 };
 
-class VehiclesList extends Component {
+class VehiclesListComponent extends Component {
 	constructor(props) {
 		super(props);
-
 		this.showDescription = this.showDescription.bind(this);
-
 		this.state = {
 			show: false,
 			data: 0,
+			edit: false,
+			create: true,
+			remove: false,
+			group: true,
 		};
 	}
 
@@ -45,18 +46,85 @@ class VehiclesList extends Component {
 	}
 
 	showDescription(value) {
-		this.setState({ show: true, data: value });
+		const { props: { unidades, dispatch } } = this;
+		const descriptionVehicle = unidades.filter(obj => obj.id === value).toJS()[0];
+
+		dispatch({
+			type: fetchVehicles,
+			payload: descriptionVehicle,
+		});
+
+		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
 	}
 
 	render() {
-		const { props: { vehicles } } = this;
-		const { show } = this.state;
+		const { props: { unidades } } = this;
+		const { show, edit, create, remove, group } = this.state;
+		const descriptionVehicles = unidades.filter(obj => obj.id === this.state.data).toJS()[0];
 
+		let btnCreate = (
+			<Button>
+				Create
+			</Button>
+		);
 
-		const descriptionVehicle = vehicles.filter(obj => obj.id === this.state.data).toJS()[0]
+		if(create){
+			btnCreate = (
+				<Button>
+					<Link className="btn" tag={Link} color="info" to='/formulario'> create </Link>
+				</Button>
+			);
+		}
+
+		let btnEdit = (
+			<Button disabled>
+				Edit
+			</Button>
+		);
+
+		if (edit) {
+			btnEdit = (
+				<Button>
+					<Link className="btn" tag={Link} color="info" to='/formulario'> edit </Link>
+				</Button>
+			);
+		}
+
+		let btnRemove = (
+			<Button disabled>
+				Remove
+			</Button>
+		);
+
+		if (remove) {
+			btnRemove = (
+				<Button>
+					<Link className="btn" tag={Link} color="info" to='/'> remove </Link>
+				</Button>
+			);
+		}
+
+		let btnGroup = (
+			<Button>
+				Group
+			</Button>
+		);
+
+		if (group) {
+			btnGroup = (
+				<Button>
+					<Link className="btn" tag={Link} color="info" to=''> new_group </Link>
+				</Button>
+			);
+		}
+
 		return (
 			<div>
-				<Griddle data={ vehicles ? vehicles.toJS() : [] }
+				{ btnCreate }
+				{ btnEdit }
+				{ btnRemove }
+				{ btnGroup }
+				<Griddle data={ unidades ? unidades.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
 				styleConfig={{
 					classNames: {
@@ -67,21 +135,21 @@ class VehiclesList extends Component {
 					Layout: NewLayout
 				}}>
 					<RowDefinition>
-					  <ColumnDefinition id="label" visible/>
-				      <ColumnDefinition id="model" visible/>
-				      <ColumnDefinition id="tracker" visible/>
-				      <ColumnDefinition id="reg_plate" visible/>
-				      <ColumnDefinition id="type" visible/>
-				      <ColumnDefinition id="id" title="Description" visible customComponent={ CustomColumn(this.showDescription) }/>
+						<ColumnDefinition id="label" title="Label" visible/>
+				      	<ColumnDefinition id="model" title="Model" visible/>
+				      	<ColumnDefinition id="tracker.label" title="Tracker" visible/>
+				      	<ColumnDefinition id="vehicle_registration_plate" title="Registration Plate" visible/>
+				      	<ColumnDefinition id="type.label" title="Type" visible/>
+				      	<ColumnDefinition id="id" title="Description" visible customComponent={ CustomColumn(this.showDescription) }/>
 				 	</RowDefinition>
 				</Griddle>
-				{ show && descriptionVehicle ? (
+				{ show && descriptionVehicles ? (
 					<Vehicles
-						label = { descriptionVehicle.label }
-						model = { descriptionVehicle.model }
-						tracker = { descriptionVehicle.tracker }
-						reg_plate = { descriptionVehicle.reg_plate }
-						type = { descriptionVehicle.type }
+						label = { descriptionVehicles.label }
+						model = { descriptionVehicles.model }
+						tracker = { descriptionVehicles.tracker }
+						vehicle_registration_plate = { descriptionVehicles.vehicle_registration_plate }
+						type = { descriptionVehicles.type }
 					/> ) : null
 				}
 			</div>
@@ -89,4 +157,4 @@ class VehiclesList extends Component {
 	}
 }
 
-export default connect(selector)(VehiclesList);
+export default connect(selector)(VehiclesListComponent);
