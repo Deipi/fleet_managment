@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import { POSTED_EDIT, FETCHED_EDITED } from '../actions/indexEdit';
+import { POSTED_EDIT, FETCHED_EDITED } from '../actions/IndexDrivers';
 
 export default (state=Immutable.List(), action) => {
 	switch(action.type) {
