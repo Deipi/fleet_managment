@@ -57,7 +57,7 @@ const renderField = ({ input, label, type, meta: { asyncValidating, touched, err
 
 const FormCombustible=(props)=>{
 	const { handleSubmit } = props
-	return ( 
+	return (
 		<div>
 		<br/>
 			<div>
