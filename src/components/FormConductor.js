@@ -219,6 +219,10 @@ const FormConductorComponent = (props) => {
 }
 export default reduxForm ({
 	form: 'formDriver',
+	// initial: {
+
+	// }
+
 	validate,
 })(FormConductorComponent);
 
