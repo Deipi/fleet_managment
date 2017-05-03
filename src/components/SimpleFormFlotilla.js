@@ -3,19 +3,19 @@ import { Field, reduxForm } from 'redux-form/immutable'
 import validate from '../validate'
 
 const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
+	<div>
+	    <label>{label}</label>
+	    <div className={asyncValidating ? 'async-validating' : ''}>
+	    	<input {...input} type={type} placeholder={label}/>
+	    	{touched && error && <span>{error}</span>}
+	    </div>
+	</div>
 )
 
 const SimpleFormF = (props) => {
-	const { handleSubmit } = props
+	const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return (
-		<form onSubmit = {handleSubmit}>
+		<form onSubmit = {handleSubmit(actionSubmit)}>
 		<br/>
 			<div>
 			<center>
@@ -39,11 +39,21 @@ const SimpleFormF = (props) => {
 				<Field name="garage" component={ renderField } type="text"/>
 			</div>
 			</div>
+
+			<div>
+        		<button type="submit" disabled={pristine || submitting}>Guardar</button>
+        		<button type="button" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</button>
+      		</div>
 		</form>
 	)
 }
 
 export default reduxForm({
-  form: 'simpleFlotilla',  // a unique identifier for this form
-  validate
+	form: 'simpleFlotilla',  // a unique identifier for this form
+  	validate
+})(SimpleFormF);
+
+export const Flotilla = reduxForm({
+	form: 'simpleFlotilla',  // a unique identifier for this form
+  	validate
 })(SimpleFormF)

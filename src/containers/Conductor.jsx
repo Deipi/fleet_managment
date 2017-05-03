@@ -2,7 +2,6 @@ import React from 'react'
 import FormConductor from '../components/FormConductor';
 import { connect } from 'react-redux';
 import { change } from 'redux-form/immutable';
-
 import createConductor from '../actions/indexConductores';
 
 class ConductorComponent extends React.Component {

@@ -19,25 +19,25 @@ const format = value => {
 		return value.split(' ')[0] + value.split(' ')[2] + ' kg ';
 	}
 	if (value) {
-		return value + ' kg ';	
+		return value + ' kg ';
 	}
-} 
+}
 
 const formato = value => {
 	if (value && parseInt(value.split(' ')[0]) > 0 && value.includes('mm')) {
 		return value.split(' ')[0] + value.split(' ')[2] + ' mm ';
 	}
 	if (value) {
-		return value + ' mm ';	
+		return value + ' mm ';
 	}
-} 
+}
 
 const people = value => {
 	if (value && parseInt(value.split(' ')[0]) > 0 && value.includes('people')) {
 		return value.split(' ')[0] + value.split(' ')[2] + ' people ';
 	}
 	if (value) {
-		return value + ' people ';	
+		return value + ' people ';
 	}
 } 
 
@@ -52,7 +52,7 @@ const SimpleFormD = (props) => {
 			<tr>DIMENSIONES</tr><br/>
 			</center>
 			</div>
-			
+
 			<div>
 			<label>Cargo_capacity</label>
 			<div>

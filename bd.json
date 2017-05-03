@@ -1,22 +1,4 @@
 {
-  "vehicles": [
-    {
-      "label": "Volkswagen",
-      "model": "А21R32",
-      "tracker": "Ann (Volkswagen)",
-      "reg_plate": "TG654FA",
-      "type": "Truck",
-      "id": 1
-    },
-    {
-      "label": "Man truck",
-      "model": "MAN TGA 33.480",
-      "tracker": "Paul (Man truck)",
-      "reg_plate": "D028N4",
-      "type": "Truck",
-      "id": 2
-    }
-  ],
   "unidades": [
     {
       "permited_speed": "100 Km/h ",
@@ -113,6 +95,7 @@
       "id": 2
     }
   ],
+<<<<<<< HEAD
   "empleados": [
   {
     "department": "Desarrollo",
@@ -355,6 +338,16 @@
     "email": "Rey.Padberg@karina.biz"
   }
 ],
+=======
+  "flotillas": [
+    {
+      "nombre": "Andrea Lizbeth",
+      "supervisor": "Andres",
+      "garage": "garage",
+      "id": 1
+    }
+  ],
+>>>>>>> 96ca119e7727ed27cd9b3b2e9d967c098db914de
   "posts": [
     {
       "id": 1,
