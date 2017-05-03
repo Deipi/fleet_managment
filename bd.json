@@ -1,22 +1,4 @@
 {
-  "vehicles": [
-    {
-      "label": "Volkswagen",
-      "model": "А21R32",
-      "tracker": "Ann (Volkswagen)",
-      "reg_plate": "TG654FA",
-      "type": "Truck",
-      "id": 1
-    },
-    {
-      "label": "Man truck",
-      "model": "MAN TGA 33.480",
-      "tracker": "Paul (Man truck)",
-      "reg_plate": "D028N4",
-      "type": "Truck",
-      "id": 2
-    }
-  ],
   "unidades": [
     {
       "permited_speed": "100 Km/h ",
@@ -111,6 +93,14 @@
       "email": "alf@gmail.com",
       "driver_license_number": "4",
       "id": 2
+    }
+  ],
+  "flotillas": [
+    {
+      "nombre": "Andrea Lizbeth",
+      "supervisor": "Andres",
+      "garage": "garage",
+      "id": 1
     }
   ],
   "posts": [
