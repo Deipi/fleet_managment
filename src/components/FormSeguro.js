@@ -7,8 +7,7 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
-  
-class Example extends React.Component {
+class InsuranceDate extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -52,7 +51,7 @@ const FormSeguro=(props)=>{
 			<tr>INSURANCE</tr><br/>
 			</center>
 			</div>
-			
+
 			<div>
 			<label>Insurance policy number</label>
 			<div>
@@ -61,7 +60,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance valid</label>
 			<div>
-				<Field name="insurance_valid" component={Example}/>
+				<Field name="insurance_valid" component={InsuranceDate}/>
 			</div>
 
 			<label>Insurance 2 policy number</label>
@@ -71,7 +70,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance 2 valid</label>
 			<div>
-				<Field name="insurance_2_valid" component={Example}/>
+				<Field name="insurance_2_valid" component={InsuranceDate}/>
 			</div>
 			</div>
 		</div>
