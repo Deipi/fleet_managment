@@ -2,6 +2,8 @@ import React from 'react';
 import Map from './Monitoreo';
 import { getVehicles } from '../utils/ApiUtils.js'
 
+
+
 export default class MapContainer extends React.Component {
 
 	constructor(props) {
