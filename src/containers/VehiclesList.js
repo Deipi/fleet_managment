@@ -102,6 +102,9 @@ class VehiclesListComponent extends Component {
 				<Button>
 					<Link className="btn" tag={Link} color="info" to='/'> remove </Link>
 				</Button>
+					// <div class="alert alert-danger">
+					// 	<button class="close" data-dismiss="alert"></button>
+					// </div>
 			);
 		}
 
