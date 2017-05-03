@@ -65,7 +65,7 @@ const FormCombustible=(props)=>{
 			<tr>FUEL</tr><br/>
 			</center>
 			</div>
-			
+
 			<div>
 			<label>Fuel type</label>
 			<div>
