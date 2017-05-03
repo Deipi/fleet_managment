@@ -143,8 +143,6 @@ var CreatableGA = React.createClass({
   }
 });
 
-const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value : -1 * parseFloat(value.split(' ')[0])
-
 const format = value => {
   if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
     return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
