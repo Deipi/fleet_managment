@@ -24,7 +24,7 @@ const FormWheelbase=(props)=>{
 			<tr>WHEELBASE</tr><br/>
 			</center>
 			</div>
-			
+
 			<div>
 			<label>Wheel arrangement</label>
 			<div>
