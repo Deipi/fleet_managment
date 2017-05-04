@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchVehicles, FETCHED_EDITED } from '../actions/index';
+import { fetchVehicles, FETCHED_EDITED, deleteVehicles } from '../actions/index';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Vehicles } from '../components/Vehicles';
@@ -31,6 +31,7 @@ class VehiclesListComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.showDescription = this.showDescription.bind(this);
+		this.deleteVehicle = this.deleteVehicle.bind(this);
 		this.state = {
 			show: false,
 			data: 0,
@@ -56,6 +57,12 @@ class VehiclesListComponent extends Component {
 		});
 
 		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
+	}
+
+	deleteVehicle() {
+		const { dispatch } = this.props;
+
+		dispatch(deleteVehicles(this.state.data));
 	}
 
 	render() {
@@ -92,19 +99,16 @@ class VehiclesListComponent extends Component {
 		}
 
 		let btnRemove = (
-			<Button disabled>
+			<Button disabled >
 				Remove
 			</Button>
 		);
 
 		if (remove) {
 			btnRemove = (
-				<Button>
-					<Link className="btn" tag={Link} color="info" to='/'> remove </Link>
+				<Button onClick={ this.deleteVehicle } >
+					<Link className="btn" tag={Link} color="info" to="/vehicles">remove</Link>
 				</Button>
-					// <div class="alert alert-danger">
-					// 	<button class="close" data-dismiss="alert"></button>
-					// </div>
 			);
 		}
 
