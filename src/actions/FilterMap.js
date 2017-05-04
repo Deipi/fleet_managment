@@ -10,7 +10,7 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3004/empl
 	body: JSON.stringify(data)
 }).then(result => result.json().then(empleado => dispatch({
 	type: POSTED_FILTER,
-	payload: conductor
+	payload: empleado
 })));
 
 export const fetchEmpleados=(filter)=>(dispatch, getStore)=>fetch(`http://localhost:3004/empleados?${qs.stringify(filter)}`, {
