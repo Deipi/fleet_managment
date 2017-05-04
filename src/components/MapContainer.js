@@ -1,9 +1,8 @@
 import React from 'react';
 import Map from './Monitoreo';
-import { getVehicles } from '../utils/ApiUtils.js'
 
 import FilterMap from './FilterMap'
-import {fetchEmpleados} from '../actions/FilterMap'
+import {fetchEmpleados, getVehicles} from '../actions/FilterMap'
 import { connect } from 'react-redux';
 
 class MapContainer extends React.Component {
@@ -11,24 +10,30 @@ class MapContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			markers: [],
+ 		}
 
- 	}
+ 		this.onChange = this.onChange.bind(this);
 	}
 
 	onChange(event) {
-const { state: { filter} } = this;
-const { target: { value, name, } } = event;
-filter[name] = value
-this.setState({filter});
-}
+		const { target: { value, name, } } = event;
 
-onClickFilter(){
-const { props: { dispatch }, state: { filter } } = this;
-dispatch(fetchEmpleados(filter));
-}
+		const markersFilter = this.state.markers.filter(marker => marker.item.get('department') === value);
+		this.setState({ markers: markersFilter });
+	}
+
+	onClickFilter(){
+		const { props: { dispatch }, state: { filter } } = this;
+		dispatch(fetchEmpleados(filter));
+	}
 
 	componentWillMount() {
-		const plotVehicles = () => getVehicles().then((results) => {
+		const { dispatch } = this.props;
+
+		dispatch(getVehicles());
+
+		/*const plotVehicles = () => getVehicles().then((results) => {
 			const markers = results.data.map((item, index) => {
 				return {
 					position: {
@@ -54,10 +59,39 @@ dispatch(fetchEmpleados(filter));
 		});
 
 		plotVehicles();
-		window.setInterval(plotVehicles, 2000);
+		window.setInterval(plotVehicles, 2000);*/
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { vehicles } = nextProps;
+
+		const markers = vehicles.map((item, index) => {
+			return {
+				position: {
+					//elementos del API
+					lat: item.getIn([ 'address', 'geo', 'lat' ]),
+					lng: item.getIn([ 'address', 'geo', 'lng' ]),
+				},
+				draggable: true,
+				animation: window.google.maps.Animation.BOUNCE,
+				title: item.get('name') && item.get('department'),
+				key: index,
+				icon: {
+					path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+					scale: 2,
+					fillColor: '#000080',
+					strokeColor: '#000080',
+					fillOpacity: 1,
+					strokeOpacity: 1,
+				},
+				item: item,
+			};
+		});
+		this.setState({ markers });
 	}
 
 	render() {
+		
 		return (
 			<div style={{ height: '100vh' }}>
 			<FilterMap  mapi={this.onChange} onClick={this.onClickFilter}/>
@@ -74,10 +108,13 @@ dispatch(fetchEmpleados(filter));
 					onMarkerRightClick={this.handleMarkerRightClick}
 
 				/>
-				
 			</div>
 		);
 	}
 }
 
-export default connect()(MapContainer)
+export default connect(state => {
+	return {
+		vehicles: state.get('vehiclesStore'),
+	};
+})(MapContainer)
