@@ -1,8 +1,9 @@
 import axios from 'axios';
 import qs from 'qs'
 
-const getVehicles=()=>{
-  return axios.get('http://localhost:3004/empleados');
-};
-
-export { getVehicles, };
+export const getVehicles = () => (dispatch, getStore) => axios.get('http://localhost:3004/empleados').then(response => dispatch({
+	type: GET_VEHICLES,
+	payload: response.data,
+}));
+/*
+export { getVehicles, };*/
