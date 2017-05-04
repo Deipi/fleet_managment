@@ -1,54 +1,154 @@
 {
-  "unidades": [],
-  "conductores": [
+  "unidades": [
     {
-      "driver_license_class": "abcaa",
-      "hardware_key": "JMZMA18P200411817",
-      "phone": "12",
-      "department": {
-        "value": "des",
-        "label": "Desarrollo"
+      "permited_speed": "4 Km/h ",
+      "chassis_number": "asdf",
+      "vehicle_registration_plate": "sad",
+      "fuel_type": {
+        "value": "petrol",
+        "label": "Petrol"
       },
-      "last_name": "Cartens",
-      "middle_name": "Che",
+      "insurance_2_policy_number": "45",
+      "wheel_front": "5",
+      "cargo_h": "5 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "5",
+      "tyre_size": "5",
+      "cargo_l": "5 mm ",
+      "model": "x",
+      "number_of_passengers": "5 people ",
+      "tyres_number": "5",
+      "fuel_grade": "5",
+      "tank_capacity": "5 L ",
+      "insurance_policy_number": "5",
+      "fuel_consumption": "5 L ",
+      "cargo_w": "5 mm ",
+      "label": "Label",
       "tracker": {
         "value": "pepe",
         "label": "Pepe"
       },
       "tags": [
-        "ok",
-        "bien",
-        "todo",
-        "al",
-        "100"
+        "sw"
       ],
-      "first_name": "Jose",
-      "email": "alf@gmail.com",
-      "driver_license_number": "5",
+      "type": {
+        "value": "special",
+        "label": "Special"
+      },
+      "vin": "asd",
+      "cargo_capacity": "5 kg ",
       "id": 1
     },
     {
-      "driver_license_class": "abcaa",
-      "hardware_key": "JMZMA18P200411817",
-      "phone": "1234",
-      "department": {
-        "value": "des",
-        "label": "Desarrollo"
+      "permited_speed": "4 Km/h ",
+      "chassis_number": "asdf",
+      "vehicle_registration_plate": "sad",
+      "fuel_type": {
+        "value": "petrol",
+        "label": "Petrol"
       },
-      "last_name": "Cartens",
-      "middle_name": "Luis",
+      "insurance_2_policy_number": "45",
+      "wheel_front": "5",
+      "cargo_h": "5 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "5",
+      "tyre_size": "5",
+      "cargo_l": "5 mm ",
+      "model": "x",
+      "number_of_passengers": "5 people ",
+      "tyres_number": "5",
+      "fuel_grade": "5",
+      "tank_capacity": "5 L ",
+      "insurance_policy_number": "5",
+      "fuel_consumption": "5 L ",
+      "cargo_w": "5 mm ",
+      "label": "Label2",
       "tracker": {
-        "value": "martin",
-        "label": "Martin"
+        "value": "pepe",
+        "label": "Pepe"
       },
       "tags": [
-        "ok",
-        "oc"
+        "sw"
       ],
-      "first_name": "Jose",
-      "email": "alf@gmail.com",
-      "driver_license_number": "4",
+      "type": {
+        "value": "special",
+        "label": "Special"
+      },
+      "vin": "asd",
+      "cargo_capacity": "5 kg ",
       "id": 2
+    },
+    {
+      "permited_speed": "4 Km/h ",
+      "chassis_number": "asdf",
+      "vehicle_registration_plate": "sad",
+      "fuel_type": {
+        "value": "petrol",
+        "label": "Petrol"
+      },
+      "insurance_2_policy_number": "45",
+      "wheel_front": "5",
+      "cargo_h": "5 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "5",
+      "tyre_size": "5",
+      "cargo_l": "5 mm ",
+      "model": "x",
+      "number_of_passengers": "5 people ",
+      "tyres_number": "5",
+      "fuel_grade": "5",
+      "tank_capacity": "5 L ",
+      "insurance_policy_number": "5",
+      "fuel_consumption": "5 L ",
+      "cargo_w": "5 mm ",
+      "label": "Label3",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "tags": [
+        "sw"
+      ],
+      "type": {
+        "value": "special",
+        "label": "Special"
+      },
+      "vin": "asd",
+      "cargo_capacity": "5 kg ",
+      "id": 3
+    }
+  ],
+  "conductores": [
+    {
+      "driver_license_class": "2343",
+      "hardware_key": "123",
+      "phone": "7861234567",
+      "department": {
+        "value": "dis",
+        "label": "Diseño"
+      },
+      "last_name": "Moreno",
+      "middle_name": "Alberto",
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "tags": [
+        "sw"
+      ],
+      "first_name": "Diego",
+      "id": 2,
+      "email": "ser@gmail.com",
+      "driver_license_number": "23123"
     }
   ],
   "empleados": [
