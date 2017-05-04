@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import { POSTED_VEHICLE, FETCHED_VEHICLES } from '../actions';
+import { POSTED_VEHICLE, FETCHED_VEHICLES, DELETE_VEHICLES } from '../actions';
 
 export default (state=Immutable.List(), action) => {
 	switch(action.type) {
@@ -7,6 +7,8 @@ export default (state=Immutable.List(), action) => {
 			return state.merge(Immutable.List(action.payload));
 		case FETCHED_VEHICLES:
 			return Immutable.List(action.payload);
+		case DELETE_VEHICLES:
+			return state.filter(vehicle => vehicle.id !== action.payload);
 		default:
 			return state;
 	}
