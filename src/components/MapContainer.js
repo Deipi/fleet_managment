@@ -2,15 +2,30 @@ import React from 'react';
 import Map from './Monitoreo';
 import { getVehicles } from '../utils/ApiUtils.js'
 
+import FilterMap from './FilterMap'
+import {fetchEmpleados} from '../actions/FilterMap'
+import { connect } from 'react-redux';
 
-
-export default class MapContainer extends React.Component {
+class MapContainer extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-		};
+
+ 	}
 	}
+
+	onChange(event) {
+const { state: { filter} } = this;
+const { target: { value, name, } } = event;
+filter[name] = value
+this.setState({filter});
+}
+
+onClickFilter(){
+const { props: { dispatch }, state: { filter } } = this;
+dispatch(fetchEmpleados(filter));
+}
 
 	componentWillMount() {
 		const plotVehicles = () => getVehicles().then((results) => {
@@ -45,6 +60,7 @@ export default class MapContainer extends React.Component {
 	render() {
 		return (
 			<div style={{ height: '100vh' }}>
+			<FilterMap  mapi={this.onChange} onClick={this.onClickFilter}/>
 				<Map
 					containerElement={
 						<div style={{ height: '100%' }} />
@@ -56,8 +72,12 @@ export default class MapContainer extends React.Component {
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
+
 				/>
+				
 			</div>
 		);
 	}
 }
+
+export default connect()(MapContainer)
