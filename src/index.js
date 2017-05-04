@@ -36,6 +36,7 @@ import unidades from './reducers/UnidadesList';
 import conductores from './reducers/DriversList';
 import conductoresEdit from './reducers/EditList';
 import vehiclesEdit from './reducers/EditUnit';
+import vehiclesReducer from './reducers/Map';
 
 const initialState = immutable.Map();
 
@@ -44,7 +45,8 @@ const rootReducer = combineReducers({
 	VehiclesList: vehicles,
 	DriversList: conductores,
 	conductoresInfo: conductoresEdit,
-	vehiclesInfo: vehiclesEdit
+	vehiclesInfo: vehiclesEdit,
+	vehiclesStore: vehiclesReducer,
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
