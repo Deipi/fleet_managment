@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import { POSTED_EDIT, FETCHED_EDITED } from '../actions/FilterMap';
+import { FETCHED_EMPLEADOS } from '../actions/FilterMap';
 
 export default (state=fromJS([]), action) => {
 	switch(action.type) {
