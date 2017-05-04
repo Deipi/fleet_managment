@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchDrivers, FETCHED_EDITED } from '../actions/IndexDrivers';
+import { fetchDrivers, FETCHED_EDITED, deleteDrivers } from '../actions/IndexDrivers';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Driver } from '../components/Driver';
@@ -30,9 +30,8 @@ const selector = state => {
 class DriversListComponent extends Component {
 	constructor(props) {
 		super(props);
-
 		this.showDescription = this.showDescription.bind(this);
-
+		this.deleteDriver = this.deleteDriver.bind(this);
 		this.state = {
 			show: false,
 			data: 0,
@@ -58,6 +57,11 @@ class DriversListComponent extends Component {
 		});
 
 		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
+	}
+
+	deleteDriver() {
+		const { dispatch } = this.props;
+		dispatch(deleteDrivers(this.state.data));
 	}
 
 	render() {
@@ -102,8 +106,8 @@ class DriversListComponent extends Component {
 
 		if (remove) {
 			btnRemove = (
-				<Button>
-					<Link className="btn" tag={Link} color="info" to='/vehicles'> remove </Link>
+				<Button onClick={ this.deleteDriver }>
+					<Link className="btn" tag={Link} color="info" to='/drivers'> remove </Link>
 				</Button>
 			);
 		}
