@@ -51,10 +51,6 @@
       "id": 2
     }
   ],
-<<<<<<< HEAD
-
-=======
->>>>>>> 162f74d612670fbe35c433ce472d5c3cda163c10
   "empleados": [
     {
       "department": "Desarrollo",
@@ -272,12 +268,6 @@
       },
       "email": "Chaim_McDermott@dana.io"
     },
-<<<<<<< HEAD
-    "email": "Rey.Padberg@karina.biz"
-  }
-],
-
-=======
     {
       "department": "Desarrollo",
       "username": "Sirloin",
@@ -303,7 +293,6 @@
       "email": "Rey.Padberg@karina.biz"
     }
   ],
->>>>>>> 162f74d612670fbe35c433ce472d5c3cda163c10
   "flotillas": [
     {
       "nombre": "Andrea Lizbeth",
@@ -312,10 +301,6 @@
       "id": 1
     }
   ],
-<<<<<<< HEAD
-
-=======
->>>>>>> 162f74d612670fbe35c433ce472d5c3cda163c10
   "posts": [
     {
       "id": 1,
