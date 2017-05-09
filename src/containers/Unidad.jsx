@@ -2,8 +2,7 @@ import React from 'react'
 import FormUnidad from '../components/FormUnidad';
 import { connect } from 'react-redux';
 import { change } from 'redux-form/immutable';
-
-import createUnidad from '../actions/indexUnidad';
+import createUnidad, { updateVehicles } from '../actions/indexUnidad';
 
 class UnidadComponent extends React.Component {
   constructor(props) {
@@ -13,8 +12,12 @@ class UnidadComponent extends React.Component {
   }
 
   actionSubmit(values) {
-    const { dispatch } = this.props;
-    dispatch(createUnidad(values.toJS()));
+    const { dispatch, info } = this.props;
+    if(info.get('id')){
+      dispatch(updateVehicles(info.get('id'), values.toJS()));
+    } else {
+      dispatch(createUnidad(values.toJS()));
+    }
   }
 
   onChangeAction(value){
