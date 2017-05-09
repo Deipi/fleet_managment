@@ -26,7 +26,7 @@
       "insurance_policy_number": "5",
       "fuel_consumption": "5 L ",
       "cargo_w": "5 mm ",
-      "label": "Label",
+      "label": "Label Actualizado",
       "tracker": {
         "value": "pepe",
         "label": "Pepe"
@@ -39,50 +39,8 @@
         "label": "Special"
       },
       "vin": "asd",
-      "cargo_capacity": "5 kg ",
-      "id": 1
-    },
-    {
-      "permited_speed": "4 Km/h ",
-      "chassis_number": "asdf",
-      "vehicle_registration_plate": "sad",
-      "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
-      },
-      "insurance_2_policy_number": "45",
-      "wheel_front": "5",
-      "cargo_h": "5 mm ",
-      "garage": {
-        "value": "garage",
-        "label": "Garage"
-      },
-      "wheel_rear": "5",
-      "tyre_size": "5",
-      "cargo_l": "5 mm ",
-      "model": "x",
-      "number_of_passengers": "5 people ",
-      "tyres_number": "5",
-      "fuel_grade": "5",
-      "tank_capacity": "5 L ",
-      "insurance_policy_number": "5",
-      "fuel_consumption": "5 L ",
-      "cargo_w": "5 mm ",
-      "label": "Label2",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "tags": [
-        "sw"
-      ],
-      "type": {
-        "value": "special",
-        "label": "Special"
-      },
-      "vin": "asd",
-      "cargo_capacity": "5 kg ",
-      "id": 2
+      "id": 1,
+      "cargo_capacity": "5 kg "
     },
     {
       "permited_speed": "4 Km/h ",
@@ -123,8 +81,8 @@
         "label": "Special"
       },
       "vin": "asd",
-      "cargo_capacity": "5 kg ",
-      "id": 3
+      "id": 2,
+      "cargo_capacity": "5 kg "
     }
   ],
   "conductores": [
@@ -136,7 +94,7 @@
         "value": "dis",
         "label": "Diseño"
       },
-      "last_name": "Moreno",
+      "last_name": "Martinez",
       "middle_name": "Alberto",
       "tracker": {
         "value": "luis",
@@ -145,7 +103,7 @@
       "tags": [
         "sw"
       ],
-      "first_name": "Diego",
+      "first_name": "Sofia",
       "id": 2,
       "email": "ser@gmail.com",
       "driver_license_number": "23123"
