@@ -1,5 +1,6 @@
 export const POSTED_UNIDAD =  'POSTED_UNIDAD';
 export const FETCHED_UNIDADES = 'FETCHED_UNIDADES';
+export const UPDATE_VEHICLES = 'UPDATE_VEHICLES';
 
 export default data => (dispatch, getStore) => fetch('http://localhost:3004/unidades', {
 	method: 'POST',
@@ -19,5 +20,16 @@ export const fetchUnidades=()=>(dispatch, getStore)=>fetch('http://localhost:300
 	},
 }).then(result=>result.json().then(unidades=>dispatch ({
 	type: FETCHED_UNIDADES,
+	payload: unidades
+})));
+
+export const updateVehicles = (id, data) => (dispatch, getStore) => fetch(`http://localhost:3004/unidades/${ id }`, {
+	method: 'PUT',
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify(data),
+}).then( result => result.json().then( unidades => dispatch({
+	type: UPDATE_VEHICLES,
 	payload: unidades
 })));
