@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchVehicles, FETCHED_EDITED, deleteVehicles } from '../actions/index';
+import { fetchVehicles, FETCHED_EDITED, CLEAN_VEHICLE, deleteVehicles } from '../actions/index';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Vehicles } from '../components/Vehicles';
@@ -20,7 +20,6 @@ const CustomColumn = showDescription => ({value}) =>
 		<span className="glyphicon glyphicon-align-justify"></span>
 	</button>;
 
-
 const selector = state => {
 	return {
 		unidades: state.get('VehiclesList'),
@@ -32,6 +31,7 @@ class VehiclesListComponent extends Component {
 		super(props);
 		this.showDescription = this.showDescription.bind(this);
 		this.deleteVehicle = this.deleteVehicle.bind(this);
+		this.cleanVehicleStore = this.cleanVehicleStore.bind(this);
 		this.state = {
 			show: false,
 			data: 0,
@@ -50,19 +50,24 @@ class VehiclesListComponent extends Component {
 	showDescription(value) {
 		const { props: { unidades, dispatch } } = this;
 		const descriptionVehicle = unidades.filter(obj => obj.id === value).toJS()[0];
-
 		dispatch({
 			type: FETCHED_EDITED,
 			payload: descriptionVehicle,
 		});
-
 		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
 	}
 
 	deleteVehicle() {
 		const { dispatch } = this.props;
-
 		dispatch(deleteVehicles(this.state.data));
+	}
+
+	cleanVehicleStore() {
+		const { dispatch } = this.props;
+		dispatch({
+			type: CLEAN_VEHICLE,
+			payload: {}
+		});
 	}
 
 	render() {
@@ -75,10 +80,9 @@ class VehiclesListComponent extends Component {
 				Create
 			</Button>
 		);
-
 		if(create){
 			btnCreate = (
-				<Button>
+				<Button onClick={ this.cleanVehicleStore } >
 					<Link className="btn" tag={Link} color="info" to='/formulario'> create </Link>
 				</Button>
 			);
@@ -89,7 +93,6 @@ class VehiclesListComponent extends Component {
 				Edit
 			</Button>
 		);
-
 		if (edit) {
 			btnEdit = (
 				<Button>
@@ -103,7 +106,6 @@ class VehiclesListComponent extends Component {
 				Remove
 			</Button>
 		);
-
 		if (remove) {
 			btnRemove = (
 				<Button onClick={ this.deleteVehicle } >
@@ -117,7 +119,6 @@ class VehiclesListComponent extends Component {
 				Group
 			</Button>
 		);
-
 		if (group) {
 			btnGroup = (
 				<Button>
