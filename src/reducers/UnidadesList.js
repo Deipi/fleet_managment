@@ -8,6 +8,6 @@ export default (state=fromJS([]), action)=>{
 		case FETCHED_UNIDADES:
 			return fromJS(action.payload);
 		default:
-			return state;			
+			return state;
 	}
 }
