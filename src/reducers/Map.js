@@ -7,18 +7,8 @@ export default (state=Immutable.fromJS([]), action) => {
 			return Immutable.fromJS(action.payload);
 
 		case GET_VEHICLES:
-			const newList = action.payload.map(obj => {
-				if (typeof obj.latitud === "string") {
-					obj.latitud = parseFloat(obj.latitud);
-				}
-				if (typeof obj.longitud === "string") {
-					obj.longitud = parseFloat(obj.longitud);
-				}
-
-				return obj;
-			});
-
-			return Immutable.fromJS(newList);
+		
+			return Immutable.fromJS(action.payload);
 		default:
 			return state;
 	}
