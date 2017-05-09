@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
-import { fetchDrivers, FETCHED_EDITED, deleteDrivers } from '../actions/IndexDrivers';
+import { fetchDrivers, FETCHED_EDITED, CLEAN_DRIVER, deleteDrivers } from '../actions/IndexDrivers';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Driver } from '../components/Driver';
@@ -32,6 +32,7 @@ class DriversListComponent extends Component {
 		super(props);
 		this.showDescription = this.showDescription.bind(this);
 		this.deleteDriver = this.deleteDriver.bind(this);
+		this.cleanDriverStore = this.cleanDriverStore.bind(this);
 		this.state = {
 			show: false,
 			data: 0,
@@ -50,12 +51,10 @@ class DriversListComponent extends Component {
 	showDescription(value) {
 		const { props: { conductores, dispatch } } = this;
 		const descriptionDriver = conductores.filter(obj => obj.id === value).toJS()[0];
-
 		dispatch({
 			type: FETCHED_EDITED,
 			payload: descriptionDriver,
 		});
-
 		this.setState({ show: true, data: value, edit: true, create: true, remove: true, group: true });
 	}
 
@@ -64,21 +63,27 @@ class DriversListComponent extends Component {
 		dispatch(deleteDrivers(this.state.data));
 	}
 
+	cleanDriverStore() {
+		const { dispatch } = this.props;
+		dispatch({
+			type: CLEAN_DRIVER,
+			payload: {}
+		});
+	}
+
 	render() {
 		const { props: { conductores } } = this;
 		const { show, edit, create, remove, group } = this.state;
 		const descriptionDrivers = conductores.filter(obj => obj.id === this.state.data).toJS()[0];
-
 
 		let btnCreate = (
 			<Button>
 				Create
 			</Button>
 		);
-
 		if(create){
 			btnCreate = (
-				<Button>
+				<Button onClick={ this.cleanDriverStore } >
 					<Link className="btn" tag={Link} color="info" to='/conductores'> create </Link>
 				</Button>
 			);
@@ -89,7 +94,6 @@ class DriversListComponent extends Component {
 				Edit
 			</Button>
 		);
-
 		if (edit) {
 			btnEdit = (
 				<Button>
@@ -103,7 +107,6 @@ class DriversListComponent extends Component {
 				Remove
 			</Button>
 		);
-
 		if (remove) {
 			btnRemove = (
 				<Button onClick={ this.deleteDriver }>
@@ -117,7 +120,6 @@ class DriversListComponent extends Component {
 				Group
 			</Button>
 		);
-
 		if (group) {
 			btnGroup = (
 				<Button>
