@@ -1,154 +1,335 @@
 {
   "unidades": [
     {
-      "permited_speed": "4 Km/h ",
-      "chassis_number": "asdf",
-      "vehicle_registration_plate": "sad",
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "123ASD",
+      "vehicle_registration_plate": "FEYO123",
       "fuel_type": {
         "value": "petrol",
         "label": "Petrol"
       },
-      "insurance_2_policy_number": "45",
-      "wheel_front": "5",
-      "cargo_h": "5 mm ",
+      "insurance_2_policy_number": "BNM",
+      "wheel_front": "2",
+      "cargo_h": "122 mm ",
       "garage": {
         "value": "garage",
         "label": "Garage"
       },
-      "wheel_rear": "5",
-      "tyre_size": "5",
-      "cargo_l": "5 mm ",
-      "model": "x",
-      "number_of_passengers": "5 people ",
-      "tyres_number": "5",
-      "fuel_grade": "5",
-      "tank_capacity": "5 L ",
-      "insurance_policy_number": "5",
-      "fuel_consumption": "5 L ",
-      "cargo_w": "5 mm ",
-      "label": "Label",
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Raptor",
+      "number_of_passengers": "4 people ",
+      "tyres_number": "4",
+      "fuel_grade": "ALTO",
+      "fleet": {
+        "value": "and",
+        "label": "Andres"
+      },
+      "tank_capacity": "300 L ",
+      "insurance_policy_number": "CVB",
+      "fuel_consumption": "12 L ",
+      "department": {
+        "value": "des",
+        "label": "Desarrollo"
+      },
+      "status": {
+        "value": "on",
+        "label": "Online"
+      },
+      "cargo_w": "12 mm ",
+      "label": "Deipi",
+      "longitud": -101.170734,
       "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
+        "value": "martin",
+        "label": "Martin"
       },
       "tags": [
-        "sw"
+        "OC"
       ],
+      "latitud": 19.689718,
       "type": {
-        "value": "special",
-        "label": "Special"
+        "value": "car",
+        "label": "Car"
       },
-      "vin": "asd",
-      "cargo_capacity": "5 kg ",
+      "vin": "RAP123TOR",
+      "cargo_capacity": "1000 kg ",
       "id": 1
     },
     {
-      "permited_speed": "4 Km/h ",
-      "chassis_number": "asdf",
-      "vehicle_registration_plate": "sad",
+      "permited_speed": "120 Km/h ",
+      "chassis_number": "DFGH14",
+      "vehicle_registration_plate": "ASDF12",
       "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
+        "value": "gas",
+        "label": "Gas"
       },
-      "insurance_2_policy_number": "45",
-      "wheel_front": "5",
-      "cargo_h": "5 mm ",
+      "insurance_2_policy_number": "fgh",
+      "wheel_front": "4",
+      "cargo_h": "122 mm ",
       "garage": {
-        "value": "garage",
-        "label": "Garage"
+        "value": "no garage",
+        "label": "No Garage"
       },
-      "wheel_rear": "5",
-      "tyre_size": "5",
-      "cargo_l": "5 mm ",
-      "model": "x",
-      "number_of_passengers": "5 people ",
-      "tyres_number": "5",
-      "fuel_grade": "5",
-      "tank_capacity": "5 L ",
-      "insurance_policy_number": "5",
-      "fuel_consumption": "5 L ",
-      "cargo_w": "5 mm ",
-      "label": "Label2",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Veyron",
+      "number_of_passengers": "3 people ",
+      "tyres_number": "4",
+      "fuel_grade": "ALTO",
+      "fleet": {
+        "value": "ser",
+        "label": "Sergio"
       },
-      "tags": [
-        "sw"
-      ],
-      "type": {
-        "value": "special",
-        "label": "Special"
-      },
-      "vin": "asd",
-      "cargo_capacity": "5 kg ",
-      "id": 2
-    },
-    {
-      "permited_speed": "4 Km/h ",
-      "chassis_number": "asdf",
-      "vehicle_registration_plate": "sad",
-      "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
-      },
-      "insurance_2_policy_number": "45",
-      "wheel_front": "5",
-      "cargo_h": "5 mm ",
-      "garage": {
-        "value": "garage",
-        "label": "Garage"
-      },
-      "wheel_rear": "5",
-      "tyre_size": "5",
-      "cargo_l": "5 mm ",
-      "model": "x",
-      "number_of_passengers": "5 people ",
-      "tyres_number": "5",
-      "fuel_grade": "5",
-      "tank_capacity": "5 L ",
-      "insurance_policy_number": "5",
-      "fuel_consumption": "5 L ",
-      "cargo_w": "5 mm ",
-      "label": "Label3",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "tags": [
-        "sw"
-      ],
-      "type": {
-        "value": "special",
-        "label": "Special"
-      },
-      "vin": "asd",
-      "cargo_capacity": "5 kg ",
-      "id": 3
-    }
-  ],
-  "conductores": [
-    {
-      "driver_license_class": "2343",
-      "hardware_key": "123",
-      "phone": "7861234567",
+      "tank_capacity": "300 L ",
+      "insurance_policy_number": "dxf",
+      "fuel_consumption": "10 L ",
       "department": {
         "value": "dis",
         "label": "Diseño"
       },
-      "last_name": "Moreno",
-      "middle_name": "Alberto",
+      "status": {
+        "value": "off",
+        "label": "Offline"
+      },
+      "cargo_w": "122 mm ",
+      "label": "Xbox",
+      "longitud": -101.203244,
       "tracker": {
         "value": "luis",
         "label": "Luis"
       },
       "tags": [
-        "sw"
+        "veloz",
+        "rapido"
       ],
-      "first_name": "Diego",
-      "id": 2,
-      "email": "ser@gmail.com",
-      "driver_license_number": "23123"
+      "latitud": 19.710282,
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "M34NBYHG56",
+      "cargo_capacity": "300 kg ",
+      "id": 2
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "LJCPCBLCXI1000237",
+      "vehicle_registration_plate": "SBA 1234A",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "fgh",
+      "wheel_front": "4",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "13",
+      "cargo_l": "122 mm ",
+      "model": "Niisan",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "4",
+      "fuel_grade": "ALTO",
+      "fleet": {
+        "value": "man",
+        "label": "Manuel"
+      },
+      "tank_capacity": "300 L ",
+      "insurance_policy_number": "fgh",
+      "fuel_consumption": "12 L ",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "status": {
+        "value": "on",
+        "label": "Online"
+      },
+      "cargo_w": "122 mm ",
+      "label": "Jonny",
+      "longitud": -101.188825,
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "tags": [
+        "oj"
+      ],
+      "latitud": 19.695976,
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "JMZMA18P200411817",
+      "cargo_capacity": "1000 kg ",
+      "id": 4
+    },
+    {
+      "permited_speed": "120 Km/h ",
+      "chassis_number": "DFGH14",
+      "vehicle_registration_plate": "ASDF12",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "werer",
+      "wheel_front": "4",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "3",
+      "tyre_size": "13",
+      "cargo_l": "122 mm ",
+      "model": "Dron",
+      "number_of_passengers": "3 people ",
+      "tyres_number": "5",
+      "fuel_grade": "ALTO",
+      "fleet": {
+        "value": "ser",
+        "label": "Sergio"
+      },
+      "tank_capacity": "23 L ",
+      "insurance_policy_number": "fgh",
+      "fuel_consumption": "23 L ",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "status": {
+        "value": "on",
+        "label": "Online"
+      },
+      "cargo_w": "122 mm ",
+      "label": "Sirlord",
+      "longitud": -101,
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        "oc"
+      ],
+      "latitud": 19,
+      "type": {
+        "value": "special",
+        "label": "Special"
+      },
+      "vin": "M676GYUKJK",
+      "cargo_capacity": "100 kg ",
+      "id": 6
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "123ASD",
+      "vehicle_registration_plate": "FEYO123",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "BNM",
+      "wheel_front": "4",
+      "cargo_h": "122 mm ",
+      "garage": {
+        "value": "no garage",
+        "label": "No Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "23",
+      "cargo_l": "122 mm ",
+      "model": "Nuevo",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "4",
+      "fuel_grade": "HIGH",
+      "fleet": {
+        "value": "and",
+        "label": "Andres"
+      },
+      "tank_capacity": "200 L ",
+      "insurance_policy_number": "CVB",
+      "fuel_consumption": "12 L ",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "status": {
+        "value": "off",
+        "label": "Offline"
+      },
+      "cargo_w": "122 mm ",
+      "label": "na",
+      "longitud": -101.160367,
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        "ok"
+      ],
+      "latitud": 19.716067,
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "QW12ER",
+      "cargo_capacity": "1000 kg ",
+      "id": 7
+    }
+  ],
+  "conductores": [
+    {
+      "driver_license_class": "a",
+      "hardware_key": "ASDFG",
+      "phone": "123456789",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "Perez",
+      "middle_name": "Jonny",
+      "tracker": {
+        "value": "John Cena",
+        "label": "John Cena",
+        "className": "Select-create-option-placeholder"
+      },
+      "tags": [
+        "ok",
+        "oc"
+      ],
+      "first_name": "Juan",
+      "email": "ruf@adm.com",
+      "driver_license_number": "12",
+      "id": 3
+    },
+    {
+      "driver_license_class": "AB",
+      "hardware_key": "wert",
+      "phone": "1234",
+      "department": {
+        "value": "dis",
+        "label": "Diseño"
+      },
+      "last_name": "Sanchez",
+      "middle_name": "Box",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        "bien",
+        "ok",
+        "oc"
+      ],
+      "first_name": "Canelo",
+      "email": "alf@g.com",
+      "driver_license_number": "2",
+      "id": 4
     }
   ],
   "empleados": [
@@ -395,10 +576,10 @@
   ],
   "flotillas": [
     {
-      "nombre": "Andrea Lizbeth",
+      "nombre": "Andrea",
       "supervisor": "Andres",
       "garage": "garage",
-      "id": 1
+      "id": 2
     }
   ],
   "posts": [
