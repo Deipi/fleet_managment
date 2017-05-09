@@ -3,8 +3,24 @@ import Map from './Monitoreo';
 
 import FilterMap from './FilterMap'
 import FilterMapFlotilla from './FilterMapFlotilla'
-import {fetchEmpleados, getVehicles} from '../actions/FilterMap'
+import FilterMapState from './FilterMapState'
+import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
+
+import Griddle, { plugins } from 'griddle-react';
+
+const NewLayout = ({ Filter }) => (
+	<div>
+		<Filter/>
+		
+	</div>
+);
+
+const selector = state => {
+	return {
+		unidades: state.get('MapContainer'),
+	}
+};
 
 class MapContainer extends React.Component {
 
@@ -73,7 +89,7 @@ class MapContainer extends React.Component {
 					lng: item.getIn([ 'longitud' ]),
 				},
 				animation: window.google.maps.Animation.BOUNCE,
-				title: item.get('name'),
+				title: item.getIn(['tracker','label']),
 				key: index,
 				icon: {
 					path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
@@ -90,12 +106,19 @@ class MapContainer extends React.Component {
 	}
 
 	render() {
-
+const { props: { unidades } } = this;
 		return (
+
 			<div style={{ height: '100vh' }}>
 			<FilterMap  mapi={this.onChange} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChange}/>
-			
+			<FilterMapState  maps={this.onChange}/>
+			<Griddle data={ unidades ? unidades.toJS() : [] }
+				plugins={[plugins.LocalPlugin]}
+				components={{
+					Layout: NewLayout
+				}}>
+				</Griddle>
 				<Map
 					containerElement={
 						<div style={{ height: '100%' }} />
