@@ -40,6 +40,18 @@
       "cargo_w": "12 mm ",
       "label": "Deipi",
       "longitud": -101.170734,
+      "wheel_rear": "5",
+      "tyre_size": "5",
+      "cargo_l": "5 mm ",
+      "model": "x",
+      "number_of_passengers": "5 people ",
+      "tyres_number": "5",
+      "fuel_grade": "5",
+      "tank_capacity": "5 L ",
+      "insurance_policy_number": "5",
+      "fuel_consumption": "5 L ",
+      "cargo_w": "5 mm ",
+      "label": "Label Actualizado",
       "tracker": {
         "value": "martin",
         "label": "Martin"
@@ -167,7 +179,11 @@
       },
       "vin": "JMZMA18P200411817",
       "cargo_capacity": "1000 kg ",
-      "id": 4
+      "id": 4,
+      "vin": "asd",
+      "id": 1,
+      "cargo_capacity": "5 kg "
+
     },
     {
       "permited_speed": "120 Km/h ",
@@ -221,6 +237,7 @@
         "value": "special",
         "label": "Special"
       },
+
       "vin": "M676GYUKJK",
       "cargo_capacity": "100 kg ",
       "id": 6
@@ -279,7 +296,12 @@
       },
       "vin": "QW12ER",
       "cargo_capacity": "1000 kg ",
-      "id": 7
+      "id": 7,
+
+      "vin": "asd",
+      "id": 2,
+      "cargo_capacity": "5 kg "
+
     }
   ],
   "conductores": [
@@ -315,8 +337,12 @@
         "value": "dis",
         "label": "Diseño"
       },
+
       "last_name": "Sanchez",
       "middle_name": "Box",
+
+      "last_name": "Martinez",
+      "middle_name": "Alberto",
       "tracker": {
         "value": "martin",
         "label": "Martin"
@@ -326,10 +352,17 @@
         "ok",
         "oc"
       ],
+
       "first_name": "Canelo",
       "email": "alf@g.com",
       "driver_license_number": "2",
-      "id": 4
+      "id": 4,
+
+      "first_name": "Sofia",
+      "id": 2,
+      "email": "ser@gmail.com",
+      "driver_license_number": "23123"
+
     }
   ],
   "empleados": [

@@ -2,6 +2,7 @@ import React from 'react';
 import Map from './Monitoreo';
 
 import FilterMap from './FilterMap'
+import FilterMapFlotilla from './FilterMapFlotilla'
 import {fetchEmpleados, getVehicles} from '../actions/FilterMap'
 import { connect } from 'react-redux';
 
@@ -61,7 +62,6 @@ class MapContainer extends React.Component {
 		plotVehicles();
 		window.setInterval(plotVehicles, 2000);*/
 	}
-
 	componentWillReceiveProps(nextProps) {
 		const { vehicles } = nextProps;
 
@@ -69,12 +69,11 @@ class MapContainer extends React.Component {
 			return {
 				position: {
 					//elementos del API
-					lat: item.getIn([ 'address', 'geo', 'lat' ]),
-					lng: item.getIn([ 'address', 'geo', 'lng' ]),
+					lat: item.getIn([ 'latitud' ]),
+					lng: item.getIn([ 'longitud' ]),
 				},
-				draggable: true,
 				animation: window.google.maps.Animation.BOUNCE,
-				title: item.get('name') && item.get('department'),
+				title: item.get('name'),
 				key: index,
 				icon: {
 					path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
@@ -91,10 +90,12 @@ class MapContainer extends React.Component {
 	}
 
 	render() {
-		
+
 		return (
 			<div style={{ height: '100vh' }}>
 			<FilterMap  mapi={this.onChange} onClick={this.onClickFilter}/>
+			<FilterMapFlotilla  mapf={this.onChange}/>
+			
 				<Map
 					containerElement={
 						<div style={{ height: '100%' }} />

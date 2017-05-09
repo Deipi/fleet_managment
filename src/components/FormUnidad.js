@@ -9,7 +9,10 @@ import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fddced25eeed27f78b4b932081b1eaf5cf72228c
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
   propTypes: {

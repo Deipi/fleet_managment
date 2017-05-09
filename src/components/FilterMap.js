@@ -8,7 +8,7 @@ export class FilterMap extends Component {
 		  return (
 		<div>
 			<select name='state' onChange={ mapi } >
-				<option value="">--Todos--</option>
+				<option value="">Todos los departamentos</option>
 				<option value="Desarrollo">Desarrollo</option>
 				<option value="Diseño">Diseño</option>
 				<option value="Ventas">Ventas</option>
