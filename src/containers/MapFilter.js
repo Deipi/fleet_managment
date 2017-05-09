@@ -17,7 +17,7 @@ const selector = state => {
 	}
 };
 
-class FilterMapComponent extends Component { 
+class FilterMapComponent extends Component {
 	constructor(props){
 		super(props);
 			this.state = {
