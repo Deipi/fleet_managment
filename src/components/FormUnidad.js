@@ -8,6 +8,8 @@ import FormCombustible from './FormCombustible';
 import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
+
+
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
   propTypes: {
@@ -143,6 +145,101 @@ var CreatableGA = React.createClass({
   }
 });
 
+ var CreatableDEP=React.createClass({
+  displayName: 'CreatableDEP',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState(){
+    return{
+      optionsDEP: [
+        { value: 'des', label: 'Desarrollo'},
+        { value: 'dis', label: 'Diseño'},
+        { value: 'ven', label: 'Ventas'}
+      ]
+    };
+  },
+  render (){
+    const { props: { input : { onChange, value, name } } } = this;
+    const { optionsDEP } = this.state;
+    return(
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select.Creatable
+          options={optionsDEP}
+          name={name}
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
+
+  var CreatableSTA=React.createClass({
+  displayName: 'CreatableSTA',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState(){
+    return{
+      optionsSTA: [
+        { value: 'on', label: 'Online'},
+        { value: 'off', label: 'Offline'}
+      ]
+    };
+  },
+  render (){
+    const { props: { input : { onChange, value, name } } } = this;
+    const { optionsSTA } = this.state;
+    return(
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select
+          options={optionsSTA}
+          name={name}
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
+
+ var CreatableFLE=React.createClass({
+  displayName: 'CreatableFLE',
+  propTypes: {
+    hint: React.PropTypes.string,
+    label: React.PropTypes.string
+  },
+  getInitialState(){
+    return{
+      optionsSTA: [
+        { value: 'and', label: 'Andres'},
+        { value: 'ser', label: 'Sergio'},
+        { value: 'man', label: 'Manuel'}
+      ]
+    };
+  },
+  render (){
+    const { props: { input : { onChange, value, name } } } = this;
+    const { optionsSTA } = this.state;
+    return(
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <Select
+          options={optionsSTA}
+          name={name}
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+});
+
 const format = value => {
   if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
     return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
@@ -189,6 +286,55 @@ const FormUnidadComponent = (props) => {
           />
         </div>
       </div>
+
+      <div>
+        <label>Department</label>
+        <div>
+          <Field
+            name="department"
+            component={ CreatableDEP }
+          />
+        </div>
+      </div>
+
+      <div>
+        <label>Status</label>
+        <div>
+          <Field
+            name="status"
+            component={ CreatableSTA }
+          />
+        </div>
+      </div>
+
+      <div>
+        <label>Fleet</label>
+        <div>
+          <Field
+            name="fleet"
+            component={ CreatableFLE }
+          />
+        </div>
+      </div>
+
+      <div>
+        <label>Coordenadas</label>
+        <div>
+          <Field
+            name="latitud"
+            component="input"
+            type="number"
+            placeholder="Latitud"
+          />
+          <Field
+            name="longitud"
+            component="input"
+            type="number"
+            placeholder="Longitud"
+          />
+        </div>
+      </div>
+
 
       <div>
         <label>Garage</label>
