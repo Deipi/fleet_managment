@@ -14,7 +14,9 @@ class UnidadComponent extends React.Component {
 
   actionSubmit(values) {
     const { dispatch } = this.props;
-    dispatch(createUnidad(values.toJS()));
+    
+    const newValues = values.set('latitud', parseFloat(values.get('latitud'))).set('longitud', parseFloat(values.get('longitud')));
+    dispatch(createUnidad(newValues.toJS()));
   }
 
   onChangeAction(value){
