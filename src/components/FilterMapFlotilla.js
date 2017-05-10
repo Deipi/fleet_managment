@@ -12,7 +12,6 @@ export class FilterMapFlotilla extends Component {
 						<option value="Sergio">Sergio</option>
 						<option value="Manuel">Manuel</option>
 					</select>
-						
 				</div>
 			);
 	}
