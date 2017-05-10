@@ -186,63 +186,6 @@
 
     },
     {
-      "permited_speed": "120 Km/h ",
-      "chassis_number": "DFGH14",
-      "vehicle_registration_plate": "ASDF12",
-      "fuel_type": {
-        "value": "diesel",
-        "label": "Diesel"
-      },
-      "insurance_2_policy_number": "werer",
-      "wheel_front": "4",
-      "cargo_h": "122 mm ",
-      "garage": {
-        "value": "garage",
-        "label": "Garage"
-      },
-      "wheel_rear": "3",
-      "tyre_size": "13",
-      "cargo_l": "122 mm ",
-      "model": "Dron",
-      "number_of_passengers": "3 people ",
-      "tyres_number": "5",
-      "fuel_grade": "ALTO",
-      "fleet": {
-        "value": "ser",
-        "label": "Sergio"
-      },
-      "tank_capacity": "23 L ",
-      "insurance_policy_number": "fgh",
-      "fuel_consumption": "23 L ",
-      "department": {
-        "value": "ven",
-        "label": "Ventas"
-      },
-      "status": {
-        "value": "on",
-        "label": "Online"
-      },
-      "cargo_w": "122 mm ",
-      "label": "Sirlord",
-      "longitud": -101,
-      "tracker": {
-        "value": "martin",
-        "label": "Martin"
-      },
-      "tags": [
-        "oc"
-      ],
-      "latitud": 19,
-      "type": {
-        "value": "special",
-        "label": "Special"
-      },
-
-      "vin": "M676GYUKJK",
-      "cargo_capacity": "100 kg ",
-      "id": 6
-    },
-    {
       "permited_speed": "100 Km/h ",
       "chassis_number": "123ASD",
       "vehicle_registration_plate": "FEYO123",
