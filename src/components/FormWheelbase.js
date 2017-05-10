@@ -1,6 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
-import Select from 'react-select'
+import { Field } from 'redux-form/immutable'
 import 'react-select/dist/react-select.css'
 
 const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value: -1 * parseFloat(value.split(' ')[0])
