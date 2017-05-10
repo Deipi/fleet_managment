@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
+import { Field } from 'redux-form/immutable'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 
@@ -35,7 +35,6 @@ var CreatableComb= React.createClass({
 	}
 });
 
-const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value : -1 * parseFloat(value.split(' ')[0])
 const format = value => {
 	if(value && parseInt(value.split(' ')[0]) > 0 && value.includes('L')){
 		return value.split(' ')[0]+value.split(' ')[2]+ ' L ';

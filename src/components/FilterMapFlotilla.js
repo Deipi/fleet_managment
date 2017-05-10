@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 export class FilterMapFlotilla extends Component {
 	render() {
-		const { mapf, onClick }=this.props;
+		const { mapf }=this.props;
 			return (
 				<div>
 					<select name='fleet' onChange={ mapf }>

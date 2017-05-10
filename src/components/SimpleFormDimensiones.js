@@ -1,6 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
-import validate from '../validate'
+import { Field } from 'redux-form/immutable'
 
 const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
   <div>

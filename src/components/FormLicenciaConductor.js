@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
+import { Field } from 'redux-form/immutable'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 
