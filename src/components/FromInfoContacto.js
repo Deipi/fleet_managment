@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
+import { Field } from 'redux-form/immutable'
 
 const FormInfocontacto=(props)=>{
 	const { handleSubmit } = props
