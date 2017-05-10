@@ -12,7 +12,6 @@ import Griddle, { plugins } from 'griddle-react';
 const NewLayout = ({ Filter }) => (
 	<div>
 		<Filter/>
-		
 	</div>
 );
 
@@ -34,9 +33,9 @@ class MapContainer extends React.Component {
 	}
 
 	onChange(event) {
+		debugger;
 		const { target: { value, name, } } = event;
-
-		const markersFilter = this.state.markers.filter(marker => marker.item.get('department') === value);
+		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
 		this.setState({ markers: markersFilter });
 	}
 
@@ -47,37 +46,9 @@ class MapContainer extends React.Component {
 
 	componentWillMount() {
 		const { dispatch } = this.props;
-
 		dispatch(getVehicles());
-
-		/*const plotVehicles = () => getVehicles().then((results) => {
-			const markers = results.data.map((item, index) => {
-				return {
-					position: {
-						//elementos del API
-						lat: item.address.geo.lat,
-						lng: item.address.geo.lng,
-					},
-					draggable: true,
-					animation: window.google.maps.Animation.BOUNCE,
-					title: item.name && item.department,
-					key: index,
-					icon: {
-						path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-						scale: 2,
-						fillColor: '#000080',
-						strokeColor: '#000080',
-						fillOpacity: 1,
-						strokeOpacity: 1,
-					},
-				};
-			});
-			this.setState({ markers });
-		});
-
-		plotVehicles();
-		window.setInterval(plotVehicles, 2000);*/
 	}
+
 	componentWillReceiveProps(nextProps) {
 		const { vehicles } = nextProps;
 
@@ -110,7 +81,8 @@ const { props: { unidades } } = this;
 		return (
 
 			<div style={{ height: '100vh' }}>
-			<FilterMap  mapi={this.onChange} onClick={this.onClickFilter}/>
+
+			<FilterMap  mapd={this.onChange} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChange}/>
 			<FilterMapState  maps={this.onChange}/>
 			<Griddle data={ unidades ? unidades.toJS() : [] }
