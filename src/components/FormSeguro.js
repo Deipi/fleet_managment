@@ -1,6 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form/immutable'
-import Select from 'react-select'
+import { Field } from 'redux-form/immutable'
 import 'react-select/dist/react-select.css'
 
 import DatePicker from 'react-datepicker'
@@ -29,17 +28,6 @@ class InsuranceDate extends React.Component {
     />;
   }
 }
-
-
-const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
 
 const FormSeguro=(props)=>{
 	const { handleSubmit } = props
