@@ -49,7 +49,7 @@ class MapContainer extends React.Component {
 		this.setState({ markers: markersFilterF});
 	}
 	onChangeS(event){
-		debugger;
+		
 		const { target: { value, name } } = event;
 		const markersFilterS = this.state.markers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
 		this.setState({ markers: markersFilterS});
