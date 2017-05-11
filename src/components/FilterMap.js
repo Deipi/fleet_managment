@@ -15,7 +15,6 @@ export class FilterMap extends Component {
 				<option value="Diseño">Diseño</option>
 				<option value="Ventas">Ventas</option>
 			</select>
-				<button onClick={ onClick }>Filter</button>
 		</div>
 
 		);
