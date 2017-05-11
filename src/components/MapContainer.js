@@ -33,7 +33,6 @@ class MapContainer extends React.Component {
 	}
 
 	onChange(event) {
-		debugger;
 		const { target: { value, name, } } = event;
 		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
 		this.setState({ markers: markersFilter });
@@ -102,7 +101,6 @@ const { props: { unidades } } = this;
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
-
 				/>
 			</div>
 		);
