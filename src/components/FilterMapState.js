@@ -6,7 +6,7 @@ export class FilterMapState extends Component {
 		const { maps }=this.props;
 			return (
 				<div>
-					<select name='status' onChange={ maps }>
+					<select name='state' onChange={ maps }>
 						<option value="">Estados</option>
 						<option value="Online">Online</option>
 						<option value="Offline">Offline</option>

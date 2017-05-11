@@ -6,7 +6,7 @@ export class FilterMapFlotilla extends Component {
 		const { mapf }=this.props;
 			return (
 				<div>
-					<select name='fleet' onChange={ mapf }>
+					<select name='state' onChange={ mapf }>
 						<option value="">Flotillas</option>
 						<option value="Andres">Andres</option>
 						<option value="Sergio">Sergio</option>
