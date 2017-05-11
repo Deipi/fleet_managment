@@ -15,9 +15,9 @@ const NewLayout = ({ Filter }) => (
 	</div>
 );
 
-const selector = state => {
+const selector = status => {
 	return {
-		unidades: state.get('MapContainer'),
+		unidades: status.get('MapContainer'),
 
 	}
 };
@@ -34,7 +34,6 @@ class MapContainer extends React.Component {
  		this.onChangeS = this.onChangeS.bind(this);
 	}
 
-	onChange(event) {
 	onChangeD(event) {
 		const { target: { value, name, } } = event;
 		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
@@ -47,7 +46,6 @@ class MapContainer extends React.Component {
 		this.setState({ markers: markersFilterF});
 	}
 	onChangeS(event){
-		
 		const { target: { value, name } } = event;
 		const markersFilterS = this.state.markers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
 		this.setState({ markers: markersFilterS});
@@ -98,7 +96,7 @@ const { props: { unidades } } = this;
 			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 			<FilterMapState  maps={this.onChangeS}/>
-			<Griddle data={ unidades ? unidades.toJS() : [] }
+			<Griddle data={ unidades ? unidades.model.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
 				components={{
 					Layout: NewLayout
