@@ -24,19 +24,17 @@ const selector = state => {
 
 
 class MapContainer extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			markers: [],
  		}
- 	
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
- 	
 	}
 
+	onChange(event) {
 	onChangeD(event) {
 		const { target: { value, name, } } = event;
 		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
@@ -117,7 +115,6 @@ const { props: { unidades } } = this;
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
-
 				/>
 			</div>
 		);
