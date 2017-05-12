@@ -65,17 +65,16 @@ class MapContainer extends React.Component {
 
 		const markers = vehicles.map((item, index) => {
 			return {
+				//elementos del API
 				position: {
-					//elementos del API
 					lat: item.getIn([ 'latitud' ]),
 					lng: item.getIn([ 'longitud' ]),
 				},
-				animation: window.google.maps.Animation.BOUNCE,
 				title: item.getIn(['tracker','label']),
 				key: index,
 				icon: {
-					path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-					scale: 2,
+					path: window.google.maps.Marker,
+					scale: 3,
 					fillColor: '#000080',
 					strokeColor: '#000080',
 					fillOpacity: 1,
