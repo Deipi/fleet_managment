@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Button,Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import Filter from '../components/Filter';
+import FilterModel from '../components/FilterModel';
 import FilterLabel from '../components/FilterLabel';
 import FilterTracker from '../components/FilterTracker';
 import fetchVehiclesFilter from '../actions/Filters';
@@ -10,7 +10,7 @@ class FilterMapUnit extends Component {
 
 	constructor(props) {
 		super(props);
-		this.updateTextFilter = this.updateTextFilter.bind(this);
+		this.updateTextFilterM = this.updateTextFilterM.bind(this);
 		this.updateTextFilterL = this.updateTextFilterL.bind(this);
 		this.updateTextFilterT = this.updateTextFilterT.bind(this);
 		this.retrieveFilteredReceipts = this.retrieveFilteredReceipts.bind(this);
@@ -19,21 +19,14 @@ class FilterMapUnit extends Component {
 			model: null,
 			label: null,
 			['tracker.label']: null,
-			// markers: [],
-			// allMarkers: [],
 		}
 	}
 
-	updateTextFilter(input) {
-		// const { model: input.target.value }
-		// const markersFilter = this.state.allMarkers;
-		// this.setState({ markers: markersFilter})
+	updateTextFilterM(input) {
 		this.setState({ model: input.target.value })
-		
 	}
 	updateTextFilterL(input) {
 
-		
 		this.setState({ label: input.target.value })
 	}
 
@@ -42,7 +35,7 @@ class FilterMapUnit extends Component {
 	}
 
 	retrieveFilteredReceipts() {
-		debugger;
+		
 		const { dispatch } = this.props;
 
 		let queyObj = this.state;
@@ -56,10 +49,12 @@ class FilterMapUnit extends Component {
 
 		}
 		dispatch(fetchVehiclesFilter(queryArray.join('&')))
-			console.log(queyObj)
+			
 
-			console.log()
 	}
+
+
+
 
 	render() {
 
@@ -69,8 +64,7 @@ class FilterMapUnit extends Component {
 
 						<Row>
 							<Col sm='3'>
-								<Filter onTextUpdate={ this.updateTextFilter } />
-
+								<FilterModel onTextUpdate={ this.updateTextFilterM } />
 							</Col>
 							<Col sm='3'>
 								<FilterTracker onTextUpdate={ this.updateTextFilterT } />
