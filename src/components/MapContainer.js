@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Map from './Monitoreo';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import FilterMap from './FilterMap'
@@ -16,12 +16,13 @@ import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
 
-class MapContainer extends React.Component {
+
+class MapContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			markers: [],
-			allMarkers: [],
+			allMarkers: [], 
  		};
 
  		this.onChangeD = this.onChangeD.bind(this);
@@ -106,13 +107,13 @@ class MapContainer extends React.Component {
 					mapElement={
 						<div style={{ height: '100%' }} />
 					}
-
+		
 					onMapLoad={this.handleMapLoad}
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-				<MarkersList/>
+				
 				<DriversList/>
 			</div>
 		);
