@@ -1,26 +1,19 @@
 import React from 'react';
 import Map from './Monitoreo';
-
+import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import FilterMap from './FilterMap'
 import FilterMapFlotilla from './FilterMapFlotilla'
 import FilterMapState from './FilterMapState'
+
 import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
 
-import Griddle, { plugins } from 'griddle-react';
 
-const NewLayout = ({ Filter }) => (
-	<div>
-		<Filter/>
-	</div>
-);
+import MarkersList from '../containers/MarkersList';
+import DriversList from '../containers/DriversList';
 
-const selector = status => {
-	return {
-		unidades: status.get('MapContainer'),
-
-	}
-};
+import FilterMapUnit from './FilterMapUnit'
+import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
 
 class MapContainer extends React.Component {
@@ -28,28 +21,33 @@ class MapContainer extends React.Component {
 		super(props);
 		this.state = {
 			markers: [],
- 		}
+			allMarkers: [],
+ 		};
+
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
+
+
 	}
 
 	onChangeD(event) {
 		const { target: { value, name, } } = event;
-		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
+		const markersFilter = this.state.allMarkers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
 		this.setState({ markers: markersFilter });
 	}
 
 	onChangeF(event){
 		const { target: { value, name } } = event;
-		const markersFilterF = this.state.markers.filter(marker => marker.item.getIn([ 'fleet', 'label' ] ) === value);
+		const markersFilterF = this.state.allMarkers.filter(marker => marker.item.getIn([ 'fleet', 'label' ] ) === value);
 		this.setState({ markers: markersFilterF});
 	}
 	onChangeS(event){
 		const { target: { value, name } } = event;
-		const markersFilterS = this.state.markers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
+		const markersFilterS = this.state.allMarkers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
 		this.setState({ markers: markersFilterS});
 	}
+
 	onClickFilter(){
 		const { props: { dispatch }, state: { filter } } = this;
 		dispatch(fetchEmpleados(filter));
@@ -82,37 +80,40 @@ class MapContainer extends React.Component {
 				},
 				item: item,
 			};
+
 		});
-		this.setState({ markers });
+		this.setState({ markers, allMarkers: markers });
+
+		
 	}
 
 	render() {
-const { props: { unidades } } = this;
+
 		return (
 
-			<div style={{ height: '100vh' }}>
+			<div style={{ height: '60vh' }}>
 
 			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 			<FilterMapState  maps={this.onChangeS}/>
-			<Griddle data={ unidades ? unidades.model.toJS() : [] }
-				plugins={[plugins.LocalPlugin]}
-				components={{
-					Layout: NewLayout
-				}}>
-				</Griddle>
+			<FilterMapUnit />
+
 				<Map
+
 					containerElement={
 						<div style={{ height: '100%' }} />
 					}
 					mapElement={
 						<div style={{ height: '100%' }} />
 					}
+
 					onMapLoad={this.handleMapLoad}
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
+				<MarkersList/>
+				<DriversList/>
 			</div>
 		);
 	}

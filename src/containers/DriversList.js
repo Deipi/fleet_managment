@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { Driver } from '../components/Driver';
 import createDriver from '../actions/IndexDrivers';
-
+ 
 const NewLayout = ({ Table,Filter,Pagination }) => (
 	<div>
 		<Filter/>
