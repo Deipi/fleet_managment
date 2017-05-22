@@ -12,9 +12,7 @@ export default (state=Immutable.fromJS([]), action) => {
 
 		case FETCHED_VEHICLES_FILTER:
 			return Immutable.fromJS(action.payload);
-			// return state.filter(vehicle => vehicle.get('id') === action.payload[0].id);
-			// return state.filter(vehicle => vehicle.get('id') === action.payload[0].id);
-		
+
 		default:
 			return state;
 	}
