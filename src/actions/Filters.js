@@ -6,11 +6,6 @@ export const fetchVehiclesFilter = (filter) => (dispatch, getStore) => fetch(`ht
 	headers: {
 		'Content-Type': 'application/json'
 	},
-// }).then( result => result.json().then( unidades => dispatch({
-// 	type: FETCHED_VEHICLES_FILTER,
-// 	payload: unidades
-
-// })));
 
 }).then( result => result.json().then( unidades => {debugger; return dispatch({
 	type: FETCHED_VEHICLES_FILTER,
