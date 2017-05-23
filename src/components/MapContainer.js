@@ -9,8 +9,8 @@ import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
 
 
-import MarkersList from '../containers/MarkersList';
-import DriversList from '../containers/DriversList';
+import DataTable from '../containers/MarkersList';
+
 
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
@@ -81,11 +81,13 @@ class MapContainer extends Component {
 				},
 				item: item,
 			};
+			// i.addListener('click', function() {
+			// 	console.log('debe')
+			// });
 
 		});
+	
 		this.setState({ markers, allMarkers: markers });
-
-		
 	}
 
 	render() {
@@ -113,8 +115,8 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
+				<DataTable/>
 				
-				<DriversList/>
 			</div>
 		);
 	}
