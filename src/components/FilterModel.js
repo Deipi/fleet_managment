@@ -8,7 +8,7 @@ export class FilterModel extends Component {
 	return (
 
 		<FormGroup>
-			<Input type="text" name="model, label"  placeholder="Model..." onChange={ this.props.onTextUpdate } />
+			<Input type="text" name="model"  placeholder="Model..." onChange={ this.props.onTextUpdate } />
 		</FormGroup>
 		);
 	}
