@@ -72,7 +72,7 @@ class FilterMapUnit extends Component {
 							<Col sm='3'>
 								<FilterLabel onTextUpdate={ this.updateTextFilterL } />
 							</Col>
-							<Col sm='3'>
+							<Col sm='2'>
 								<Button color="info" onClick={ this.retrieveFilteredReceipts } >Filtrar</Button>
 							</Col>
 						</Row>
