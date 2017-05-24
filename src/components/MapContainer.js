@@ -4,19 +4,13 @@ import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react
 import FilterMap from './FilterMap'
 import FilterMapFlotilla from './FilterMapFlotilla'
 import FilterMapState from './FilterMapState'
-
 import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
-
-
 import DataTable from '../containers/MarkersList';
-
-
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-
-
+import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 class MapContainer extends Component {
 	constructor(props) {
 		super(props);
@@ -24,12 +18,9 @@ class MapContainer extends Component {
 			markers: [],
 			allMarkers: [], 
  		};
-
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
-
-
 	}
 
 	onChangeD(event) {
@@ -59,6 +50,7 @@ class MapContainer extends Component {
 		dispatch(getVehicles());
 	}
 
+
 	componentWillReceiveProps(nextProps) {
 		const { vehicles } = nextProps;
 
@@ -81,12 +73,9 @@ class MapContainer extends Component {
 				},
 				item: item,
 			};
-			// i.addListener('click', function() {
-			// 	console.log('debe')
-			// });
 
 		});
-	
+
 		this.setState({ markers, allMarkers: markers });
 	}
 
@@ -102,21 +91,21 @@ class MapContainer extends Component {
 			<FilterMapUnit />
 
 				<Map
-
+				
 					containerElement={
 						<div style={{ height: '100%' }} />
 					}
 					mapElement={
 						<div style={{ height: '100%' }} />
 					}
-		
+
 					onMapLoad={this.handleMapLoad}
 					onMapClick={this.handleMapClick}
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-				<DataTable/>
-				
+			<DataTable/>
+
 			</div>
 		);
 	}
