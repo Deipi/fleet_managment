@@ -15,6 +15,7 @@ const Map = withGoogleMap((props) =>{
       <Marker
 
         {...marker}
+
       />
     ))}
     </GoogleMap>
