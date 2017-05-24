@@ -187,7 +187,7 @@
       "wheel_rear": "2",
       "tyre_size": "23",
       "cargo_l": "122 mm ",
-      "model": "Nuevo",
+      "model": "Jeep",
       "number_of_passengers": "2 people ",
       "tyres_number": "4",
       "fuel_grade": "HIGH",
@@ -221,10 +221,66 @@
         "value": "car",
         "label": "Car"
       },
-      "vin": "QW12ER",
-      "cargo_capacity": "1000 kg ",
       "vin": "asd",
+      "cargo_capacity": "1000 kg ",
       "id": 4
+    },
+    {
+      "permited_speed": "100 Km/h ",
+      "chassis_number": "123TA45",
+      "vehicle_registration_plate": "TAC123",
+      "fuel_type": {
+        "value": "diesel",
+        "label": "Diesel"
+      },
+      "insurance_2_policy_number": "CVBNM",
+      "wheel_front": "4",
+      "cargo_h": "150 mm ",
+      "garage": {
+        "value": "garage",
+        "label": "Garage"
+      },
+      "wheel_rear": "2",
+      "tyre_size": "14",
+      "cargo_l": "150 mm ",
+      "model": "Tacoma",
+      "number_of_passengers": "2 people ",
+      "tyres_number": "4",
+      "fuel_grade": "ALTO",
+      "fleet": {
+        "value": "man",
+        "label": "Manuel"
+      },
+      "tank_capacity": "300 L ",
+      "insurance_policy_number": "FGHJK",
+      "fuel_consumption": "12 L ",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "status": {
+        "value": "on",
+        "label": "Online"
+      },
+      "cargo_w": "150 mm ",
+      "label": "Toyota",
+      "longitud": -101.195935,
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "tags": [
+        "Roja",
+        "Seminueva"
+      ],
+      "latitud": 19.703777,
+      "type": {
+        "value": "car",
+        "label": "Car"
+      },
+      "vin": "OMA123",
+      "cargo_capacity": "1500 kg ",
+      "id": 5
     }
   ],
   "conductores": [
@@ -260,10 +316,6 @@
         "value": "dis",
         "label": "Diseño"
       },
-
-      "last_name": "Sanchez",
-      "middle_name": "Box",
-
       "last_name": "Martinez",
       "middle_name": "Alberto",
       "tracker": {
@@ -275,17 +327,10 @@
         "ok",
         "oc"
       ],
-
-      "first_name": "Canelo",
-      "email": "alf@g.com",
-      "driver_license_number": "2",
-      "id": 4,
-
       "first_name": "Sofia",
-      "id": 2,
       "email": "ser@gmail.com",
-      "driver_license_number": "23123"
-
+      "driver_license_number": "23123",
+      "id": 2
     }
   ],
   "empleados": [
