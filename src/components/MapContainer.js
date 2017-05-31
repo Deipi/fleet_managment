@@ -10,7 +10,6 @@ import DataTable from '../containers/MarkersList';
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-<<<<<<< HEAD
 import Griddle, { plugins } from 'griddle-react';
 
 const NewLayout = ({ Filter }) => (
@@ -27,10 +26,8 @@ const selector = state => {
 
 
 class MapContainer extends React.Component {
-=======
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 class MapContainer extends Component {
->>>>>>> 60199ea777a9a70ad2fbce84f6989eafc30ef770
 	constructor(props) {
 		super(props);
 		this.state = {
