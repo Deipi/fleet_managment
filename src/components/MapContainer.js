@@ -17,8 +17,7 @@ const NewLayout = ({ Filter }) => (
 
 const selector = state => {
 	return {
-		unidades: state.get('MapContainer'),
-
+		unidades: state.get('MapContainer')
 	}
 };
 
@@ -34,7 +33,6 @@ class MapContainer extends React.Component {
  		this.onChangeS = this.onChangeS.bind(this);
 	}
 
-	onChange(event) {
 	onChangeD(event) {
 		const { target: { value, name, } } = event;
 		const markersFilter = this.state.markers.filter(marker => marker.item.getIn([ 'department', 'label'] ) === value);
@@ -47,7 +45,6 @@ class MapContainer extends React.Component {
 		this.setState({ markers: markersFilterF});
 	}
 	onChangeS(event){
-		
 		const { target: { value, name } } = event;
 		const markersFilterS = this.state.markers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
 		this.setState({ markers: markersFilterS});
@@ -92,9 +89,7 @@ class MapContainer extends React.Component {
 	render() {
 const { props: { unidades } } = this;
 		return (
-
 			<div style={{ height: '100vh' }}>
-
 			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 			<FilterMapState  maps={this.onChangeS}/>
