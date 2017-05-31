@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Map from './Monitoreo';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import FilterMap from './FilterMap'
@@ -9,23 +9,14 @@ import { connect } from 'react-redux';
 import DataTable from '../containers/MarkersList';
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
-
 
 import { CURRENT_MARKER } from '../actions/Filters';
-import Griddle, { plugins } from 'griddle-react';
 
 const NewLayout = ({ Filter }) => (
 	<div>
 		<Filter/>
 	</div>
 );
-
-const selector = state => {
-	return {
-		unidades: state.get('MapContainer')
-	}
-};
 
 class MapContainer extends Component {
 	constructor(props) {
@@ -37,7 +28,6 @@ class MapContainer extends Component {
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
- 	
 	}
 
 	componentWillMount() {
@@ -68,9 +58,10 @@ class MapContainer extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		
 		const { vehicles } = nextProps;
 		const { dispatch } = this.props;
-	
+
 		const markers = vehicles.map((item, index) => {
 
 			return {
@@ -108,31 +99,8 @@ class MapContainer extends Component {
 	render() {
 
 		return (
-			<div style={{ height: '100vh' }}>
+
 			<div style={{ height: '60vh' }}>
-
-
-				<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
-				<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
-				<FilterMapState  maps={this.onChangeS}/>
-				<FilterMapUnit />
-
-
-					<Map
-						containerElement={
-							<div style={{ height: '100%' }} />
-						}
-						mapElement={
-							<div style={{ height: '100%' }} />
-						}
-
-						onMapLoad={this.handleMapLoad}
-						onMapClick={this.handleMapClick}
-						markers={this.state.markers}
-						onMarkerRightClick={this.handleMarkerRightClick}
-					/>
-				<DataTable />
-
 			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 			<FilterMapState  maps={this.onChangeS}/>
@@ -154,7 +122,6 @@ class MapContainer extends Component {
 			<DataTable/>
 
 			</div>
-
 		);
 	}
 }
