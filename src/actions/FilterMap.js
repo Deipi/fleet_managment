@@ -25,6 +25,7 @@ export const getVehicles = () => (dispatch, getStore) => fetch('http://localhost
 })));
 
 export const fetchEmpleados=(filter)=>(dispatch, getStore)=>fetch(`http://localhost:3004/unidades?${qs.stringify(filter)}`, {
+	
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'

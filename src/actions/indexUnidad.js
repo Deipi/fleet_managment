@@ -1,6 +1,9 @@
 export const POSTED_UNIDAD =  'POSTED_UNIDAD';
 export const FETCHED_UNIDADES = 'FETCHED_UNIDADES';
 export const UPDATE_VEHICLES = 'UPDATE_VEHICLES';
+export const FETCHED_EDITED = 'FETCHED_EDITED';
+export const CLEAN_DRIVER = 'CLEAN_DRIVER';
+export const DELETE_DRIVERS = 'DELETE_DRIVERS';
 
 export default data => (dispatch, getStore) => fetch('http://localhost:3004/unidades', {
 	method: 'POST',
