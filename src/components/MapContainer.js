@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Map from './Monitoreo';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import FilterMap from './FilterMap'
@@ -9,18 +9,27 @@ import { connect } from 'react-redux';
 import DataTable from '../containers/MarkersList';
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
+
+import { CURRENT_MARKER } from '../actions/Filters';
+
 class MapContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			markers: [],
-			allMarkers: [], 
+			allMarkers: [],
  		};
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
+ 	
+	}
+
+	componentWillMount() {
+		const { dispatch } = this.props;
+		dispatch(getVehicles());
 	}
 
 	onChangeD(event) {
@@ -45,16 +54,12 @@ class MapContainer extends Component {
 		dispatch(fetchEmpleados(filter));
 	}
 
-	componentWillMount() {
-		const { dispatch } = this.props;
-		dispatch(getVehicles());
-	}
-
-
 	componentWillReceiveProps(nextProps) {
 		const { vehicles } = nextProps;
-
+		const { dispatch } = this.props;
+	
 		const markers = vehicles.map((item, index) => {
+
 			return {
 				//elementos del API
 				position: {
@@ -72,6 +77,14 @@ class MapContainer extends Component {
 					strokeOpacity: 1,
 				},
 				item: item,
+
+				onClick: () => 
+
+
+				// console.log('model: '+item.get('model'),', '+ 'tracker: '+item.getIn(['tracker', 'label']))
+
+				{debugger; return dispatch({type:'CURRENT_MARKER', payload: item })}
+
 			};
 
 		});
@@ -85,28 +98,29 @@ class MapContainer extends Component {
 
 			<div style={{ height: '60vh' }}>
 
-			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
-			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
-			<FilterMapState  maps={this.onChangeS}/>
-			<FilterMapUnit />
+				<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
+				<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
+				<FilterMapState  maps={this.onChangeS}/>
+				<FilterMapUnit />
 
-				<Map
+
+					<Map
+						containerElement={
+							<div style={{ height: '100%' }} />
+						}
+						mapElement={
+							<div style={{ height: '100%' }} />
+						}
+
+						onMapLoad={this.handleMapLoad}
+						onMapClick={this.handleMapClick}
+						markers={this.state.markers}
+						onMarkerRightClick={this.handleMarkerRightClick}
+					/>
+				<DataTable />
 				
-					containerElement={
-						<div style={{ height: '100%' }} />
-					}
-					mapElement={
-						<div style={{ height: '100%' }} />
-					}
-
-					onMapLoad={this.handleMapLoad}
-					onMapClick={this.handleMapClick}
-					markers={this.state.markers}
-					onMarkerRightClick={this.handleMarkerRightClick}
-				/>
-			<DataTable/>
-
 			</div>
+
 		);
 	}
 }
