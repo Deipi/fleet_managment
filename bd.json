@@ -1,62 +1,6 @@
 {
   "unidades": [
     {
-      "permited_speed": "100 Km/h ",
-      "chassis_number": "123ASD",
-      "vehicle_registration_plate": "FEYO123",
-      "fuel_type": {
-        "value": "petrol",
-        "label": "Petrol"
-      },
-      "insurance_2_policy_number": "BNM",
-      "wheel_front": "2",
-      "cargo_h": "122 mm ",
-      "garage": {
-        "value": "garage",
-        "label": "Garage"
-      },
-      "fleet": {
-        "value": "and",
-        "label": "Andres"
-      },
-      "department": {
-        "value": "des",
-        "label": "Desarrollo"
-      },
-      "status": {
-        "value": "on",
-        "label": "Online"
-      },
-      "cargo_w": "12 mm ",
-      "label": "Deipi",
-      "longitud": -101.170734,
-      "wheel_rear": "5",
-      "tyre_size": "5",
-      "cargo_l": "5 mm ",
-      "model": "Raptor",
-      "number_of_passengers": "5 people ",
-      "tyres_number": "5",
-      "fuel_grade": "5",
-      "tank_capacity": "5 L ",
-      "insurance_policy_number": "5",
-      "fuel_consumption": "5 L ",
-      "tracker": {
-        "value": "martin",
-        "label": "Martin"
-      },
-      "tags": [
-        "OC"
-      ],
-      "latitud": 19.689718,
-      "type": {
-        "value": "car",
-        "label": "Car"
-      },
-      "vin": "RAP123TOR",
-      "cargo_capacity": "1000 kg ",
-      "id": 1
-    },
-    {
       "permited_speed": "120 Km/h ",
       "chassis_number": "DFGH14",
       "vehicle_registration_plate": "ASDF12",
