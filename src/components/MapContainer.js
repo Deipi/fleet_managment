@@ -13,6 +13,19 @@ import { Link } from 'react-router-dom';
 
 
 import { CURRENT_MARKER } from '../actions/Filters';
+import Griddle, { plugins } from 'griddle-react';
+
+const NewLayout = ({ Filter }) => (
+	<div>
+		<Filter/>
+	</div>
+);
+
+const selector = state => {
+	return {
+		unidades: state.get('MapContainer')
+	}
+};
 
 class MapContainer extends Component {
 	constructor(props) {
@@ -95,8 +108,9 @@ class MapContainer extends Component {
 	render() {
 
 		return (
-
+			<div style={{ height: '100vh' }}>
 			<div style={{ height: '60vh' }}>
+
 
 				<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 				<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
@@ -118,7 +132,27 @@ class MapContainer extends Component {
 						onMarkerRightClick={this.handleMarkerRightClick}
 					/>
 				<DataTable />
-				
+
+			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
+			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
+			<FilterMapState  maps={this.onChangeS}/>
+			<FilterMapUnit />
+
+				<Map
+					containerElement={
+						<div style={{ height: '100%' }} />
+					}
+					mapElement={
+						<div style={{ height: '100%' }} />
+					}
+
+					onMapLoad={this.handleMapLoad}
+					onMapClick={this.handleMapClick}
+					markers={this.state.markers}
+					onMarkerRightClick={this.handleMarkerRightClick}
+				/>
+			<DataTable/>
+
 			</div>
 
 		);
