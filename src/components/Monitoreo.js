@@ -1,7 +1,8 @@
-import React from 'react';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
-
+import React, {PropTypes} from "react"
+import GoogleMapLoader from "react-google-maps-loader"
 const Map = withGoogleMap((props) =>{
+  
   return(
 
     <GoogleMap
@@ -9,8 +10,9 @@ const Map = withGoogleMap((props) =>{
       ref={props.onMapLoad}
       defaultZoom={13}
       defaultCenter={{lat: 19.702322, lng: -101.192190}}
-      onClick={props.onMapClick}
+
     >
+
     {props.markers&&props.markers.map(marker=>(
       <Marker
 
