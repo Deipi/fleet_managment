@@ -1,29 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import { fetchVehicles } from '../actions/index';
-
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 
-const products = [
-{
-	id: 1,
-	model: 'Lobo',
-	vehicle_registration_plate: '123qwe',
-	type: {
-		"value": "special",
-        "label": "Special"
-	},
-	tracker: {
-		"value": "martin",
-        "label": "Martin"
-	},
-	status:{
-		"value": "off",
-        "label": "Offline"
-	},
-}
-];
 
 const NewLayout = ({ Table }) => (
 	<div>
@@ -33,23 +12,20 @@ const NewLayout = ({ Table }) => (
 
 const selector = state => {
 	return {
-		unidades: state.get('VehiclesList'),
+		item: state.get('receipt'),
 	}
 };
 
 class DataTable extends Component {
 
-
-
   render() {
 
-  	const { props: { unidades, dispatch } } = this;
-		dispatch(fetchVehicles());
+  	const { props: { item } } = this;
+		
 
     return (
-
     	<div>
-	    	 <Griddle data={ unidades ? unidades.toJS() : [] }
+	    	 <Griddle data={ item }
 	       styleConfig={{
 						classNames: {
 							Table: 'table table-striped',
@@ -67,9 +43,10 @@ class DataTable extends Component {
 		      <ColumnDefinition id="status.label" title='Status' visible/>
 		    </RowDefinition>
 		  </Griddle>
+
 		 </div>
-    );
+    ); 
   }
 }
 
-export default connect(selector) (DataTable);
+export default connect(selector)(DataTable);
