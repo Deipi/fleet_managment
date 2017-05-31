@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
+import { fromJS } from 'immutable';
 import { FETCHED_EMPLEADOS, GET_VEHICLES } from '../actions/FilterMap';
-import { FETCHED_VEHICLES_FILTER } from '../actions/Filters';
+import { FETCHED_VEHICLES_FILTER, CURRENT_MARKER } from '../actions/Filters';
 
 export default (state=Immutable.fromJS([]), action) => {
 	switch(action.type) {
