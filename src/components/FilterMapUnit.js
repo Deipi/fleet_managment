@@ -35,7 +35,7 @@ class FilterMapUnit extends Component {
 	}
 
 	retrieveFilteredReceipts() {
-		
+
 		const { dispatch } = this.props;
 
 		let queyObj = this.state;
@@ -49,12 +49,8 @@ class FilterMapUnit extends Component {
 
 		}
 		dispatch(fetchVehiclesFilter(queryArray.join('&')))
-			
 
 	}
-
-
-
 
 	render() {
 
