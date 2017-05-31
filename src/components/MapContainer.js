@@ -35,7 +35,7 @@ class MapContainer extends Component {
 		super(props);
 		this.state = {
 			markers: [],
-			allMarkers: [], 
+			allMarkers: [],
  		};
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
@@ -101,20 +101,14 @@ class MapContainer extends Component {
 	render() {
 
 		return (
-<<<<<<< HEAD
 			<div style={{ height: '100vh' }}>
-=======
-
 			<div style={{ height: '60vh' }}>
-
->>>>>>> 60199ea777a9a70ad2fbce84f6989eafc30ef770
 			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 			<FilterMapState  maps={this.onChangeS}/>
 			<FilterMapUnit />
 
 				<Map
-				
 					containerElement={
 						<div style={{ height: '100%' }} />
 					}
