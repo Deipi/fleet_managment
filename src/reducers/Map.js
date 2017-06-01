@@ -18,3 +18,12 @@ export default (state=Immutable.fromJS([]), action) => {
 			return state;
 	}
 }
+
+export const currentVehicle = (state=Immutable.Map(), action) => {
+	switch(action.type) {
+		case CURRENT_MARKER:
+			return Immutable.fromJS(action.payload);
+		default:
+			return state;
+	}
+}
