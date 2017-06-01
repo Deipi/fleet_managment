@@ -519,6 +519,24 @@
       "email": "Rey.Padberg@karina.biz"
     }
   ],
+  "employes_contac": [
+    {
+      "nombre": "Jesus",
+      "apellidos": "Cruz",
+      "email": "jesus@gmail.com",
+      "telefono": 7151358093,
+      "comentario": "Nota adicional",
+      "id": 1
+    },
+    {
+      "nombre": "Alfredo",
+      "apellidos": "Correa Cambron",
+      "email": "feyo@gmail.com",
+      "telefono": "786123456",
+      "comentario": "hola",
+      "id": 2
+    }
+  ],
   "flotillas": [
     {
       "nombre": "Andrea",
