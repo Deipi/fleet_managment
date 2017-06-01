@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 
-
 const NewLayout = ({ Table }) => (
 	<div>
 		<Table/>
@@ -12,7 +11,8 @@ const NewLayout = ({ Table }) => (
 
 const selector = state => {
 	return {
-		item: state.get('receipt'),
+		item: state.get('currentVehicle'),
+		vehicles: state.get('vehiclesStore'),
 	}
 };
 
@@ -20,12 +20,11 @@ class DataTable extends Component {
 
   render() {
 
-  	const { props: { item } } = this;
-		
+  	const { props: { item, vehicles } } = this;
 
     return (
     	<div>
-	    	 <Griddle data={ item }
+    		<Griddle data={ vehicles.filter(v => v.get('id') === item.get('id')).toJS() }
 	       styleConfig={{
 						classNames: {
 							Table: 'table table-striped',
@@ -45,7 +44,7 @@ class DataTable extends Component {
 		  </Griddle>
 
 		 </div>
-    ); 
+    );
   }
 }
 
