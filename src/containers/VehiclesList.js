@@ -68,6 +68,7 @@ class VehiclesListComponent extends Component {
 			type: CLEAN_VEHICLE,
 			payload: {}
 		});
+		
 	}
 
 	render() {
