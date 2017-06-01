@@ -35,6 +35,11 @@ const FormGeocercas=(props)=>{
 					<Field name="radius" component={renderField} type="number"/>
 				</div>
 
+				<div>
+        		<button type="submit" disabled={pristine || submitting}>Guardar</button>
+      		</div>
+
+
 			</div>
 		</div>
 		</form>
