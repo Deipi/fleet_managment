@@ -37,7 +37,7 @@ import unidades from './reducers/UnidadesList';
 import conductores from './reducers/DriversList';
 import conductoresEdit from './reducers/EditList';
 import vehiclesEdit from './reducers/EditUnit';
-import vehiclesReducer from './reducers/Map';
+import vehiclesReducer, { currentVehicle } from './reducers/Map';
 import vehiclesFilterReducer from './reducers/receipt';
 
 const initialState = immutable.Map();
@@ -50,6 +50,7 @@ const rootReducer = combineReducers({
 	vehiclesInfo: vehiclesEdit,
 	vehiclesStore: vehiclesReducer,
 	vehiclesFilter: vehiclesFilterReducer,
+	currentVehicle: currentVehicle,
 
 });
 
