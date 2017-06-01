@@ -6,7 +6,6 @@ import FilterMapFlotilla from './FilterMapFlotilla'
 import FilterMapState from './FilterMapState'
 import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
-import DataTable from '../containers/MarkersList';
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
@@ -119,7 +118,6 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-			<DataTable/>
 
 			</div>
 		);
