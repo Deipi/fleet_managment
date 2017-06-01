@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 
 const NewLayout = ({ Table }) => (
