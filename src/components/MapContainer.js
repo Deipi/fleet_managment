@@ -6,15 +6,15 @@ import FilterMapFlotilla from './FilterMapFlotilla'
 import FilterMapState from './FilterMapState'
 import { fetchEmpleados, getVehicles } from '../actions/FilterMap'
 import { connect } from 'react-redux';
-import DataTable from '../containers/MarkersList';
+
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
-import { CURRENT_MARKER } from '../actions/Filters';
+import { fetchItems } from '../actions/Filters';
 
-const NewLayout = ({ Filter }) => (
+const NewLayout = ({ Table }) => (
 	<div>
-		<Filter/>
+		<Table/>
 	</div>
 );
 
@@ -46,6 +46,7 @@ class MapContainer extends Component {
 		const markersFilterF = this.state.allMarkers.filter(marker => marker.item.getIn([ 'fleet', 'label' ] ) === value);
 		this.setState({ markers: markersFilterF});
 	}
+
 	onChangeS(event){
 		const { target: { value, name } } = event;
 		const markersFilterS = this.state.allMarkers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
@@ -83,11 +84,12 @@ class MapContainer extends Component {
 				item: item,
 
 				onClick: () => 
-
-
+				
+				// alert(item)
+				dispatch(item.get('model'),', '+ 'tracker: '+item.getIn(['tracker', 'label']))
 				// console.log('model: '+item.get('model'),', '+ 'tracker: '+item.getIn(['tracker', 'label']))
-
-				{debugger; return dispatch({type:'CURRENT_MARKER', payload: item })}
+				// {debugger; return dispatch({type:'CURRENT_MARKER', payload: item })}
+				
 
 			};
 
@@ -97,7 +99,7 @@ class MapContainer extends Component {
 	}
 
 	render() {
-
+		const { markers } = this.props;
 		return (
 
 			<div style={{ height: '60vh' }}>
@@ -119,9 +121,27 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-			<DataTable/>
 
-			</div>
+				<Griddle data={ markers }
+			       styleConfig={{
+						classNames: {
+							Table: 'table table-striped',
+						}
+					}}
+					components={{
+						Layout: NewLayout
+					}}>
+				   <RowDefinition>
+				      <ColumnDefinition id="id" title="Unit ID" visible />
+				      <ColumnDefinition id="model" title='Model' visible/>
+				      <ColumnDefinition id="vehicle_registration_plate" title='Plate' visible />
+				      <ColumnDefinition id="type.label" title='Type' visible />
+				      <ColumnDefinition id="tracker.label" title='Tracker' visible />
+				      <ColumnDefinition id="status.label" title='Status' visible/>
+				    </RowDefinition>
+				  </Griddle>
+				</div>
+
 		);
 	}
 }
