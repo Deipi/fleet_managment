@@ -1,34 +1,42 @@
 const validate = values => {
-  const errors = {}
-  if (!values.get('cargo_capacity')) {
-    errors.cargo_capacity = 'Required'
-  }
-  if (!values.get('cargo_l')) {
-    errors.cargo_l = 'Required'
-  }
-  if (!values.get('cargo_w')) {
-    errors.cargo_w = 'Required'
-  }
-  if (!values.get('cargo_h')) {
-    errors.cargo_h = 'Required'
-  }
-  if (!values.get('number_of_passengers')) {
-    errors.number_of_passengers = 'Required'
-  }
-  if(!values.get('label')){
-    errors.label='Required'
-  }
+    const errors = {}
+    if (!values.get('cargo_capacity')) {
+        errors.cargo_capacity = 'Required'
+    }
+    if (!values.get('cargo_l')) {
+        errors.cargo_l = 'Required'
+    }
+    if (!values.get('cargo_w')) {
+        errors.cargo_w = 'Required'
+    }
+    if (!values.get('cargo_h')) {
+        errors.cargo_h = 'Required'
+    }
+    if (!values.get('number_of_passengers')) {
+        errors.number_of_passengers = 'Required'
+    }
+    if(!values.get('label')){
+        errors.label='Required'
+    }
 
-  if(!values.get('type')){
-    errors.type='Required'
-  }
-  if (!values.get('nombre')) {
-    errors.nombre = 'Required'
-  }
-  if (!values.get('first_name')) {
-    errors.first_name = 'Required*'
-  }
-  return errors
+    if(!values.get('type')){
+        errors.type='Required'
+    }
+    if (!values.get('nombre')) {
+        errors.nombre = 'Required'
+    }
+    if (!values.get('first_name')) {
+        errors.first_name = 'Required*'
+    }
+
+    if (!values.username) {
+        errors.username = 'Required'
+    }
+    if (!values.password) {
+        errors.password = 'Required'
+    }
+
+    return errors
 }
 
 export default validate
