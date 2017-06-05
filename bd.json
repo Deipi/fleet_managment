@@ -319,32 +319,14 @@
   ],
   "pedidos": [
     {
-      "nombre": "Juan",
-      "apellido": "Alvarez",
-      "telefono": 7151358093,
-      "email": "juan@gmail.com",
-      "direccion": "camelinas #10",
-      "pedido": "laptop",
-      "fecha": "12/05/17",
+      "nombre": "Alfredo",
+      "apellido": "Correa",
+      "telefono": "789456123",
+      "email": "alfred@gmail.com",
+      "direccion": "zinc 88",
+      "pedido": "audifonos",
+      "fecha": "2017-06-08",
       "id": 1
-    },
-    {
-      "nombre": "Andrea",
-      "apellido": "Camacho",
-      "telefono": "123456789",
-      "email": "andy@gmail.com",
-      "direccion": "limon 77",
-      "pedido": "iphone 6",
-      "id": 2
-    },
-    {
-      "nombre": "Lizbeth",
-      "apellido": "Medina",
-      "telefono": "123456789",
-      "email": "liz@hotmail.com",
-      "direccion": "camelinas 27",
-      "pedido": "ipad",
-      "id": 3
     }
   ],
   "flotillas": [
