@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Field } from 'redux-form/immutable'
 import 'react-select/dist/react-select.css'
 
@@ -6,34 +6,23 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
-class InsuranceDate extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      startDate: moment()
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
 
-  handleChange(date) {
-    this.setState({
-      startDate: date
-    });
-  }
-
-  render() {
-    return <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-    />;
-  }
-}
+const DataField=({input, meta:{touched, error}, ...rest})=>(
+	<div>
+		<DatePicker
+		{...input}
+		{...rest}
+		selected={input.value ? moment(input.value) : null}
+		dateFormat="YYYY-MM-DD"
+		/>
+	</div>
+);
 
 const FormSeguro=(props)=>{
 	const { handleSubmit } = props
 	return(
 		<div>
-		<br/>
+		<br/> 
 			<div>
 			<center>
 			<tr>INSURANCE</tr><br/>
@@ -48,7 +37,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance valid</label>
 			<div>
-				<Field name="insurance_valid" component={InsuranceDate}/>
+				<Field name="insurance_valid" component={DataField}/>
 			</div>
 
 			<label>Insurance 2 policy number</label>
@@ -58,7 +47,7 @@ const FormSeguro=(props)=>{
 
 			<label>Insurance 2 valid</label>
 			<div>
-				<Field name="insurance_2_valid" component={InsuranceDate}/>
+				<Field name="insurance_2_valid" component={DataField}/>
 			</div>
 			</div>
 		</div>
