@@ -559,7 +559,6 @@
       "id": 2
     }
   ],
-
   "pedidos": [
     {
       "nombre": "Juan",
@@ -572,17 +571,24 @@
       "id": 1
     },
     {
-      "nombre": "Fernando",
-      "apellido": "Gonzalez",
-      "telefono": 7351267896,
-      "email": "fer@hotmail.com",
-      "direccion": "lima #58",
-      "pedido": "medicamento",
-      "fecha": "23-01-17",
+      "nombre": "Andrea",
+      "apellido": "Camacho",
+      "telefono": "123456789",
+      "email": "andy@gmail.com",
+      "direccion": "limon 77",
+      "pedido": "iphone 6",
       "id": 2
+    },
+    {
+      "nombre": "Lizbeth",
+      "apellido": "Medina",
+      "telefono": "123456789",
+      "email": "liz@hotmail.com",
+      "direccion": "camelinas 27",
+      "pedido": "ipad",
+      "id": 3
     }
   ],
-
   "flotillas": [
     {
       "nombre": "Andrea",
