@@ -5,28 +5,16 @@ import moment from 'moment'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-class Example extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      startDate: moment()
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(date) {
-    this.setState({
-      startDate: date
-    });
-  }
-
-  render() {
-    return <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-    />;
-  }
-}
+const DataField=({input, meta:{touched, error}, ...rest})=>(
+	<div>
+		<DatePicker
+		{...input}
+		{...rest}
+		selected={input.value ? moment(input.value) : null}
+		dateFormat="YYYY-MM-DD"
+		/>
+	</div>
+);
 
 const FormLicenciaConductor=(props)=>{
 	const { handleSubmit }=props
@@ -52,7 +40,7 @@ const FormLicenciaConductor=(props)=>{
 
 					<label>Expiration date</label>
 					<div>
-						<Field name="expiration_date" component={Example} />
+						<Field name="expiration_date" component={DataField} />
 					</div>
 				</div>
 		</div>
