@@ -96,7 +96,7 @@ const SimpleFormPedidos = (props) => {
             <center>
                 <label>Fecha</label>
                 <div>
-                    <Field name="fecha" component={ PedidosDate } type="fecha" placeholder="Fecha"/>
+                    <Field name="fecha" component={ PedidosDate }/>
                 </div>
             </center>
         </div><br/>
