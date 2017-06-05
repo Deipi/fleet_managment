@@ -297,6 +297,78 @@
       "email": "clau@gmail.com",
       "driver_license_number": "12345678",
       "id": 3
+    },
+    {
+      "driver_license_class": "ASD",
+      "hardware_key": "ASDF123",
+      "phone": "7861162457",
+      "department": {
+        "value": "des",
+        "label": "Desarrollo"
+      },
+      "last_name": "Correa",
+      "middle_name": "Feyo",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        "ok",
+        "good",
+        "no",
+        "very",
+        "bad"
+      ],
+      "first_name": "Alfredo",
+      "email": "alf@gmail.com",
+      "driver_license_number": "123",
+      "id": 4
+    },
+    {
+      "driver_license_class": "ASB",
+      "hardware_key": "BNM123",
+      "phone": "1234567890",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "Perez",
+      "middle_name": "Alias",
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "tags": [
+        "OC",
+        "bien"
+      ],
+      "first_name": "Tony",
+      "email": "ruf@adm.com",
+      "driver_license_number": "3",
+      "id": 5
+    },
+    {
+      "driver_license_class": "ACB",
+      "hardware_key": "CVBB",
+      "phone": "234567890",
+      "department": {
+        "value": "ven",
+        "label": "Ventas"
+      },
+      "last_name": "Sanchez",
+      "middle_name": "Jonny",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "tags": [
+        "OK"
+      ],
+      "first_name": "Juanes",
+      "email": "nmnmnm@gmail.com",
+      "driver_license_number": "123",
+      "expiration_date": "2017-06-22",
+      "id": 6
     }
   ],
   "employes_contac": [
@@ -317,7 +389,6 @@
       "id": 2
     }
   ],
-
   "pedidos": [
     {
       "nombre": "Juan",
@@ -340,7 +411,6 @@
       "id": 2
     }
   ],
-
   "flotillas": [
     {
       "nombre": "Andrea",
