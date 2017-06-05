@@ -14,7 +14,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import VehiclesList from './containers/VehiclesList';
 import DriversList from './containers/DriversList';
+
 import Contact from './containers/Contact';
+import Historial from './containers/Historial';
+import Pedidos from './containers/Pedidos';
 
 import {
 	BrowserRouter as Router,
@@ -69,6 +72,8 @@ ReactDOM.render(
 	        <li><Link to='monitoreo'>Monitoreo</Link></li>
 	        <li><Link to='drivers'>Drivers</Link></li>
 	        <li><Link to='contact'>Contacto</Link></li>
+	        <li><Link to='historial'>Historial</Link></li>
+	        <li><Link to='pedidos'>Pedidos</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
@@ -99,9 +104,17 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<DriversList/></Component> } />
 
-	      	<Route path="/contact" component={ props => 
+	      	<Route path="/contact" component={ props =>
 	      		<Component {...props}>
 	      		<Contact/></Component> } />
+
+	      	<Route path="/historial" component={ props =>
+	      		<Component {...props}>
+	      		<Historial/></Component> } />
+
+	      	<Route path="/pedidos" component={ props =>
+	      		<Component {...props}>
+	      		<Pedidos/></Component> } />
 	      </Switch>
 	    </div>
   		</Router>

@@ -250,7 +250,7 @@
       "first_name": "Juan",
       "email": "ruf@adm.com",
       "driver_license_number": "12",
-      "id": 3
+      "id": 1
     },
     {
       "driver_license_class": "AB",
@@ -275,6 +275,28 @@
       "email": "ser@gmail.com",
       "driver_license_number": "23123",
       "id": 2
+    },
+    {
+      "driver_license_class": "AB",
+      "hardware_key": "qwaszx",
+      "phone": "7861234567",
+      "department": {
+        "value": "dis",
+        "label": "Diseño"
+      },
+      "last_name": "Cruz",
+      "middle_name": "Fernanda",
+      "tracker": {
+        "value": "Bmw",
+        "label": "Bmw"
+      },
+      "tags": [
+        "Perfecto"
+      ],
+      "first_name": "Claudia",
+      "email": "clau@gmail.com",
+      "driver_license_number": "12345678",
+      "id": 3
     }
   ],
   "employes_contac": [
@@ -295,6 +317,30 @@
       "id": 2
     }
   ],
+
+  "pedidos": [
+    {
+      "nombre": "Juan",
+      "apellido": "Alvarez",
+      "telefono": 7151358093,
+      "email": "juan@gmail.com",
+      "direccion": "camelinas #10",
+      "pedido": "laptop",
+      "fecha": "12/05/17",
+      "id": 1
+    },
+    {
+      "nombre": "Fernando",
+      "apellido": "Gonzalez",
+      "telefono": 7351267896,
+      "email": "fer@hotmail.com",
+      "direccion": "lima #58",
+      "pedido": "medicamento",
+      "fecha": "23-01-17",
+      "id": 2
+    }
+  ],
+
   "flotillas": [
     {
       "nombre": "Andrea",
