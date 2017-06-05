@@ -43,7 +43,7 @@ const FormLicenciaConductor=(props)=>{
 						<Field name="expiration_date" component={DataField} />
 					</div>
 				</div>
-		</div>
+		</div> 
 	)
 }
 export default FormLicenciaConductor;
