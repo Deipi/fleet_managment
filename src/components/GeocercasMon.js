@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form/immutable'
 import { fetchGeocercas } from '../actions/indexGeocercas';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import DrawingManager from 'react-google-maps/lib/drawing/DrawingManager';
-import Circle from 'react-google-maps/lib/Circle';
+
 
 const Mapa = withGoogleMap((props) =>{
   return(
@@ -19,15 +19,16 @@ const Mapa = withGoogleMap((props) =>{
         {...marker}
       />
     ))}
-  
+
  	<DrawingManager
-            
+
             defaultOptions={{
               drawingControl: true,
               drawingControlOptions: {
                 position: window.google.maps.ControlPosition.TOP_CENTER,
                 drawingModes: ['circle', 'polygon', 'rectangle'],
               },
+
               circleOptions: {
                 fillColor: `#ffff00`,
                 fillOpacity: 0.35,
@@ -35,7 +36,7 @@ const Mapa = withGoogleMap((props) =>{
                 clickable: true,
                 editable: true,
                 zIndex: 1,
-              
+
               },
               polygonOptions: {
                     clickable: true,
