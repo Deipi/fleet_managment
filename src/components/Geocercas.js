@@ -1,49 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form/immutable'
+import { fetchGeocercas } from '../actions/indexGeocercas';
+import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 
+import Mapa from './GeocercasMon';
 
- const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
-
-const FormGeocercas=(props)=>{
-	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
+class MapContainer extends Component {
 	
-	return(
-		<form onSubmit={ handleSubmit(actionSubmit) }>
-		<div>
-			<div>
-				<center>
-					<tr>Geofences</tr>
-				</center>
-			</div>
 
-			<div>
-				<label>Name</label>
-				<div>
-					<Field name="name" component={renderField} type="text"/>
-				</div>
+	render() {
 
-				<label>Radius</label>
-				<div>
-					<Field name="radius" component={renderField} type="number"/>
-				</div>
+		return (
 
-				<div>
-        		<button type="submit" disabled={pristine || submitting}>Guardar</button>
-      		</div>
+			<div style={{ height: '60vh' }}>
 
+				<Mapa
+					containerElement={
+						<div style={{ height: '100%' }} />
+					}
+					mapElement={
+						<div style={{ height: '100%' }} />
+					}
+
+				/>
 
 			</div>
-		</div>
-		</form>
-	)
+		);
+	}
 }
 
-export default reduxForm(FormGeocercas);
+export default MapContainer;
