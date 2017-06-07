@@ -409,6 +409,23 @@
       "id": 2
     }
   ],
+  "geocercas": [
+    {
+      "name": "Juan",
+      "radius": "1",
+      "id": 1
+    },
+    {
+      "name": "Morelia",
+      "radius": "3",
+      "id": 2
+    },
+    {
+      "name": "rolando",
+      "radius": "56",
+      "id": 3
+    }
+  ],
   "posts": [
     {
       "id": 1,
