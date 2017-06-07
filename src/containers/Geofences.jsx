@@ -1,19 +1,24 @@
-import React { Comment } from 'react'
-import FormGeocercas from '../components/Geocercas';
+import React, { Component } from 'react';
+import Geocercas from '../components/Geocercas';
 import { connect } from 'react-redux';
-import { change } from 'redux-form/immutable';
+import submitGeocercas from '../actions/indexGeocercas';
 
-class GeofencesComponent extends Comment{
-	constructor(props){
+class SimpleFormContainer extends Component {
+	constructor(props) {
 		super(props);
+		this.onSubmit = this.onSubmit.bind(this);
+	}
 
+	onSubmit(values) {
+		const { props: { dispatch } } = this;
+		dispatch(submitGeocercas(values))
 	}
 
 	render(){
 		return (
-			<FormGeocercas
-
-			>
+			<Geocercas onSubmit={ this.onSubmit } />
 		);
 	}
 }
+
+export default connect()(SimpleFormContainer);
