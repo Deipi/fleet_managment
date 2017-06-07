@@ -18,6 +18,7 @@ import DriversList from './containers/DriversList';
 import Contact from './containers/Contact';
 import Historial from './containers/Historial';
 import Pedidos from './containers/Pedidos';
+import Geocercas from './components/Geocercas';
 
 import {
 	BrowserRouter as Router,
@@ -74,6 +75,7 @@ ReactDOM.render(
 	        <li><Link to='contact'>Contacto</Link></li>
 	        <li><Link to='historial'>Historial</Link></li>
 	        <li><Link to='pedidos'>Pedidos</Link></li>
+	        <li><Link to='geocercas'>Geocercas</Link></li>
 	      </ul>
 
 	      <h2> PROYECTO </h2>
@@ -115,6 +117,11 @@ ReactDOM.render(
 	      	<Route path="/pedidos" component={ props =>
 	      		<Component {...props}>
 	      		<Pedidos/></Component> } />
+
+	      	<Route path="/geocercas" component={ props =>
+	      		<Component {...props}>
+	      		<Geocercas/></Component> } />
+	      		
 	      </Switch>
 	    </div>
   		</Router>
