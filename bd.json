@@ -399,6 +399,34 @@
       "pedido": "audifonos",
       "fecha": "2017-06-08",
       "id": 1
+    },
+    {
+      "nombre": "asddf",
+      "apellido": "adfgf",
+      "telefono": "123",
+      "email": "alfred@gmail.com",
+      "direccion": "asdf`",
+      "pedido": "asdff",
+      "fecha": "2017-06-06",
+      "id": 2
+    }
+  ],
+  "registrar": [
+    {
+      "name": "pepe",
+      "apellido": "gonzalez",
+      "telefono": "123456789",
+      "email": "pepe@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "Juanito",
+      "apellido": "Lopez",
+      "telefono": "12334587",
+      "email": "juan@gmail.com",
+      "password": "123",
+      "id": 2
     }
   ],
   "flotillas": [
