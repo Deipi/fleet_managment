@@ -5,8 +5,6 @@ import { combineReducers } from 'redux-immutablejs';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux';
-import { reducer as formReducer } from 'redux-form/immutable'
-import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -192,6 +190,9 @@ ReactDOM.render(
 	      		<Login/></Component> } />
 
 	      	<Route path="/formulario" component={ props =>
+	      		<Component {...props}>
+	      		<Unidad/></Component> } />
+
 	      	<Route path="/unidades" component={ props =>
 	      		<Component {...props}>
 	      		<Unidad /></Component> } />
