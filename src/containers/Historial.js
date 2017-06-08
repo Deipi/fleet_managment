@@ -31,7 +31,7 @@ class DriversList extends Component {
 				plugins={[plugins.LocalPlugin]}
 				styleConfig={{
 					classNames: {
-						Table: 'table table-striped',
+						Table: 'table table-bordered',
 					}
 				}}
 				components={{
