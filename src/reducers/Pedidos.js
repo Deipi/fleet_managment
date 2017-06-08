@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { POSTED_PEDIDOS } from '../actions/indexPedidos';
+import { POSTED_PEDIDOS,  } from '../actions/indexPedidos';
 
 export default (state=fromJS([]), action) => {
 	switch(action.type) {
