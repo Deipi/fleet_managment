@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+
 
 import Unidad from './containers/Unidad';
 import Conductor from './containers/Conductor';
@@ -163,19 +163,6 @@ ReactDOM.render(
   		<Router>
 	    <div>
   		<MenuConnect/>
-	      <ul id="menu">
-	        <li><Link to='unidades'>Registro Unidades</Link></li>
-	        <li><Link to='flotilla'>Registro Flotilla</Link></li>
-	        <li><Link to='vehicles'>Lista de Unidades</Link></li>
-	        <li><Link to='conductores'>Registro Conductores</Link></li>
-	        <li><Link to='monitoreo'>Monitoreo</Link></li>
-	        <li><Link to='drivers'>Lista Conductores</Link></li>
-	        <li><Link to='contact'>Contacto</Link></li>
-	        <li><Link to='historial'>Historial Conductores</Link></li>
-	        <li><Link to='pedidos'>Registro de Pedidos</Link></li>
-	        <li><Link to='geocercas'>Geocercas</Link></li>
-	        <li><Link to='entregas'>Tabla de Entregas</Link></li>
-	      </ul>
 
 	      <h2> PROYECTO </h2>
 
