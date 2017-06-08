@@ -134,20 +134,7 @@ class Menu extends React.Component {
 		        <NavItem>
 		        	<NavLink><Link to='geocercas'>Geocercas</Link></NavLink>
 		        </NavItem>
-		        {
-		        	login && login.size ? null : (
-				        <NavItem>
-				        	<NavLink><Link to='login'>Login</Link></NavLink>
-				        </NavItem>
-	        		)
-		        }
-		        {
-		        	login && login.size ? null : (
-				        <NavItem>
-				        	<NavLink><Link to='registrar'>Registrar</Link></NavLink>
-			            </NavItem>
-			        )
-			    }
+		        
             </Nav>
           </Collapse>
         </Navbar>
