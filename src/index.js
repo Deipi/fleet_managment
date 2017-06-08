@@ -102,7 +102,7 @@ class Menu extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
 	            <NavItem>
-	                <NavLink><Link to='formulario'>Unidades</Link></NavLink>
+	                <NavLink><Link to='unidades'>Unidades</Link></NavLink>
 	            </NavItem>
 	            <NavItem>
 	                <NavLink><Link to='flotilla'>Flotilla</Link></NavLink>
