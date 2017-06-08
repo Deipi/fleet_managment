@@ -21,3 +21,4 @@ export const fetchGeocercas=()=>(dispatch, getStore)=>fetch('http://localhost:30
 	type: FETCHED_GEOCERCAS,
 	payload: geocercas
 })));
+ 
