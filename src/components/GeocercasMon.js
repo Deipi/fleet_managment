@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form/immutable'
-import { fetchGeocercas } from '../actions/indexGeocercas';
+import { fetchGeocercas,POSTED_GEOCERCAS } from '../actions/indexGeocercas';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import DrawingManager from 'react-google-maps/lib/drawing/DrawingManager';
-
 
 const Mapa = withGoogleMap((props) =>{
   return(
@@ -18,44 +17,49 @@ const Mapa = withGoogleMap((props) =>{
       <Marker
         {...marker}
       />
-    ))}
+    ))} 
 
  	<DrawingManager
+    defaultOptions={{
+      drawingControl: true,
+      drawingControlOptions: {
+        position: window.google.maps.ControlPosition.TOP_CENTER,
+        drawingModes: ['circle', 'polygon', 'rectangle'],
+      },
 
-            defaultOptions={{
-              drawingControl: true,
-              drawingControlOptions: {
-                position: window.google.maps.ControlPosition.TOP_CENTER,
-                drawingModes: ['circle', 'polygon', 'rectangle'],
-              },
+      circleOptions: {
+        fillColor: `#ffff00`,
+        fillOpacity: 0.35,
+        strokeWeight: 5,
+        clickable: true,
+        editable: true,
+        zIndex: 1,
+      },
+      polygonOptions: {
+            clickable: true,
+            draggable: true,
+            editable: true,
+            fillColor: '#ffff00',
+            fillOpacity: 0.35,
 
-              circleOptions: {
-                fillColor: `#ffff00`,
-                fillOpacity: 0.35,
-                strokeWeight: 5,
-                clickable: true,
-                editable: true,
-                zIndex: 1,
+      },
+      rectangleOptions: {
+          clickable: true,
+          draggable: true,
+          editable: true,
+          fillColor: '#ffff00',
+          fillOpacity: 0.35,
+      }
+    }}
+    onCircleComplete={ (evt) =>{ console.log('el radio es: ', evt.getRadius());}}
+    onPolygonComplete={ (pol) => { alert(pol.getPath()); return pol;}}
+    onRectangleComplete={ (rec) => { alert(rec.getBounds()); return rec;}}
+      // onCircleComplete={  (cir) => {  dispatch({
+      //   method: 'SAVE_GEO',
+        
+      // })}}
 
-              },
-              polygonOptions: {
-                    clickable: true,
-                    draggable: true,
-                    editable: true,
-                    fillColor: '#ffff00',
-                    fillOpacity: 0.35,
-
-              },
-              rectangleOptions: {
-                  clickable: true,
-                  draggable: true,
-                  editable: true,
-                  fillColor: '#ffff00',
-                  fillOpacity: 0.35,
-              }
-
-            }}
-            />
+  />
 
     </GoogleMap>
 
