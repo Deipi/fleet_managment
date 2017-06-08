@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import { fetchDrivers } from '../actions/IndexDrivers';
-import { FETCHED_DRIVERS } from '../actions/IndexDrivers';
-
 
 const NewLayout = ({ Table }) => (
 	<div>
