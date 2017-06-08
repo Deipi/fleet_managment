@@ -26,14 +26,20 @@ const validate = values => {
         errors.nombre = 'Required'
     }
     if (!values.get('first_name')) {
-        errors.first_name = 'Required*'
+        errors.first_name = 'Required'
     }
 
-    if (!values.username) {
-        errors.username = 'Required'
+    if (!values.get('name')) {
+        errors.name = 'Required'
     }
-    if (!values.password) {
-        errors.password = 'Required'
+    if (!values.get('apellido')) {
+        errors.apellido = 'Required'
+    }
+    if (!values.get('telefono')) {
+        errors.telefono = 'Required'
+    }
+    if (!values.get('email')) {
+        errors.email = 'Required'
     }
 
     return errors
