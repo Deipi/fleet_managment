@@ -7,7 +7,6 @@ import DrawingManager from 'react-google-maps/lib/drawing/DrawingManager';
 import Mapa from './GeocercasMon';
 
 class MapContainer extends Component {
-	
 
 	render() {
 
