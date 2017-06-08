@@ -6,15 +6,17 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux';
 import { reducer as formReducer } from 'redux-form/immutable'
+import { Provider } from 'react-redux';
+import { reducer as formReducer } from 'redux-form/immutable';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
 import Unidad from './containers/Unidad';
 import Conductor from './containers/Conductor';
 import SimpleFormFlotilla from './containers/Flotilla';
 import MapContainer from './components/MapContainer';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 import VehiclesList from './containers/VehiclesList';
 import DriversList from './containers/DriversList';
-
 import Contact from './containers/Contact';
 import Historial from './containers/Historial';
 import Pedidos from './containers/Pedidos';
@@ -22,6 +24,7 @@ import Login from './containers/Login';
 import Registrar from './containers/Registrar';
 
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
 import {
@@ -48,6 +51,7 @@ import vehiclesEdit from './reducers/EditUnit';
 import vehiclesReducer, { currentVehicle } from './reducers/Map';
 import vehiclesFilterReducer from './reducers/receipt';
 import loginReducer from './reducers/Login';
+import entrega from './reducers/Entregas'
 
 const initialState = immutable.Map();
 
@@ -61,6 +65,8 @@ const rootReducer = combineReducers({
 	vehiclesFilter: vehiclesFilterReducer,
 	currentVehicle: currentVehicle,
 	login: loginReducer,
+	Entregas: entrega
+
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
@@ -159,6 +165,19 @@ ReactDOM.render(
   		<Router>
 	    <div>
   		<MenuConnect/>
+	      <ul id="menu">
+	        <li><Link to='unidades'>Registro Unidades</Link></li>
+	        <li><Link to='flotilla'>Registro Flotilla</Link></li>
+	        <li><Link to='vehicles'>Lista de Unidades</Link></li>
+	        <li><Link to='conductores'>Registro Conductores</Link></li>
+	        <li><Link to='monitoreo'>Monitoreo</Link></li>
+	        <li><Link to='drivers'>Lista Conductores</Link></li>
+	        <li><Link to='contact'>Contacto</Link></li>
+	        <li><Link to='historial'>Historial Conductores</Link></li>
+	        <li><Link to='pedidos'>Registro de Pedidos</Link></li>
+	        <li><Link to='geocercas'>Geocercas</Link></li>
+	        <li><Link to='entregas'>Tabla de Entregas</Link></li>
+	      </ul>
 
 	      <h2> PROYECTO </h2>
 
@@ -173,6 +192,7 @@ ReactDOM.render(
 	      		<Login/></Component> } />
 
 	      	<Route path="/formulario" component={ props =>
+	      	<Route path="/unidades" component={ props =>
 	      		<Component {...props}>
 	      		<Unidad /></Component> } />
 
@@ -211,6 +231,10 @@ ReactDOM.render(
 	      	<Route path="/geocercas" component={ props =>
 	      		<Component {...props}>
 	      		<Geocercas/></Component> } />
+
+	      	<Route path="/entregas" component={ props =>
+	      		<Component {...props}>
+	      		<Entregas/></Component> } />
 	      </Switch>
 	    </div>
   		</Router>

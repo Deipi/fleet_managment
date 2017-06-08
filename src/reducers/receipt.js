@@ -9,7 +9,7 @@ export default (state=fromJS([]), action) => {
 
 		case CURRENT_MARKER:
 			return fromJS(action.payload);
-			
+
 		default:
 			return state;
 	}
