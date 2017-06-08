@@ -18,14 +18,11 @@ import DriversList from './containers/DriversList';
 import Contact from './containers/Contact';
 import Historial from './containers/Historial';
 import Pedidos from './containers/Pedidos';
-<<<<<<< HEAD
 import Login from './containers/Login';
 import Registrar from './containers/Registrar';
 
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-=======
 import Geocercas from './components/Geocercas';
->>>>>>> 72c3f492b0203489977633c681955a45902bee5c
 
 import {
 	BrowserRouter as Router,
@@ -50,6 +47,7 @@ import conductoresEdit from './reducers/EditList';
 import vehiclesEdit from './reducers/EditUnit';
 import vehiclesReducer, { currentVehicle } from './reducers/Map';
 import vehiclesFilterReducer from './reducers/receipt';
+import loginReducer from './reducers/Login';
 
 const initialState = immutable.Map();
 
@@ -62,7 +60,7 @@ const rootReducer = combineReducers({
 	vehiclesStore: vehiclesReducer,
 	vehiclesFilter: vehiclesFilterReducer,
 	currentVehicle: currentVehicle,
-
+	login: loginReducer,
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
@@ -83,10 +81,20 @@ class Menu extends React.Component {
     });
   }
   render() {
+  	const { login } = this.props;
+
     return (
         <Navbar color="faded" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand><Link to='login'>Login</Link></NavbarBrand>
+          {
+          	login && login.size ? (
+          		<p>
+          			Bienvenido { login.get(0).get('name') }
+          		</p>
+          	) : (
+          		<NavbarBrand><Link to='login'>Login</Link></NavbarBrand>
+          	)
+          }
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
 	            <NavItem>
@@ -117,11 +125,22 @@ class Menu extends React.Component {
 		        	<NavLink><Link to='pedidos'>Pedidos</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='login'>Login</Link></NavLink>
+		        	<NavLink><Link to='geocercas'>Geocercas</Link></NavLink>
 		        </NavItem>
-		        <NavItem>
-		        	<NavLink><Link to='registrar'>Registrar</Link></NavLink>
-	            </NavItem>
+		        {
+		        	login && login.size ? null : (
+				        <NavItem>
+				        	<NavLink><Link to='login'>Login</Link></NavLink>
+				        </NavItem>
+	        		)
+		        }
+		        {
+		        	login && login.size ? null : (
+				        <NavItem>
+				        	<NavLink><Link to='registrar'>Registrar</Link></NavLink>
+			            </NavItem>
+			        )
+			    }
             </Nav>
           </Collapse>
         </Navbar>
@@ -129,25 +148,18 @@ class Menu extends React.Component {
   }
 }
 
-const MenuConnect = connect()(Menu);
+const MenuConnect = connect(state => {
+  return {
+    login: state.get('login'),
+  }
+})(Menu);
 
 ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
 	    <div>
   		<MenuConnect/>
-	      <ul id="menu">
-	        <li><Link to='formulario'>Unidades</Link></li>
-	        <li><Link to='flotilla'>Flotilla</Link></li>
-	        <li><Link to='vehicles'>Vehicles</Link></li>
-	        <li><Link to='conductores'>Conductores</Link></li>
-	        <li><Link to='monitoreo'>Monitoreo</Link></li>
-	        <li><Link to='drivers'>Drivers</Link></li>
-	        <li><Link to='contact'>Contacto</Link></li>
-	        <li><Link to='historial'>Historial</Link></li>
-	        <li><Link to='pedidos'>Pedidos</Link></li>
-	        <li><Link to='geocercas'>Geocercas</Link></li>
-	      </ul>
+
 	      <h2> PROYECTO </h2>
 
 	      <hr/>
