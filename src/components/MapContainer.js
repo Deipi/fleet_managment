@@ -82,10 +82,12 @@ class MapContainer extends Component {
 				},
 				item: item,
 
-				onClick: () => dispatch({
-					type: 'CURRENT_MARKER',
-					payload: item,
-				})
+				onClick: () => {
+					dispatch({
+						type: 'CURRENT_MARKER',
+						payload: item,
+					})
+				}
 			};
 
 		});
