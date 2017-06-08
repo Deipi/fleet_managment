@@ -1,8 +1,7 @@
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import React, {PropTypes} from "react"
-import GoogleMapLoader from "react-google-maps-loader"
 const Map = withGoogleMap((props) =>{
-  
+
   return(
 
     <GoogleMap
