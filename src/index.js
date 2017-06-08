@@ -18,10 +18,14 @@ import DriversList from './containers/DriversList';
 import Contact from './containers/Contact';
 import Historial from './containers/Historial';
 import Pedidos from './containers/Pedidos';
+<<<<<<< HEAD
 import Login from './containers/Login';
 import Registrar from './containers/Registrar';
 
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+=======
+import Geocercas from './components/Geocercas';
+>>>>>>> 72c3f492b0203489977633c681955a45902bee5c
 
 import {
 	BrowserRouter as Router,
@@ -132,7 +136,18 @@ ReactDOM.render(
   		<Router>
 	    <div>
   		<MenuConnect/>
-
+	      <ul id="menu">
+	        <li><Link to='formulario'>Unidades</Link></li>
+	        <li><Link to='flotilla'>Flotilla</Link></li>
+	        <li><Link to='vehicles'>Vehicles</Link></li>
+	        <li><Link to='conductores'>Conductores</Link></li>
+	        <li><Link to='monitoreo'>Monitoreo</Link></li>
+	        <li><Link to='drivers'>Drivers</Link></li>
+	        <li><Link to='contact'>Contacto</Link></li>
+	        <li><Link to='historial'>Historial</Link></li>
+	        <li><Link to='pedidos'>Pedidos</Link></li>
+	        <li><Link to='geocercas'>Geocercas</Link></li>
+	      </ul>
 	      <h2> PROYECTO </h2>
 
 	      <hr/>
@@ -180,6 +195,10 @@ ReactDOM.render(
 	      	<Route path="/pedidos" component={ props =>
 	      		<Component {...props}>
 	      		<Pedidos/></Component> } />
+
+	      	<Route path="/geocercas" component={ props =>
+	      		<Component {...props}>
+	      		<Geocercas/></Component> } />
 	      </Switch>
 	    </div>
   		</Router>

@@ -399,16 +399,6 @@
       "pedido": "audifonos",
       "fecha": "2017-06-08",
       "id": 1
-    },
-    {
-      "nombre": "asddf",
-      "apellido": "adfgf",
-      "telefono": "123",
-      "email": "alfred@gmail.com",
-      "direccion": "asdf`",
-      "pedido": "asdff",
-      "fecha": "2017-06-06",
-      "id": 2
     }
   ],
   "registrar": [
@@ -435,6 +425,23 @@
       "supervisor": "Andres",
       "garage": "garage",
       "id": 2
+    }
+  ],
+  "geocercas": [
+    {
+      "name": "Juan",
+      "radius": "1",
+      "id": 1
+    },
+    {
+      "name": "Morelia",
+      "radius": "3",
+      "id": 2
+    },
+    {
+      "name": "rolando",
+      "radius": "56",
+      "id": 3
     }
   ],
   "posts": [

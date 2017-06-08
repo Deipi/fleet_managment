@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import DataTable from '../containers/MarkersList';
 import FilterMapUnit from './FilterMapUnit'
 import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-
 import { fetchItems } from '../actions/Filters';
 
 const NewLayout = ({ Table }) => (
@@ -59,7 +58,7 @@ class MapContainer extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		
+
 		const { vehicles } = nextProps;
 		const { dispatch } = this.props;
 
@@ -87,11 +86,6 @@ class MapContainer extends Component {
 					type: 'CURRENT_MARKER',
 					payload: item,
 				})
-				// dispatch(item)
-				// alert(item)
-				// console.log('model: '+item.get('model'),', '+ 'tracker: '+item.getIn(['tracker', 'label']))
-
-
 			};
 
 		});
@@ -100,7 +94,7 @@ class MapContainer extends Component {
 	}
 
 	render() {
-		
+
 		return (
 
 			<div style={{ height: '60vh' }}>
@@ -122,9 +116,8 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-				<DataTable/>
-				</div>
-
+			<DataTable/>
+			</div>
 		);
 	}
 }
