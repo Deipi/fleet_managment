@@ -68,7 +68,7 @@ const SimpleFormD = (props) => {
 				<Row>
 					<Col className="col-sm-12">
 						<center>
-							<br/><tr>DIMENSIONES</tr><br/>
+							<br/><tr>DIMENSIONS</tr><br/>
 						</center>
 
 						<InputGroup>
