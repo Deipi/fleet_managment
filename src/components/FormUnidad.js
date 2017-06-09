@@ -9,7 +9,7 @@ import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
@@ -287,7 +287,7 @@ const FormUnidadComponent = (props) => {
 				<Col className="col-sm-6">
 
 					<center>
-						<br/><tr>UNIDADES</tr><br/>
+						<br/><br/><tr>SUMMARY</tr><br/>
 					</center>
 
 					<InputGroup>
@@ -445,15 +445,16 @@ const FormUnidadComponent = (props) => {
 			  	</Col>
 			  	<Col className="col-sm-6">
 					<SimpleFormD/><br/>
-					<FormCombustible/>
-					<FormWheelbase/>
-					<FormSeguro/>
+					<FormCombustible/><br/>
+					<FormWheelbase/><br/>
+					<FormSeguro/><br/>
 		  		</Col>
 
-			   	<div>
-					<button type="submit" disabled={pristine || submitting}>Guardar</button>
-					<button type="button" disabled={pristine || submitting} onClick={reset}>Restab</button>
-			  	</div>
+
+			   	<Col className="offset-4">
+					<Button type="submit" color="primary" disabled={pristine || submitting}>Guardar</Button>
+					<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</Button>
+			  	</Col><br/><br/><br/>
 			</Row>
 		</form>
 	</Container>
