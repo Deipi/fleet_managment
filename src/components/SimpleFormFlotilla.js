@@ -46,7 +46,7 @@ const SimpleFormF = (props) => {
 
 							<InputGroup>
 								<Col className="col-sm-6">
-								<Field name="nombre" component={ renderField } type="text" label="Nombre"/>
+								<Field name="nombre" component={ renderField } type="text" label="Name"/>
 								</Col>
 							</InputGroup>
 
@@ -69,10 +69,10 @@ const SimpleFormF = (props) => {
 							<br/>
 
 							</Col>
-						  <Col className="offset-4">
-			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Guardar</Button>
+						  <Col className="offset-5">
+			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
 			        		
-			        		<Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</Button>
+			        		<Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 			      		  </Col>
 
 			      		</Row>
