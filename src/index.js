@@ -25,6 +25,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
+
 import {
 	BrowserRouter as Router,
 	Route,
@@ -102,7 +103,7 @@ class Menu extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
 	            <NavItem>
-	                <NavLink><Link to='formulario'>Unidades</Link></NavLink>
+	                <NavLink><Link to='unidades'>Unidades</Link></NavLink>
 	            </NavItem>
 	            <NavItem>
 	                <NavLink><Link to='flotilla'>Flotilla</Link></NavLink>
@@ -176,13 +177,9 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<Login/></Component> } />
 
-	      	<Route path="/formulario" component={ props =>
-	      		<Component {...props}>
-	      		<Unidad/></Component> } />
-
 	      	<Route path="/unidades" component={ props =>
 	      		<Component {...props}>
-	      		<Unidad /></Component> } />
+	      		<Unidad/></Component> } />
 
 	      	<Route path="/flotilla" component={ props =>
 	      		<Component {...props}>
