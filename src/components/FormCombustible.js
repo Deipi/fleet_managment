@@ -3,6 +3,9 @@ import { Field } from 'redux-form/immutable'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap'
+
 var CreatableComb= React.createClass({
 	displayName: 'CreatableComb',
 	propTypes: {
@@ -44,49 +47,88 @@ const format = value => {
 	}
 }
 
-const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+			</InputGroup>
+		</div>
+	);
+};
 
 const FormCombustible=(props)=>{
 	const { handleSubmit } = props
 	return (
-		<div>
-		<br/>
-			<div>
-			<center>
-			<tr>FUEL</tr><br/>
-			</center>
-			</div>
+		<Container>
+			<Card block>
+				<Row>
+					<Col className="col-sm-12">
+						<center>
+							<br/><tr>FUEL</tr><br/>
+						</center>
 
-			<div>
-			<label>Fuel type</label>
-			<div>
-				<Field name="fuel_type" component={ CreatableComb }  type="text"/>
-			</div>
+						<div>
+							<label>Fuel type</label>
+								<Field
+									name="fuel_type"
+									component={ CreatableComb }
+									type="text"
+								/>
+						</div>
 
-			<label>Fuel grade</label>
-			<div>
-				<Field name="fuel_grade" component="input" type="text"/>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Fuel Grade</InputGroupAddon>
+								<Field
+									name="fuel_grade"
+									component="input"
+									type="text"
+									placeholder="Fuel Grade"
+								/>
+						</InputGroup>
 
-			<label>Fuel consumption</label>
-			<div>
-				<Field name="fuel_consumption" component={ renderField } format={ format }/>
-			</div>
+						<InputGroup>
+							<Col className="col-sm-12">
+								<Field
+									name="fuel_consumption"
+									component={ renderField }
+									format={ format }
+									label="Fuel consumption"
+								/>
+							</Col>
+						</InputGroup>
 
-			<label>Tank capacity</label>
-			<div>
-				<Field name="tank_capacity" component={ renderField } format={ format }/>
-			</div>
-			</div>
-		</div>
+						<InputGroup>
+							<Col className="col-sm-12">
+								<Field
+									name="tank_capacity"
+									component={ renderField }
+									format={ format }
+									label="Tank capacity"
+								/>
+							</Col>
+						</InputGroup>
+					</Col>
+				</Row>
+			</Card>
+		</Container>
 	)
 }
+
 export default FormCombustible;

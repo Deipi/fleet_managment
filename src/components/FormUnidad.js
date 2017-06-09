@@ -8,439 +8,455 @@ import FormCombustible from './FormCombustible';
 import FormWheelbase from './FormWheelbase';
 import FormSeguro from './FormSeguro';
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap'
+
 var CreatableTY = React.createClass({
   displayName: 'CreatableTY',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState () {
-    return {
-       options: [
-          { value: 'car', label: 'Car'},
-          { value: 'bus', label: 'Bus'},
-          { value: 'special', label: 'Special'}
-       ]
-    };
+	return {
+	   options: [
+		  { value: 'car', label: 'Car'},
+		  { value: 'bus', label: 'Bus'},
+		  { value: 'special', label: 'Special'}
+	   ]
+	};
   },
   render () {
-    const { props: { input : { onChange, value, name } } } = this;
-    const { options } = this.state;
-    return (
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select.Creatable
-          options={options}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props: { input : { onChange, value, name } } } = this;
+	const { options } = this.state;
+	return (
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select.Creatable
+		  options={options}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
 var CreatableTR = React.createClass({
   displayName: 'CreatableTR',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState () {
-    return {
-       optionsTR: [
-      { value: 'no tracker', label: 'No Tracker'},
-      { value: 'pepe', label: 'Pepe'},
-      { value: 'luis', label: 'Luis'},
-      { value: 'martin', label: 'Martin'}
-     ]
-    };
+	return {
+	   optionsTR: [
+	  { value: 'no tracker', label: 'No Tracker'},
+	  { value: 'pepe', label: 'Pepe'},
+	  { value: 'luis', label: 'Luis'},
+	  { value: 'martin', label: 'Martin'}
+	 ]
+	};
   },
   render () {
-    const { props: { input : { onChange, value, name } } } = this;
-    const { optionsTR } = this.state;
-    return (
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select.Creatable
-          options={optionsTR}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props: { input : { onChange, value, name } } } = this;
+	const { optionsTR } = this.state;
+	return (
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select.Creatable
+		  options={optionsTR}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
 var CreatableGA = React.createClass({
   displayName: 'CreatableGA',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState () {
-    return {
-      optionsGA: [
-      { value: 'garage', label: 'Garage'},
-      { value: 'no garage', label: 'No Garage'}
-     ]
-    };
+	return {
+	  optionsGA: [
+	  { value: 'garage', label: 'Garage'},
+	  { value: 'no garage', label: 'No Garage'}
+	 ]
+	};
   },
   render () {
-    const { props : { input : { onChange, value, name } } } = this;
-    const { optionsGA } = this.state;
-    return (
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select.Creatable
-          options={optionsGA}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props : { input : { onChange, value, name } } } = this;
+	const { optionsGA } = this.state;
+	return (
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select.Creatable
+		  options={optionsGA}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
  var CreatableTAG=React.createClass({
   displayName: 'CreatableTAG',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState (){
-    return {
-      multi: true,
-      multiValue: [],
-      value: undefined
-    };
+	return {
+	  multi: true,
+	  multiValue: [],
+	  value: undefined
+	};
   },
   handleOnChange (value){
-    const { multi } = this.state;
-    const { onChangeAction } = this.props;
+	const { multi } = this.state;
+	const { onChangeAction } = this.props;
 
-    onChangeAction(value);
-    if (multi) {
-      this.setState({multiValue: value});
-    }else{
-      this.setState({value});
-    }
+	onChangeAction(value);
+	if (multi) {
+	  this.setState({multiValue: value});
+	}else{
+	  this.setState({value});
+	}
   },
   render (){
-    const { multi, multiValue, value } = this.state;
-    return(
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select.Creatable
-          multi={multi}
-          onChange={this.handleOnChange}
-          value={multi ? multiValue : value}
-        />
-      </div>
-    );
+	const { multi, multiValue, value } = this.state;
+	return(
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select.Creatable
+		  multi={multi}
+		  onChange={this.handleOnChange}
+		  value={multi ? multiValue : value}
+		/>
+	  </div>
+	);
   }
 });
 
  var CreatableDEP=React.createClass({
   displayName: 'CreatableDEP',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState(){
-    return{
-      optionsDEP: [
-        { value: 'des', label: 'Desarrollo'},
-        { value: 'dis', label: 'Diseño'},
-        { value: 'ven', label: 'Ventas'}
-      ]
-    };
+	return{
+	  optionsDEP: [
+		{ value: 'des', label: 'Desarrollo'},
+		{ value: 'dis', label: 'Diseño'},
+		{ value: 'ven', label: 'Ventas'}
+	  ]
+	};
   },
   render (){
-    const { props: { input : { onChange, value, name } } } = this;
-    const { optionsDEP } = this.state;
-    return(
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select.Creatable
-          options={optionsDEP}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props: { input : { onChange, value, name } } } = this;
+	const { optionsDEP } = this.state;
+	return(
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select.Creatable
+		  options={optionsDEP}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
   var CreatableSTA=React.createClass({
   displayName: 'CreatableSTA',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState(){
-    return{
-      optionsSTA: [
-        { value: 'on', label: 'Online'},
-        { value: 'off', label: 'Offline'}
-      ]
-    };
+	return{
+	  optionsSTA: [
+		{ value: 'on', label: 'Online'},
+		{ value: 'off', label: 'Offline'}
+	  ]
+	};
   },
   render (){
-    const { props: { input : { onChange, value, name } } } = this;
-    const { optionsSTA } = this.state;
-    return(
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select
-          options={optionsSTA}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props: { input : { onChange, value, name } } } = this;
+	const { optionsSTA } = this.state;
+	return(
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select
+		  options={optionsSTA}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
  var CreatableFLE=React.createClass({
   displayName: 'CreatableFLE',
   propTypes: {
-    hint: React.PropTypes.string,
-    label: React.PropTypes.string
+	hint: React.PropTypes.string,
+	label: React.PropTypes.string
   },
   getInitialState(){
-    return{
-      optionsSTA: [
-        { value: 'and', label: 'Andres'},
-        { value: 'ser', label: 'Sergio'},
-        { value: 'man', label: 'Manuel'}
-      ]
-    };
+	return{
+	  optionsSTA: [
+		{ value: 'and', label: 'Andres'},
+		{ value: 'ser', label: 'Sergio'},
+		{ value: 'man', label: 'Manuel'}
+	  ]
+	};
   },
   render (){
-    const { props: { input : { onChange, value, name } } } = this;
-    const { optionsSTA } = this.state;
-    return(
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
-        <Select
-          options={optionsSTA}
-          name={name}
-          onChange={onChange}
-          value={value}
-        />
-      </div>
-    );
+	const { props: { input : { onChange, value, name } } } = this;
+	const { optionsSTA } = this.state;
+	return(
+	  <div className="section">
+		<h3 className="section-heading">{this.props.label}</h3>
+		<Select
+		  options={optionsSTA}
+		  name={name}
+		  onChange={onChange}
+		  value={value}
+		/>
+	  </div>
+	);
   }
 });
 
 const format = value => {
   if(value && parseInt(value.split(' ')[0]) >0 && value.includes('Km/h')){
-    return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
+	return value.split(' ')[0] + value.split(' ')[2]+ ' Km/h ';
   }
   if(value){
-    return value + ' Km/h ';
+	return value + ' Km/h ';
   }
 }
 
- const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+			</InputGroup>
+		</div>
+	);
+};
 
 
 const FormUnidadComponent = (props) => {
-  const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
+	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 
-  return (
+	return (
+	<Container>
+		<form onSubmit={ handleSubmit(actionSubmit) }>
+			<Row>
+				<Col className="col-sm-6">
 
-    <form onSubmit={ handleSubmit(actionSubmit) }>
-    <div>
-        <label>Label*</label>
-        <div>
-          <Field
-            name="label"
-            component={renderField}
-            type="text"
-          />
-        </div>
-      </div>
+					<center>
+						<br/><tr>UNIDADES</tr><br/>
+					</center>
 
-      <div>
-        <label>Tracker</label>
-        <div>
-          <Field
-            name="tracker"
-            component={ CreatableTR }
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<Col className="col-sm-12">
+							<Field
+								name="label"
+								component={renderField}
+								type="text"
+								label="label*"
+							/>
+						</Col>
+					</InputGroup>
 
-      <div>
-        <label>Department</label>
-        <div>
-          <Field
-            name="department"
-            component={ CreatableDEP }
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Tracker</label>
+							<Field
+								name="tracker"
+								component={ CreatableTR }
+							/>
+						</Col>
+					</div>
 
-      <div>
-        <label>Status</label>
-        <div>
-          <Field
-            name="status"
-            component={ CreatableSTA }
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Department</label>
+							<Field
+								name="department"
+								component={ CreatableDEP }
+							/>
+						</Col>
+					</div>
 
-      <div>
-        <label>Fleet</label>
-        <div>
-          <Field
-            name="fleet"
-            component={ CreatableFLE }
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Status</label>
+							<Field
+								name="status"
+								component={ CreatableSTA }
+							/>
+						</Col>
+					</div>
 
-      <div>
-        <label>Coordenadas</label>
-        <div>
-          <Field
-            name="latitud"
-            component="input"
-            type="number"
-            placeholder="Latitud"
-          />
-          <Field
-            name="longitud"
-            component="input"
-            type="number"
-            placeholder="Longitud"
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Fleet</label>
+							<Field
+								name="fleet"
+								component={ CreatableFLE }
+							/>
+						</Col>
+					</div>
+
+					<InputGroup>
+					<InputGroupAddon>Coordenadas</InputGroupAddon>
+						<Field
+							name="latitud"
+							component="input"
+							type="number"
+							placeholder="Latitud"
+						/>
+						<Field
+							name="longitud"
+							component="input"
+							type="number"
+							placeholder="Longitud"
+						/>
+					</InputGroup>
 
 
-      <div>
-        <label>Garage</label>
-        <div>
-          <Field
-            name="garage"
-            component={ CreatableGA }
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Garage</label>
+							<Field
+								name="garage"
+								component={ CreatableGA }
+							/>
+						</Col>
+					</div>
 
-      <div>
-        <label>Model</label>
-        <div>
-          <Field
-            name="model"
-            component="input"
-            type="text"
-            placeholder="Model"
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<InputGroupAddon>Model</InputGroupAddon>
+						<Field
+							name="model"
+							component="input"
+							type="text"
+							placeholder="Model"
+						/>
+					</InputGroup>
 
-      <div>
-        <label>Type*</label>
-        <div>
-          <Field
-            name="type"
-            component={ CreatableTY }
-          />
-        </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Type*</label>
+							<Field
+								name="type"
+								component={ CreatableTY }
+							/>
+						</Col>
+					</div>
 
-      <div>
-        <label>Vehicle registration plate</label>
-        <div>
-          <Field
-            name="vehicle_registration_plate"
-            component="input"
-            type="text"
-            placeholder="Vehicle"
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<InputGroupAddon>Vehicle registration plate</InputGroupAddon>
+						<Field
+							name="vehicle_registration_plate"
+							component="input"
+							type="text"
+							placeholder="Vehicle"
+						/>
+					</InputGroup>
 
-      <div>
-        <label>VIN</label>
-        <div>
-          <Field
-            name="vin"
-            component="input"
-            type="text"
-            placeholder="VIN"
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<InputGroupAddon>VIN</InputGroupAddon>
+						<Field
+							name="vin"
+							component="input"
+							type="text"
+							placeholder="VIN"
+						/>
+					</InputGroup>
 
-      <div>
-        <label>Chassis number</label>
-        <div>
-          <Field
-            name="chassis_number"
-            component="input"
-            type="text"
-            placeholder="Chassis number"
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<InputGroupAddon>Chassis number</InputGroupAddon>
+						<Field
+							name="chassis_number"
+							component="input"
+							type="text"
+							placeholder="Chassis number"
+						/>
+					</InputGroup>
 
-      <div>
-        <label>Permited speed</label>
-        <div>
-          <Field
-            name="permited_speed"
-            component={renderField}
-            type="text"
-            format={format}
-          />
-        </div>
-      </div>
+					<InputGroup>
+						<Col className="col-sm-12">
+							<Field
+								name="permited_speed"
+								component={renderField}
+								type="text"
+								format={format}
+								label="Permited speed"
+								placeholder="Permited speed"
+							/>
+						</Col>
+					</InputGroup>
 
-      <div>
-        <label>Tags</label>
-          <div>
-            <Field
-              name="tags"
-              component={ CreatableTAG }
-              onChangeAction={ onChangeAction }
-            />
-          </div>
-      </div>
+					<div>
+						<Col className="col-sm-12">
+							<label>Tags</label>
+							<Field
+								name="tags"
+								component={ CreatableTAG }
+								onChangeAction={ onChangeAction }
+							/>
+						</Col>
+					</div>
 
-      <SimpleFormD/>
-      <FormCombustible/>
-      <FormWheelbase/>
-      <FormSeguro/>
+			  	</Col>
+			  	<Col className="col-sm-6">
+					<SimpleFormD/><br/>
+					<FormCombustible/>
+					<FormWheelbase/>
+					<FormSeguro/>
+		  		</Col>
 
-       <div>
-        <button
-          type="submit"
-          disabled={pristine || submitting}>Guardar</button>
-        <button
-          type="button"
-          disabled={pristine || submitting} onClick={reset}>Restab</button>
-      </div>
-
-  </form>
-
+			   	<div>
+					<button type="submit" disabled={pristine || submitting}>Guardar</button>
+					<button type="button" disabled={pristine || submitting} onClick={reset}>Restab</button>
+			  	</div>
+			</Row>
+		</form>
+	</Container>
   )
 }
 

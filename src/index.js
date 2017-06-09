@@ -25,6 +25,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
+
 import {
 	BrowserRouter as Router,
 	Route,
@@ -167,13 +168,9 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<Login/></Component> } />
 
-	      	<Route path="/formulario" component={ props =>
-	      		<Component {...props}>
-	      		<Unidad/></Component> } />
-
 	      	<Route path="/unidades" component={ props =>
 	      		<Component {...props}>
-	      		<Unidad /></Component> } />
+	      		<Unidad/></Component> } />
 
 	      	<Route path="/flotilla" component={ props =>
 	      		<Component {...props}>
