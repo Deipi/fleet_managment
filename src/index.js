@@ -85,6 +85,7 @@ class Menu extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+  
   render() {
   	const { login } = this.props;
 
