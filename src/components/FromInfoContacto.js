@@ -1,29 +1,44 @@
 import React from 'react'
 import { Field } from 'redux-form/immutable'
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap'
+
 const FormInfocontacto=(props)=>{
 	const { handleSubmit } = props
 	return(
-		<div>
-		<br/>
-			<div>
-				<center>
-					<tr>CONTACT INFO</tr>
-				</center>
-			</div>
+		<Container>
+			<Card block>
+				<Row>
+					<Col className="col-sm-12">
+						<center>
+							<br/><tr>CONTACT INFO</tr><br/>
+						</center>
 
-				<div>
-					<label>Phone</label>
-					<div>
-						<Field name="phone" component="input" type="number" min="10"/>
-					</div>
+						<InputGroup>
+							<InputGroupAddon>Phone</InputGroupAddon>
+							<Field
+								name="phone"
+								component="input"
+								type="number"
+								min="10"
+								placeholder="Phone"
+							/>
+						</InputGroup>
 
-					<label>E-mail</label>
-					<div>
-						<Field name="email" component="input" type="email"/>
-					</div>
-				</div>
-		</div>
+						<InputGroup>
+							<InputGroupAddon>E-mail</InputGroupAddon>
+							<Field
+								name="email"
+								component="input"
+								type="email"
+								placeholder="E-mail"
+							/>
+						</InputGroup>
+					</Col>
+				</Row>
+			</Card>
+		</Container>
 	)
 }
 export default FormInfocontacto;

@@ -5,6 +5,9 @@ import moment from 'moment'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Button, Card } from 'reactstrap'
+
 const DataField=({input, meta:{touched, error}, ...rest})=>(
 	<div>
 		<DatePicker
@@ -19,31 +22,46 @@ const DataField=({input, meta:{touched, error}, ...rest})=>(
 const FormLicenciaConductor=(props)=>{
 	const { handleSubmit }=props
 	return(
-		<div>
-		<br/>
-			<div>
-				<center>
-					<tr>DRIVER LICENSE</tr>
-				</center>
-			</div>
+		<Container>
+			<Card block>
+				<Row>
+					<Col className="col-sm-12">
+						<center>
+							<br/><tr>DRIVER LICENSE</tr><br/>
+						</center>
 
-				<div>
-					<label>Driver license number</label>
-					<div>
-						<Field name="driver_license_number" component="input" type="number"/>
-					</div>
+						<InputGroup>
+							<InputGroupAddon>Driver license number</InputGroupAddon>
+							<Field
+								name="driver_license_number"
+								component="input"
+								type="number"
+								placeholder="Driver license number"
+							/>
+						</InputGroup>
 
-					<label>Driver license class</label>
-					<div>
-						<Field name="driver_license_class" component="input" type="text"/>
-					</div>
+						<InputGroup>
+							<InputGroupAddon>Driver license class</InputGroupAddon>
+							<Field
+								name="driver_license_class"
+								component="input"
+								type="text"
+								placeholder="Driver license class"
+							/>
+						</InputGroup>
 
-					<label>Expiration date</label>
-					<div>
-						<Field name="expiration_date" component={DataField} />
-					</div>
-				</div>
-		</div> 
+						<InputGroup>
+							<InputGroupAddon>Expiration date</InputGroupAddon>
+							<Field
+								name="expiration_date"
+								component={DataField}
+								placeholder="Expiration date"
+							/>
+						</InputGroup>
+					</Col>
+				</Row>
+			</Card>
+		</Container>
 	)
 }
 export default FormLicenciaConductor;

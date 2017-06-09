@@ -441,8 +441,8 @@ const FormUnidadComponent = (props) => {
 							/>
 						</Col>
 					</div>
-
 			  	</Col>
+
 			  	<Col className="col-sm-6">
 					<SimpleFormD/><br/>
 					<FormCombustible/><br/>
@@ -451,9 +451,9 @@ const FormUnidadComponent = (props) => {
 		  		</Col>
 
 
-			   	<Col className="offset-4">
-					<Button type="submit" color="primary" disabled={pristine || submitting}>Guardar</Button>
-					<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</Button>
+			   	<Col className="offset-5">
+					<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+					<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 			  	</Col><br/><br/><br/>
 			</Row>
 		</form>
