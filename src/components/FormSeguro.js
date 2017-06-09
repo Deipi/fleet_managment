@@ -6,6 +6,8 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap'
 
 const DataField=({input, meta:{touched, error}, ...rest})=>(
 	<div>
@@ -21,36 +23,52 @@ const DataField=({input, meta:{touched, error}, ...rest})=>(
 const FormSeguro=(props)=>{
 	const { handleSubmit } = props
 	return(
-		<div>
-		<br/> 
-			<div>
-			<center>
-			<tr>INSURANCE</tr><br/>
-			</center>
-			</div>
+		<Container>
+			<Card block>
+				<Row>
+					<Col className="col-sm-12">
+						<center>
+							<br/><tr>INSURANCE</tr><br/>
+						</center>
 
-			<div>
-			<label>Insurance policy number</label>
-			<div>
-				<Field name="insurance_policy_number" component="input"  type="text"/>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Insurance policy number</InputGroupAddon>
+							<Field
+								name="insurance_policy_number"
+								component="input"
+								type="text"
 
-			<label>Insurance valid</label>
-			<div>
-				<Field name="insurance_valid" component={DataField}/>
-			</div>
+							/>
+						</InputGroup>
 
-			<label>Insurance 2 policy number</label>
-			<div>
-				<Field name="insurance_2_policy_number" component="input" type="text"/>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Insurance valid</InputGroupAddon>
+							<Field
+								name="insurance_valid"
+								component={DataField}
+							/>
+						</InputGroup>
 
-			<label>Insurance 2 valid</label>
-			<div>
-				<Field name="insurance_2_valid" component={DataField}/>
-			</div>
-			</div>
-		</div>
+						<InputGroup>
+							<InputGroupAddon>Insurance 2 policy number</InputGroupAddon>
+							<Field
+								name="insurance_2_policy_number"
+								component="input"
+								type="text"
+							/>
+						</InputGroup>
+
+						<InputGroup>
+							<InputGroupAddon>Insurance 2 valid</InputGroupAddon>
+							<Field
+								name="insurance_2_valid"
+								component={DataField}
+							/>
+						</InputGroup>
+					</Col>
+				</Row>
+			</Card>
+		</Container>
 	)
 }
 export default FormSeguro;
