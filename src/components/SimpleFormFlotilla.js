@@ -43,7 +43,7 @@ const SimpleFormF = (props) => {
 							</Col>
 
 							<Col className="col-sm-10 offset-3">
-							
+
 							<InputGroup>
 								<Col className="col-sm-6">
 								<Field name="nombre" component={ renderField } type="text" label="Nombre"/>
