@@ -74,6 +74,7 @@ class FilterMapUnit extends Component {
 						</Row>
 				</Col>
 			</Row>
+			
 		);
 	}
 }
