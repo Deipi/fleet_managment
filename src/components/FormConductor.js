@@ -6,6 +6,8 @@ import validate from '../validate'
 import FormInfocontacto from './FromInfoContacto'
 import FormLicenciaConductor from './FormLicenciaConductor'
 
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap'
 
 var CreatableTR=React.createClass({
 	displayName: 'CreatableTY',
@@ -112,109 +114,129 @@ var CreatableTAG=React.createClass({
 });
 
 
-const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div className={asyncValidating ? 'async-validating' : ''}>
-      <input {...input} type={type} placeholder={label}/>
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+			</InputGroup>
+		</div>
+	);
+};
+
 
 const FormConductorComponent = (props) => {
 	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return(
-		<form onSubmit={handleSubmit(actionSubmit)}>
-			<div>
-			<br/>
-			<div>
-				<center>
-					<tr>INFORMACION CONDUCTOR</tr>
-				</center>
-			</div>
+		<Container>
+			<form onSubmit={handleSubmit(actionSubmit)}>
+				<Row>
+					<Col className="col-sm-6">
+						<center>
+							<br/><br/><tr>SUMMARY</tr><br/>
+						</center>
 
-				<label>Last name</label>
-				<div>
-					<Field
-						name="last_name"
-						component="input"
-						type="text"
-					/>
-				</div>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Last Name</InputGroupAddon>
+							<Field
+								name="last_name"
+								component="input"
+								type="text"
+								placeholder="Last Name"
+							/>
+						</InputGroup>
 
-			<div>
-				<label>First name*</label>
-				<div>
-					<Field
-						name="first_name"
-						component={ renderField }
-						type="text"
-					/>
-				</div>
-			</div>
+						<InputGroup>
+							<Col className="col-sm-12">
+								<Field
+									name="first_name"
+									component={ renderField }
+									type="text"
+									label="First Name"
+								/>
+							</Col>
+						</InputGroup>
 
-			<div>
-				<label>Middle name</label>
-				<div>
-					<Field
-						name="middle_name"
-						component="input"
-						type="text"
-					/>
-				</div>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Middle Name</InputGroupAddon>
+							<Field
+								name="middle_name"
+								component="input"
+								type="text"
+								placeholder="Middle Name"
+							/>
+						</InputGroup>
 
-			<div>
-				<label>Tracker</label>
-				<div>
-					<Field
-						name="tracker"
-						component={ CreatableTR }
-					/>
-				</div>
-			</div>
+						<div>
+							<Col className="col-sm-12">
+								<label>Tracker</label>
+								<Field
+									name="tracker"
+									component={ CreatableTR }
+								/>
+							</Col>
+						</div>
 
-			<div>
-				<label>Department</label>
-				<div>
-					<Field
-						name="department"
-						component={ CreatableDEP }
-					/>
-				</div>
-			</div>
+						<div>
+							<Col className="col-sm-12">
+								<label>Department</label>
+								<Field
+									name="department"
+									component={ CreatableDEP }
+								/>
+							</Col>
+						</div>
 
-			<div>
-				<label>Hardware key</label>
-				<div>
-					<Field
-						name="hardware_key"
-						component="input"
-						type="text"
-					/>
-				</div>
-			</div>
+						<InputGroup>
+							<InputGroupAddon>Hardware key</InputGroupAddon>
+							<Field
+								name="hardware_key"
+								component="input"
+								type="text"
+								placeholder="Hardware Key"
+							/>
+						</InputGroup>
 
-			<div>
-				<label>Tags</label>
-				<div>
-					<Field
-						name="tags"
-						component={ CreatableTAG }
-						onChangeAction={ onChangeAction }
-					/>
-				</div>
-			</div>
-			<FormInfocontacto/>
-			<FormLicenciaConductor/>
+						<div>
+							<Col className="col-sm-12">
+								<label>Tags</label>
+								<Field
+									name="tags"
+									component={ CreatableTAG }
+									onChangeAction={ onChangeAction }
+								/>
+							</Col>
+						</div>
+					</Col>
 
-			<div>
-        		<button type="submit" disabled={pristine || submitting}>Submit</button>
-        		<button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-      		</div>
-		</form>
+					<Col className="col-sm-6">
+						<FormInfocontacto/><br/>
+						<FormLicenciaConductor/><br/>
+					</Col>
+
+						<Col className="offset-5"><br/>
+			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+			        		<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
+			      		</Col>
+			    </Row>
+			</form>
+		</Container>
 	)
 }
 export default reduxForm ({
