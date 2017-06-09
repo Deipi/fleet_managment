@@ -1,57 +1,86 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import validate from '../validate'
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Container, Card, Button, CardTitle, CardText, Row, Col, InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
-const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
-	<div>
-	    <label>{label}</label>
-	    <div className={asyncValidating ? 'async-validating' : ''}>
-	    	<input {...input} type={type} placeholder={label}/>
-	    	{touched && error && <span>{error}</span>}
-	    </div>
-	</div>
-)
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+		{ errorSpan }
+		<InputGroup>
+		<InputGroupAddon> {label}</InputGroupAddon>
+		<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={label} />
+		</InputGroup>
+		</div>
+	);
+};
 
 const SimpleFormF = (props) => {
 	const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return (
-		<Row>
-			<Col className="col-sm-6 offset-3" >
+		<Container>
+
 				<Card block>
-				<form onSubmit = {handleSubmit(actionSubmit)}>
-				<br/>
-					<div>
-					<center>
-					<tr>FLOTILLA</tr><br/>
-					</center>
-					</div>
+					<form onSubmit = {handleSubmit(actionSubmit)}>
+						<Row>
 
-					<div>
-					<label>Name</label>
-					<div>
-						<Field name="nombre" component={ renderField } type="text"/>
-					</div>
+							<Col className="offset-5">
+								<tr>FLOTILLA</tr><br/>
+							</Col>
 
-					<label>Supervisor</label>
-					<div>
-						<Field name="supervisor" component={ renderField } type="text"/>
-					</div>
+							<Col className="col-sm-10 offset-3">
+							
+							<InputGroup>
+								<Col className="col-sm-6">
+								<Field name="nombre" component={ renderField } type="text" label="Nombre"/>
+								</Col>
+							</InputGroup>
 
-					<label>Garage</label>
-					<div>
-						<Field name="garage" component={ renderField } type="text"/>
-					</div>
-					</div>
+							<br/>
 
-					<div>
-		        		<button type="submit" disabled={pristine || submitting}>Guardar</button>
-		        		<button type="button" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</button>
-		      		</div>
-				</form>
+							<InputGroup>
+								<Col className="col-sm-6">
+								<Field name="supervisor" component={ renderField } type="text" label="Supervisor"/>
+								</Col>
+							</InputGroup>
+
+							<br/>
+
+							<InputGroup>
+								<Col className="col-sm-6">
+								<Field name="garage" component={ renderField } type="text" label="Garage"/>
+								</Col>
+							</InputGroup>
+
+							<br/>
+
+							</Col>
+						  <Col className="offset-4">
+			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Guardar</Button>
+			        		
+			        		<Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Restablecer Valores</Button>
+			      		  </Col>
+
+			      		</Row>
+					</form>
 				</Card>
-			</Col>
-		</Row>
+
+			</Container>
+
 	)
 }
 
