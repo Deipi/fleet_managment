@@ -61,7 +61,7 @@ class MapContainer extends Component {
 
 		const { vehicles } = nextProps;
 		const { dispatch } = this.props;
-
+ 
 		const markers = vehicles.map((item, index) => {
 
 			return {
@@ -82,12 +82,10 @@ class MapContainer extends Component {
 				},
 				item: item,
 
-				onClick: () => {
-					dispatch({
-						type: 'CURRENT_MARKER',
-						payload: item,
-					})
-				}
+				onClick: () => dispatch({
+					type: 'CURRENT_MARKER',
+					payload: item,
+				})
 			};
 
 		});

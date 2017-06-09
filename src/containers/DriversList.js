@@ -11,13 +11,13 @@ const NewLayout = ({ Table,Filter,Pagination }) => (
 	<div>
 		<Filter/>
 		<Table/>
-		<Pagination/>
+		<center><Pagination/></center>
 	</div>
 );
 
 const CustomColumn = showDescription => ({value}) =>
 	<button type="button" className="btn btn-default" onClick={ () => showDescription(value) }>
-    	<span className="glyphicon glyphicon-align-justify"></span>
+    	<span className="fa fa-bars"></span>
     </button>;
 
 const selector = state => {
@@ -78,52 +78,52 @@ class DriversListComponent extends Component {
 
 		let btnCreate = (
 			<Button>
-				Create
+				Nuevo
 			</Button>
 		);
 		if(create){
 			btnCreate = (
 				<Button onClick={ this.cleanDriverStore } >
-					<Link className="btn" tag={Link} color="info" to='/conductores'> create </Link>
+					<Link tag={Link} color="info" to='/conductores'> Nuevo </Link>
 				</Button>
 			);
 		}
 
 		let btnEdit = (
 			<Button disabled>
-				Edit
+				Editar
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
 				<Button>
-					<Link className="btn" tag={Link} color="info" to='/conductores'> edit </Link>
+					<Link tag={Link} color="info" to='/conductores'> Editar </Link>
 				</Button>
 			);
 		}
 
 		let btnRemove = (
 			<Button disabled>
-				Remove
+				Eliminar
 			</Button>
 		);
 		if (remove) {
 			btnRemove = (
 				<Button onClick={ this.deleteDriver }>
-					<Link className="btn" tag={Link} color="info" to='/drivers'> remove </Link>
+					<Link tag={Link} color="info" to='/drivers'> Eliminar </Link>
 				</Button>
 			);
 		}
 
 		let btnGroup = (
 			<Button>
-				Group
+				Nuevo Grup
 			</Button>
 		);
 		if (group) {
 			btnGroup = (
 				<Button>
-					<Link className="btn" tag={Link} color="info" to=''> new_group </Link>
+					<Link tag={Link} color="info" to=''> Nuevo Grupo </Link>
 				</Button>
 			);
 		}
@@ -134,11 +134,13 @@ class DriversListComponent extends Component {
 				{ btnEdit }
 				{ btnRemove }
 				{ btnGroup }
+				<br/>
+				<br/>
 				<Griddle data={ conductores ? conductores.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
 				styleConfig={{
 					classNames: {
-						Table: 'table table-striped',
+						Table: 'table table-bordered',
 					}
 				}}
 				components={{

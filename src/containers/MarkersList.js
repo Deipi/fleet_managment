@@ -26,7 +26,7 @@ class DataTable extends Component {
     		<Griddle data={ vehicles.filter(v => v.get('id') === item.get('id')).toJS() }
 	       styleConfig={{
 						classNames: {
-							Table: 'table table-striped',
+							Table: 'table table-bordered',
 						}
 			}}
 			components={{

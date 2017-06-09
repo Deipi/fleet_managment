@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form/immutable'
-import { fetchGeocercas,POSTED_GEOCERCAS } from '../actions/indexGeocercas';
 import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
 import DrawingManager from 'react-google-maps/lib/drawing/DrawingManager';
 
+import saveGeo from '../actions/indexGeocercas';
 const Mapa = withGoogleMap((props) =>{
+       
+   
+
   return(
 
     <GoogleMap
@@ -20,6 +23,7 @@ const Mapa = withGoogleMap((props) =>{
     ))} 
 
  	<DrawingManager
+
     defaultOptions={{
       drawingControl: true,
       drawingControlOptions: {
@@ -51,13 +55,12 @@ const Mapa = withGoogleMap((props) =>{
           fillOpacity: 0.35,
       }
     }}
-    onCircleComplete={ (evt) =>{ console.log('el radio es: ', evt.getRadius());}}
-    onPolygonComplete={ (pol) => { alert(pol.getPath()); return pol;}}
-    onRectangleComplete={ (rec) => { alert(rec.getBounds()); return rec;}}
-      // onCircleComplete={  (cir) => {  dispatch({
-      //   method: 'SAVE_GEO',
-        
-      // })}}
+    // onCircleComplete={ (evt) =>{ console.log('el radio es: ', evt.getRadius());}}
+  
+      // onCircleComplete={  (cir) => { 
+      //     const { props: { dispatch } } = this;
+      //     dispatch(saveGeo(cir))
+      // }}
 
   />
 
