@@ -55,25 +55,22 @@ class FilterMapUnit extends Component {
 	render() {
 
 		return (
-			<Row>
-				<Col className="col-md-12 " >
-
-						<Row>
-							<Col sm='3'>
-								<FilterModel onTextUpdate={ this.updateTextFilterM } />
-							</Col>
-							<Col sm='3'>
-								<FilterTracker onTextUpdate={ this.updateTextFilterT } />
-							</Col>
-							<Col sm='3'>
-								<FilterLabel onTextUpdate={ this.updateTextFilterL } />
-							</Col>
-							<Col sm='2'>
-								<Button color="info" onClick={ this.retrieveFilteredReceipts } >Filtrar</Button>
-							</Col>
-						</Row>
+			<Col className="col-sm-11 ">
+				<Row>
+					<Col sm='3'>
+						<FilterModel onTextUpdate={ this.updateTextFilterM } />
+					</Col>
+					<Col sm='3'>
+						<FilterTracker onTextUpdate={ this.updateTextFilterT } />
+					</Col>
+					<Col sm='3'>
+						<FilterLabel onTextUpdate={ this.updateTextFilterL } />
+					</Col>
+					<Col sm='1'>
+						<Button color="info" onClick={ this.retrieveFilteredReceipts } >Filtrar</Button>
+					</Col>
+				</Row>
 				</Col>
-			</Row>
 			
 		);
 	}
