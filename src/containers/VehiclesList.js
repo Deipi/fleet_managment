@@ -78,52 +78,52 @@ class VehiclesListComponent extends Component {
 
 		let btnCreate = (
 			<Button>
-				Nuevo
+				Create
 			</Button>
 		);
 		if(create){
 			btnCreate = (
 				<Button onClick={ this.cleanVehicleStore } >
-					<Link tag={Link} color="info" to='/formulario'> Nuevo </Link>
+					<Link tag={Link} color="info" to='/formulario'> Create </Link>
 				</Button>
 			);
 		}
 
 		let btnEdit = (
 			<Button disabled>
-				Editar
+				Edit
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
 				<Button>
-					<Link tag={Link} color="info" to='/formulario'> Editar </Link>
+					<Link tag={Link} color="info" to='/formulario'> Edit </Link>
 				</Button>
 			);
 		}
 
 		let btnRemove = (
 			<Button disabled >
-				Eliminar
+				Delete
 			</Button>
 		);
 		if (remove) {
 			btnRemove = (
 				<Button onClick={ this.deleteVehicle } >
-					<Link  tag={Link} color="info" to="/vehicles">Eliminar</Link>
+					<Link  tag={Link} color="info" to="/vehicles">Delete</Link>
 				</Button>
 			);
 		}
 
 		let btnGroup = (
 			<Button>
-				Nuevo Grupo
+				New Group
 			</Button>
 		);
 		if (group) {
 			btnGroup = (
 				<Button>
-					<Link tag={Link} color="info" to=''> Nuevo Grupo </Link>
+					<Link tag={Link} color="info" to=''> New Group </Link>
 				</Button>
 			);
 		}

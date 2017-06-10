@@ -5,8 +5,6 @@ export const Vehicles = props => (
 
 <Container>
 
-	
-
 		<Card block>
 
 			<Row>
