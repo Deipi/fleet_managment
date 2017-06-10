@@ -78,52 +78,52 @@ class DriversListComponent extends Component {
 
 		let btnCreate = (
 			<Button>
-				Nuevo
+				Create
 			</Button>
 		);
 		if(create){
 			btnCreate = (
 				<Button onClick={ this.cleanDriverStore } >
-					<Link tag={Link} color="info" to='/conductores'> Nuevo </Link>
+					<Link tag={Link} color="info" to='/conductores'> Create </Link>
 				</Button>
 			);
 		}
 
 		let btnEdit = (
 			<Button disabled>
-				Editar
+				Edit
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
 				<Button>
-					<Link tag={Link} color="info" to='/conductores'> Editar </Link>
+					<Link tag={Link} color="info" to='/conductores'> Edit </Link>
 				</Button>
 			);
 		}
 
 		let btnRemove = (
 			<Button disabled>
-				Eliminar
+				Delete
 			</Button>
 		);
 		if (remove) {
 			btnRemove = (
 				<Button onClick={ this.deleteDriver }>
-					<Link tag={Link} color="info" to='/drivers'> Eliminar </Link>
+					<Link tag={Link} color="info" to='/drivers'> Delete </Link>
 				</Button>
 			);
 		}
 
 		let btnGroup = (
 			<Button>
-				Nuevo Grup
+				New Group
 			</Button>
 		);
 		if (group) {
 			btnGroup = (
 				<Button>
-					<Link tag={Link} color="info" to=''> Nuevo Grupo </Link>
+					<Link tag={Link} color="info" to=''> New Gruop </Link>
 				</Button>
 			);
 		}
