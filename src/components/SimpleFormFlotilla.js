@@ -44,29 +44,29 @@ const SimpleFormF = (props) => {
 
 							<Col className="col-sm-10 offset-3">
 
-							<InputGroup>
-								<Col className="col-sm-6">
-								<Field name="nombre" component={ renderField } type="text" label="Name"/>
-								</Col>
-							</InputGroup>
+								<InputGroup>
+									<Col className="col-sm-6">
+									<Field name="nombre" component={ renderField } type="text" label="Name"/>
+									</Col>
+								</InputGroup>
 
-							<br/>
+								<br/>
 
-							<InputGroup>
-								<Col className="col-sm-6">
-								<Field name="supervisor" component={ renderField } type="text" label="Supervisor"/>
-								</Col>
-							</InputGroup>
+								<InputGroup>
+									<Col className="col-sm-6">
+									<Field name="supervisor" component={ renderField } type="text" label="Supervisor"/>
+									</Col>
+								</InputGroup>
 
-							<br/>
+								<br/>
 
-							<InputGroup>
-								<Col className="col-sm-6">
-								<Field name="garage" component={ renderField } type="text" label="Garage"/>
-								</Col>
-							</InputGroup>
+								<InputGroup>
+									<Col className="col-sm-6">
+									<Field name="garage" component={ renderField } type="text" label="Garage"/>
+									</Col>
+								</InputGroup>
 
-							<br/>
+								<br/>
 
 							</Col>
 						  <Col className="offset-5">
