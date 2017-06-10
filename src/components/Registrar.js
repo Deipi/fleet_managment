@@ -4,77 +4,117 @@ import validate from '../validate'
 import { Link } from 'react-router-dom';
 import SAVE from '../actions/indexRegistrar'
 
-const renderField = ({ input,label,type,meta: { asyncValidating, touched, error }}) => (
-    <div>
-        <label>{label}</label>
-        <div className={asyncValidating ? 'async-validating' : ''}>
-            <input {...input} type={type} placeholder={label} />
-            {touched && error && <span>{error}</span>}
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Container, Row, Col, Button, Card } from 'reactstrap'
+
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+    const styleError = {};
+    let errorSpan = null;
+
+    const ERROR_STYLE = {
+        position: 'absolute',
+        zIndex: '3',
+        right: '11px',
+        top: '-9px',
+    };
+
+    if (touched && error) {
+        errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+        styleError.borderColor = 'darkred';
+    }
+    return(
+        <div style={ { position: 'relative' } }>
+            { errorSpan }
+            <InputGroup>
+                <InputGroupAddon> {label}</InputGroupAddon>
+                <Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+            </InputGroup>
         </div>
-    </div>
-)
+    );
+};
 
 const SimpleFormRegistrar = (props) => {
   const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
   return (
-    <form onSubmit={handleSubmit(actionSubmit)}>
-        <div>
-            <center>
-                <h3>REGISTRAR</h3><br/>
-            </center>
-        </div>
+    <Container>
+        <Card block>
+        <form onSubmit={handleSubmit(actionSubmit)}>
+            <Row>
+                <Col className="col-sm-12">
+                    <center>
+                        <br/><h3>REGISTER</h3><br/>
+                    </center>
 
-        <div>
-            <center>
-                <label>Nombre</label>
-                <div>
-                    <Field name="name" component={renderField} type="text" placeholder="Nombre"/>
-                </div>
-            </center>
-        </div><br/>
+                    <InputGroup>
+                        <Col className="col-sm-12">
+                            <Field
+                                name="name"
+                                component={renderField}
+                                type="text"
+                                placeholder="Nombre"
+                                label="Firts Name"
+                            />
+                        </Col>
+                    </InputGroup><br/>
 
-        <div>
-            <center>
-                <label>Apellido</label>
-                <div>
-                    <Field name="apellido" component={renderField} type="text" placeholder="Apellido"/>
-                </div>
-            </center>
-        </div><br/>
+                    <InputGroup>
+                        <Col className="col-sm-12">
+                            <Field
+                                name="apellido"
+                                component={renderField}
+                                type="text"
+                                placeholder="Apellido"
+                                label="Last Name"
+                            />
+                        </Col>
+                    </InputGroup><br/>
 
-        <div>
-            <center>
-                <label>Telefono</label>
-                <div>
-                    <Field name="telefono" component={renderField} type="telefono" placeholder="Telefono"/>
-                </div>
-            </center>
-        </div><br/>
+                    <InputGroup>
+                        <Col className="col-sm-12">
+                            <Field
+                                name="telefono"
+                                component={renderField}
+                                type="telefono"
+                                placeholder="Telefono"
+                                label="Phone"
+                            />
+                        </Col>
+                    </InputGroup><br/>
 
-        <div>
-            <center>
-                <label>Email</label>
-                <div>
-                    <Field name="email" component={renderField} type="email" placeholder="Email"/>
-                </div>
-            </center>
-        </div><br/>
+                    <InputGroup>
+                        <Col className="col-sm-12">
+                            <Field
+                                name="email"
+                                component={renderField}
+                                type="email"
+                                placeholder="Email"
+                                label="Email"
+                            />
+                        </Col>
+                    </InputGroup><br/>
 
-        <div>
-            <center>
-                <label>Password</label>
-                <div>
-                    <Field name="password" component={renderField} type="password" placeholder="Password"/>
-                </div>
-            </center>
-        </div><br/>
+                    <InputGroup>
+                        <Col className="col-sm-12">
+                            <Field
+                                name="password"
+                                component={renderField}
+                                type="password"
+                                placeholder="Password"
+                                label="Password"
+                            />
+                        </Col>
+                    </InputGroup><br/>
 
-        <div>
-            <center>
-            <button type="submit" onClick={()=>alert('Registrado')} disabled={pristine || submitting}>Enviar</button>
-            </center><br/>
-        </div>
-    </form>
+                    <div>
+                        <center>
+                        <Button type="submit" color="primary" onClick={()=>alert('Registrado')} disabled={pristine || submitting}>Save</Button>
+                        </center><br/>
+                    </div>
+                </Col>
+            </Row>
+        </form>
+        </Card><br/>
+    </Container>
   )
 }
 
