@@ -49,7 +49,7 @@ const SimpleFormLogin = (props) => {
     const {handleSubmit, pristine, reset, submitting, actionSubmit} = props
     return (
     <Container>
-        <Col sm="6">
+        <Col className="col-sm-6 offset-3">
             <Card block>
                 <form onSubmit={handleSubmit(actionSubmit)}>
                     <Row>
