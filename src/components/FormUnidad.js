@@ -291,6 +291,7 @@ const FormUnidadComponent = (props) => {
 					</center>
 
 					<InputGroup>
+					
 						<Col className="col-sm-12">
 							<Field
 								name="label"
