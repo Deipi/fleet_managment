@@ -5,6 +5,8 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
+import { Container, Card, Button, CardTitle, CardText, Row, Col, InputGroup, InputGroupAddon, Input } from 'reactstrap';
+
 const PedidosDate=({input, meta:{touched, error}, ...rest})=>(
     <div>
         <DatePicker
@@ -16,86 +18,133 @@ const PedidosDate=({input, meta:{touched, error}, ...rest})=>(
     </div>
 );
 
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+    const styleError = {};
+    let errorSpan = null;
+
+    const ERROR_STYLE = {
+        position: 'absolute',
+        zIndex: '3',
+        right: '11px',
+        top: '-9px',
+    };
+
+    if (touched && error) {
+        errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+        styleError.borderColor = 'darkred';
+    }
+    return(
+        <div style={ { position: 'relative' } }>
+            { errorSpan }
+            <InputGroup>
+                <InputGroupAddon> {label}</InputGroupAddon>
+                <Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+            </InputGroup>
+        </div>
+    );
+};
+
 const SimpleFormPedidos = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
-    <form onSubmit={handleSubmit}>
-        <div>
-            <center>
-                <h3>MONITOREO PEDIDOS</h3><br/>
-            </center>
-        </div>
+    <Container>
+        <Card block>
+            <form onSubmit={handleSubmit}>
+                <Row>
 
-        <div>
-            <center>
-                <label>Nombre</label>
-                <div>
-                    <Field name="nombre" component="input" type="text" placeholder="Nombre"/>
-                </div>
-            </center>
-        </div><br/>
+                    <Col className="offset-5">
+                            <tr>MONITOREO PEDIDOS</tr><br/>
+                    </Col>
 
-        <div>
-            <center>
-                <label>Apellido</label>
-                <div>
-                    <Field name="apellido" component="input" type="text" placeholder="Apellido"/>
-                </div>
-            </center>
-        </div><br/>
+                    <Col className="col-sm-10 offset-4">
+                   
+                       <InputGroup>
+                       <InputGroupAddon>Nombre</InputGroupAddon>
 
-        <div>
-            <center>
-                <label>Telefono</label>
-                <div>
-                    <Field name="telefono" component="input" type="telefono" placeholder="Telefono"/>
-                </div>
-            </center>
-        </div><br/>
+                                    <Field
+                                        name="nombre"
+                                        component="input"
+                                        type="text"
 
-        <div>
-            <center>
-                <label>Email</label>
-                <div>
-                    <Field name="email" component="input" type="email" placeholder="Email"/>
-                </div>
-            </center>
-        </div><br/>
+                                    />
 
-        <div>
-            <center>
-                <label>Direccion</label>
-                <div>
-                    <Field name="direccion" component="input" type="direccion" placeholder="Direccion"/>
-                </div>
-            </center>
-        </div><br/>
+                        </InputGroup>
 
-        <div>
-            <center>
-                <label>Pedido</label>
-                <div>
-                    <Field name="pedido" component="input" type="pedido" placeholder="Pedido"/>
-                </div>
-            </center>
-        </div><br/>
+                        <br/>
 
-        <div>
-            <center>
-                <label>Fecha</label>
-                <div>
-                    <Field name="fecha" component={ PedidosDate }/>
-                </div>
-            </center>
-        </div><br/>
+                        <InputGroup>
+                        <InputGroupAddon>Apellido</InputGroupAddon>
+                            <Field
+                                name="apellido"
+                                component="input"
+                                type="text"
+                            />
+                        </InputGroup>
+                        <br/>
 
-        <div>
-            <center>
-            <button type="submit" disabled={pristine || submitting}>Enviar</button>
-            <button type="button" disabled={pristine || submitting} onClick={reset}>Reestablecer Valores</button>
-            </center><br/>
-        </div>
-    </form>
+                         <InputGroup>
+                        <InputGroupAddon>Telefono</InputGroupAddon>
+                            <Field
+                                name="telefono"
+                                component="input"
+                                type="telefono"
+                            />
+                        </InputGroup>
+
+                        <br/>
+
+                         <InputGroup>
+                        <InputGroupAddon>Email</InputGroupAddon>
+                                    <Field
+                                        name="email"
+                                        component="input"
+                                        type="email"
+                                    />
+                        </InputGroup>
+
+                        <br/>
+
+                        <InputGroup>
+                        <InputGroupAddon>Direccion</InputGroupAddon>
+                            <Field
+                                name="direccion"
+                                component="input"
+                                type="direccion"
+                            />
+                        </InputGroup>
+                        <br/>
+
+                        <InputGroup>
+                        <InputGroupAddon>Pedido</InputGroupAddon>
+                            <Field
+                                name="pedido"
+                                component="input"
+                                type="pedido"
+                            />
+                        </InputGroup>
+                        <br/>
+
+                         <InputGroup>
+                         <InputGroupAddon>Fecha</InputGroupAddon>
+                            <Field
+                                name="fecha" 
+                                component={ PedidosDate }
+
+                            />
+                        </InputGroup>
+                        <br/>
+
+                    </Col>
+                    <Col className="offset-4">
+                        
+                        <Button type="submit" color="primary" disabled={pristine || submitting}>Enviar</Button>
+                        <Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Reestablecer Valores</Button>
+                        
+                    </Col>
+                </Row>
+            </form>
+        </Card>
+    </Container>
   )
 }
 
