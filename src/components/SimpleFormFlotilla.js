@@ -69,9 +69,10 @@ const SimpleFormF = (props) => {
 								<br/>
 
 							</Col>
+
 						  <Col className="offset-5">
 			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
-			        		
+
 			        		<Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 			      		  </Col>
 
