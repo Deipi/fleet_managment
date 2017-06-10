@@ -65,6 +65,7 @@ const SimpleFormPedidos = (props) => {
                                         name="nombre"
                                         component="input"
                                         type="text"
+                                        label="npm"
 
                                     />
 
@@ -78,6 +79,7 @@ const SimpleFormPedidos = (props) => {
                                 name="apellido"
                                 component="input"
                                 type="text"
+                                label="npm"
                             />
                         </InputGroup>
                         <br/>
@@ -88,6 +90,7 @@ const SimpleFormPedidos = (props) => {
                                 name="telefono"
                                 component="input"
                                 type="telefono"
+                                label="npm"
                             />
                         </InputGroup>
 
@@ -99,6 +102,7 @@ const SimpleFormPedidos = (props) => {
                                         name="email"
                                         component="input"
                                         type="email"
+                                        label="npm"
                                     />
                         </InputGroup>
 
@@ -110,6 +114,7 @@ const SimpleFormPedidos = (props) => {
                                 name="direccion"
                                 component="input"
                                 type="direccion"
+                                label="npm"
                             />
                         </InputGroup>
                         <br/>
@@ -120,6 +125,7 @@ const SimpleFormPedidos = (props) => {
                                 name="pedido"
                                 component="input"
                                 type="pedido"
+                                label="npm"
                             />
                         </InputGroup>
                         <br/>
@@ -135,12 +141,12 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                     </Col>
+
                     <Col className="offset-4">
-                        
                         <Button type="submit" color="primary" disabled={pristine || submitting}>Enviar</Button>
                         <Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Reestablecer Valores</Button>
-                        
                     </Col>
+
                 </Row>
             </form>
         </Card>
