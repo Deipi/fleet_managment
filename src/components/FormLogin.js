@@ -1,6 +1,7 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form/immutable';
 import { Link } from 'react-router-dom';
+import { Container, Card, Button, CardTitle, CardText, Row, Col, InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
 const validate = values => {
     const errors = {};
@@ -18,40 +19,85 @@ const validate = values => {
     return errors;
 }
 
-const renderField = ({ input,label,type,meta: { asyncValidating, touched, error }}) => (
-    <div>
-        <label>{label}</label>
-        <div className={asyncValidating ? 'async-validating' : ''}>
-            <input {...input} type={type} placeholder={label} />
-            {touched && error && <span>{error}</span>}
+const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+    const styleError = {};
+    let errorSpan = null;
+
+    const ERROR_STYLE = {
+        position: 'absolute',
+        zIndex: '3',
+        right: '11px',
+        top: '-9px',
+    };
+
+    if (touched && error) {
+        errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+        styleError.borderColor = 'darkred';
+    }
+    return(
+        <div style={ { position: 'relative' } }>
+        { errorSpan }
+        <InputGroup>
+        <InputGroupAddon> {label}</InputGroupAddon>
+        <Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={label} />
+        </InputGroup>
         </div>
-    </div>
-)
+    );
+};
 
 const SimpleFormLogin = (props) => {
     const {handleSubmit, pristine, reset, submitting, actionSubmit} = props
     return (
-    <form onSubmit={handleSubmit(actionSubmit)}>
-        <div>
-            <Field name="email" type="email" component={renderField} label="Email"/>
-        </div>
+    <Container>
+        <Col sm="6">
+            <Card block>
+                <form onSubmit={handleSubmit(actionSubmit)}>
+                    <Row>
+                        <Col className="offset-5">
+                            <tr>LOGIN</tr><br/>
+                        </Col>
 
-        <div>
-            <Field name="password" type="password" component={renderField} label="Password"/>
-        </div>
+                        <Col className="col-sm-12 offset-1">
+                            <InputGroup>
+                            <Col className="col-sm-10">
+                                <Field
+                                    name="email"
+                                    type="email"
+                                    component={renderField} 
+                                    label="Email"
+                                />
+                            </Col>
+                            </InputGroup>
 
-        <div>
-            <button type="submit" disabled={pristine || submitting}>
-                Sign Up
-            </button>
-            <button type="button" disabled={pristine || submitting} onClick={reset}>
-                <Link className="btn" tag={Link} color="info" to='login'>Clear Values</Link>
-            </button>
-            <button type="button" disabled={pristine || submitting} onClick={reset}>
-                <Link className="btn" tag={Link} color="info" to='registrar'>Registrar</Link>
-            </button>
-        </div>
-    </form>
+                            <InputGroup>
+                            <Col className="col-sm-10">
+                                <Field
+                                    name="password"
+                                    type="password"
+                                    component={renderField}
+                                    label="Password"
+                                />
+                            </Col>
+                            </InputGroup>
+
+                        </Col>
+
+                        <Col className="offset-2">
+                            <Button type="submit" disabled={pristine || submitting}>
+                                Sign Up
+                            </Button>
+                            <Button type="button" disabled={pristine || submitting} onClick={reset}>
+                                <Link tag={Link} color="info" to='login'>Clear Values</Link>
+                            </Button>
+                            <Button type="button" disabled={pristine || submitting} onClick={reset}>
+                                <Link  tag={Link} color="info" to='registrar'>Registrar</Link>
+                            </Button>
+                        </Col>
+                    </Row>
+                </form>
+            </Card>
+        </Col>
+    </Container>
   )
 }
 
