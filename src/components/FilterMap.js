@@ -4,16 +4,15 @@ import { connect } from 'react-redux';
 
 export class FilterMap extends Component {
    render() {
-   	
 		const { mapd, onClick }=this.props;
 		  return (
 		<div>
 
 			<select name='state' onChange={ mapd } >
-				<option value="">Todos los departamentos</option>
-				<option value="Desarrollo">Desarrollo</option>
-				<option value="Diseño">Diseño</option>
-				<option value="Ventas">Ventas</option>
+				<option value="">All the departments</option>
+				<option value="Desarrollo">Development</option>
+				<option value="Diseño">Design</option>
+				<option value="Ventas">Sales</option>
 			</select>
 		</div>
 
