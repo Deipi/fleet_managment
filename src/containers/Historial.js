@@ -25,7 +25,7 @@ class DriversList extends Component {
 		return (
 			<div>
 				<center>
-					<h3>HISTORIAL CONDUCTOR</h3>
+					<h3>DRIVER HISTORY</h3>
 				</center><br/>
 				<Griddle data={ conductores ? conductores.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
