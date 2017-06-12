@@ -7,7 +7,7 @@ export class FilterMapState extends Component {
 			return (
 				<div>
 					<select name='status' onChange={ maps }>
-						<option value="">Estados</option>
+						<option value="">State</option>
 						<option value="Online">Online</option>
 						<option value="Offline">Offline</option>
 					</select>
