@@ -37,28 +37,28 @@ const SimpleFormContac = (props) => {
 				<Row>
 
 					<Col className="offset-5">
-						<tr>CONTACTO</tr><br/>
+						<tr>CONTACT</tr><br/>
 					</Col>
 
 					<Col className="col-sm-12">
 						<Row>
 							<Col className="col-sm-6">
 								<div>
-									<label>¿QUIÉNES SOMOS?</label>
+									<label>ABOUT US?</label>
 									<div>
-										<p> DEIPI es una agencia de desarrollo de aplicaciones en Internet dedicada a
-										proveer soluciones de e-business para empresas que buscan reducir sus costos,
-										aumentar sus ingresos y mejorar su competitividad empresarial.</p>
+										<p> DEIPI is an application development agency dedicated to providing
+										Internet e-business solutions for companies looking to reduce costs,
+										increase revenue and improve business competitiveness.</p>
 									</div>
 								</div>
 								<div>
-									<label>SERVICIOS</label>
+									<label>SERVICES</label>
 									<div>
-										<p> Ofrecemos servicios de tecnologías de información enfocadas a internet y disposivos móviles,
-										en la modalidad de SaaS (Software as a Service) y desarrollo de proyectos a la medida de las
-										necesidades de su organización.
-										Contamos con una plataforma propietaria que nos permite el desarrollo de nuevos proyectos en internet
-										de forma modular y con funcionalidad especifica.</p>
+										<p> We offer information technology services focused on internet and
+										mobile devices, in the form of SaaS (Software as a Service) and
+										development of projects tailored to the needs of your organization.
+										We have a proprietary platform that allows us to develop new projects
+										on the internet in a modular way and with specific functionality.</p>
 									</div>
 								</div>
 							</Col>
@@ -66,8 +66,8 @@ const SimpleFormContac = (props) => {
 							<Col className="col-sm-6">
 
 								  	<InputGroup>
-								  	<InputGroupAddon>Nombre</InputGroupAddon>
-									  	<Field 
+								  	<InputGroupAddon>First Name</InputGroupAddon>
+									  	<Field
 									  		name="nombre"
 									  		component="input"
 									  		type="text"
@@ -77,7 +77,7 @@ const SimpleFormContac = (props) => {
 							  		<br/>
 
 									<InputGroup>
-									<InputGroupAddon>Apellidos</InputGroupAddon>
+									<InputGroupAddon>Last Name</InputGroupAddon>
 
 										  	<Field
 										  		name="apellidos"
@@ -100,7 +100,7 @@ const SimpleFormContac = (props) => {
 						  			<br/>
 
 							 		<InputGroup>
-								  	<InputGroupAddon>Telefono</InputGroupAddon>
+								  	<InputGroupAddon>Phone</InputGroupAddon>
 										  	<Field
 										  		name="telefono"
 										  		component="input"
@@ -110,7 +110,7 @@ const SimpleFormContac = (props) => {
 							  		<br/>
 
 							  		<InputGroup>
-								  	<InputGroupAddon>Comentario</InputGroupAddon>
+								  	<InputGroupAddon>Commentary</InputGroupAddon>
 										  	<Field
 										  		name="comentario"
 										  		component="textarea"
