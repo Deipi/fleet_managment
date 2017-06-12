@@ -53,13 +53,13 @@ const SimpleFormPedidos = (props) => {
                 <Row>
 
                     <Col className="offset-5">
-                            <tr>MONITOREO PEDIDOS</tr><br/>
+                            <tr>MONITORING ORDERS</tr><br/>
                     </Col>
 
                     <Col className="col-sm-10 offset-4">
-                   
+
                        <InputGroup>
-                       <InputGroupAddon>Nombre</InputGroupAddon>
+                       <InputGroupAddon>First Name</InputGroupAddon>
 
                                     <Field
                                         name="nombre"
@@ -74,7 +74,7 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                         <InputGroup>
-                        <InputGroupAddon>Apellido</InputGroupAddon>
+                        <InputGroupAddon>Last Name</InputGroupAddon>
                             <Field
                                 name="apellido"
                                 component="input"
@@ -85,7 +85,7 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                          <InputGroup>
-                        <InputGroupAddon>Telefono</InputGroupAddon>
+                        <InputGroupAddon>Phone</InputGroupAddon>
                             <Field
                                 name="telefono"
                                 component="input"
@@ -109,7 +109,7 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                         <InputGroup>
-                        <InputGroupAddon>Direccion</InputGroupAddon>
+                        <InputGroupAddon>Address</InputGroupAddon>
                             <Field
                                 name="direccion"
                                 component="input"
@@ -120,7 +120,7 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                         <InputGroup>
-                        <InputGroupAddon>Pedido</InputGroupAddon>
+                        <InputGroupAddon>Order</InputGroupAddon>
                             <Field
                                 name="pedido"
                                 component="input"
@@ -131,9 +131,9 @@ const SimpleFormPedidos = (props) => {
                         <br/>
 
                          <InputGroup>
-                         <InputGroupAddon>Fecha</InputGroupAddon>
+                         <InputGroupAddon>Date</InputGroupAddon>
                             <Field
-                                name="fecha" 
+                                name="fecha"
                                 component={ PedidosDate }
 
                             />
@@ -142,9 +142,9 @@ const SimpleFormPedidos = (props) => {
 
                     </Col>
 
-                    <Col className="offset-4">
-                        <Button type="submit" color="primary" disabled={pristine || submitting}>Enviar</Button>
-                        <Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Reestablecer Valores</Button>
+                    <Col className="offset-5">
+                        <Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+                        <Button type="Button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
                     </Col>
 
                 </Row>
