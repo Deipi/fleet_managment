@@ -33,7 +33,7 @@ class DataTable extends Component {
 				Layout: NewLayout
 			}}>
 		   <RowDefinition>
-		      <ColumnDefinition id="id" title="Unit ID" visible />
+		      <ColumnDefinition id="id" title="ID" visible />
 		      <ColumnDefinition id="model" title='Model' visible/>
 		      <ColumnDefinition id="vehicle_registration_plate" title='Plate' visible />
 		      <ColumnDefinition id="type.label" title='Type' visible />
