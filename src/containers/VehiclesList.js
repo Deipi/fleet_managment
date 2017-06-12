@@ -68,7 +68,6 @@ class VehiclesListComponent extends Component {
 			type: CLEAN_VEHICLE,
 			payload: {}
 		});
-		
 	}
 
 	render() {
@@ -135,7 +134,6 @@ class VehiclesListComponent extends Component {
 				{ btnRemove }
 				{ btnGroup }
 				<br/>
-				
 				<br/>
 				<Griddle data={ unidades ? unidades.toJS() : [] }
 				plugins={[plugins.LocalPlugin]}
