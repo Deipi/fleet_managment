@@ -45,15 +45,12 @@ class FilterMapUnit extends Component {
 				if (queyObj[key]) {
 					queryArray.push(`${ key }=${queyObj[key]}`);
 				}
-			} 
-
+			}
 		}
 		dispatch(fetchVehiclesFilter(queryArray.join('&')))
-
 	}
 
 	render() {
-
 		return (
 			<Col className="col-sm-11 ">
 				<Row>
@@ -67,11 +64,10 @@ class FilterMapUnit extends Component {
 						<FilterLabel onTextUpdate={ this.updateTextFilterL } />
 					</Col>
 					<Col sm='1'>
-						<Button color="info" onClick={ this.retrieveFilteredReceipts } >Filtrar</Button>
+						<Button color="info" onClick={ this.retrieveFilteredReceipts } >Filter</Button>
 					</Col>
 				</Row>
 				</Col>
-			
 		);
 	}
 }
