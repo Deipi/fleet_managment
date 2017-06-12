@@ -449,6 +449,14 @@
       "email": "juan@gmail.com",
       "password": "123",
       "id": 2
+    },
+    {
+      "name": "Jose",
+      "apellido": "Mora",
+      "telefono": "7861236447",
+      "email": "mora@gmail.com",
+      "password": "asd",
+      "id": 3
     }
   ],
   "flotillas": [
