@@ -25,7 +25,7 @@ class EntregasList extends Component {
 		return(
 			<div>
 				<center>
-					<h3>ENTREGAS</h3>
+					<h3>DELIVERIES</h3>
 				</center>
 
 				<Griddle data={ entregas ? entregas.toJS() : [] }
@@ -40,16 +40,15 @@ class EntregasList extends Component {
 						Layout: NewLayout
 					}}>
 					<RowDefinition>
-					  <ColumnDefinition id="id" title="Entrega ID" visible order={1}/>
-					  <ColumnDefinition id="nombre" title="Nombre" visible order={2}/>
-				      <ColumnDefinition id="apellido" title="Apellidos" visible order={3}/>
-				      <ColumnDefinition id="telefono" title="Telefono" visible order={4}/>
+					  <ColumnDefinition id="id" title="ID" visible order={1}/>
+					  <ColumnDefinition id="nombre" title="First Name" visible order={2}/>
+				      <ColumnDefinition id="apellido" title="Last Name" visible order={3}/>
+				      <ColumnDefinition id="telefono" title="Phone" visible order={4}/>
 				      <ColumnDefinition id="email" title="E-mail" visible order={5}/>
-				      <ColumnDefinition id="direccion" title="Direccion" visible order={6}/>
-				      <ColumnDefinition id="pedido" title="Descripcion" visible order={7}/>
-				      <ColumnDefinition id="fecha" title="Fecha de Salida" visible order={8}/>
-				      <ColumnDefinition id="fechaL" title="Fecha de Llegada" visible order={9}/>
-				      
+				      <ColumnDefinition id="direccion" title="Address" visible order={6}/>
+				      <ColumnDefinition id="pedido" title="Description" visible order={7}/>
+				      <ColumnDefinition id="fecha" title="Departure Date" visible order={8}/>
+				      <ColumnDefinition id="fechaL" title="Arrival Date" visible order={9}/>
 				 	</RowDefinition>
 				</Griddle>
 			</div>
