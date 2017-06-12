@@ -19,7 +19,7 @@ const validate = values => {
     return errors;
 }
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label,className, type, meta: { touched, error } }) => {
     const styleError = {};
     let errorSpan = null;
 
@@ -38,8 +38,8 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
         <div style={ { position: 'relative' } }>
         { errorSpan }
         <InputGroup>
-        <InputGroupAddon> {label}</InputGroupAddon>
-        <Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={label} />
+        <InputGroupAddon> <i className={className}/></InputGroupAddon>
+        <Input { ...input }className="form-control" style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={label} />
         </InputGroup>
         </div>
     );
@@ -49,53 +49,74 @@ const SimpleFormLogin = (props) => {
     const {handleSubmit, pristine, reset, submitting, actionSubmit} = props
     return (
     <Container>
-        <Col className="col-sm-6 offset-3">
-            <Card block>
-                <form onSubmit={handleSubmit(actionSubmit)}>
-                    <Row>
-                        <Col className="offset-5">
-                            <tr>LOGIN</tr><br/>
-                        </Col>
-
-                        <Col className="col-sm-12 offset-1">
-                            <InputGroup>
-                            <Col className="col-sm-10">
-                                <Field
-                                    name="email"
-                                    type="email"
-                                    component={renderField} 
-                                    label="Email"
-                                />
+        <Col className="col-sm-12">
+            <form onSubmit={handleSubmit(actionSubmit)}>
+                <Row>
+                    <div className="col-sm-6">
+                        <h3>Ingrese a su cuenta</h3>
+                        <br/>
+                        <div>
+                            <i className="fa fa-envelope fa-4x"/>
+                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Por favor introduzca su <strong>correo electrónico</strong> y <strong>contraseña</strong>  para ingresar al sistema.</p>
+                        </div><br/><br/>
+                        <div>
+                            <i className="fa fa-check fa-4x"/>
+                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Por favor introduzca su <strong>correo electrónico</strong> y <strong>contraseña</strong>  para ingresar al sistema.</p>
+                        </div>
+                    </div>
+                    <div className="col-sm-6">
+                        <Card block>
+                            <div className="offset-5">
+                                    <br/>
+                                    <h3>LOGIN</h3><br/>
+                            </div>
+                            <Col className="offset-5">
+                                <tr>LOGIN</tr><br/>
                             </Col>
-                            </InputGroup>
+                            <Col className="col-sm-12 offset-1">
+                                <InputGroup>
+                                <Col className="col-sm-10">
+                                    <Field
+                                        name="email"
+                                        type="email"
+                                        component={renderField} 
+                                        label="Email"
+                                        className="fa fa-fw fa-envelope"
+                                    />
+                                    <br/>
+                                </Col>
+                                </InputGroup>
 
-                            <InputGroup>
-                            <Col className="col-sm-10">
-                                <Field
-                                    name="password"
-                                    type="password"
-                                    component={renderField}
-                                    label="Password"
-                                />
+                                <InputGroup>
+                                <Col className="col-sm-10">
+                                    <Field
+                                        name="password"
+                                        type="password"
+                                        component={renderField}
+                                        label="Password"
+                                        className="fa fa-fw fa-key"
+                                    /><br/><br/>
+                                </Col>
+                                </InputGroup>
+
                             </Col>
-                            </InputGroup>
-
-                        </Col>
-
-                        <Col className="offset-2">
-                            <Button type="submit" disabled={pristine || submitting}>
-                                Sign Up
-                            </Button>
-                            <Button type="button" disabled={pristine || submitting} onClick={reset}>
-                                <Link tag={Link} color="info" to='login'>Clear Values</Link>
-                            </Button>
-                            <Button type="button" disabled={pristine || submitting} onClick={reset}>
-                                <Link  tag={Link} color="info" to='registrar'>Registrar</Link>
-                            </Button>
-                        </Col>
-                    </Row>
-                </form>
-            </Card>
+                                 <Row>
+                                <div className="col-sm-12 offset-2">
+                                <Button type="submit" disabled={pristine || submitting}>
+                                    Sign Up
+                                </Button>
+                                <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>
+                                    <Link tag={Link} color="info" to='login'>Clear Values</Link>
+                                </Button>
+                                <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>
+                                    <Link  tag={Link} color="info" to='registrar'>Registrar</Link>
+                                </Button>
+                                </div>
+                                </Row>
+                        </Card>
+                    </div>
+                </Row>
+            </form>
         </Col>
     </Container>
   )
