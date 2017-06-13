@@ -47,7 +47,7 @@ const format = value => {
 	}
 }
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -67,7 +67,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 			{ errorSpan }
 			<InputGroup>
 				<InputGroupAddon> {label}</InputGroupAddon>
-				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={placeholder} />
 			</InputGroup>
 		</div>
 	);
@@ -84,46 +84,36 @@ const FormCombustible=(props)=>{
 							<br/><tr>FUEL</tr><br/>
 						</center>
 
-						<div>
-							<label>Fuel type</label>
-								<Field
-									name="fuel_type"
-									component={ CreatableComb }
-									type="text"
-								/>
-						</div>
+						<label>Fuel type</label>
+						<Field
+							name="fuel_type"
+							component={ CreatableComb }
+							type="text"
+						/>
 
-						<InputGroup>
-							<InputGroupAddon>Fuel Grade</InputGroupAddon>
-								<Field
-									name="fuel_grade"
-									component="input"
-									type="text"
-									placeholder="Fuel Grade"
-								/>
-						</InputGroup>
+						<Field
+							name="fuel_grade"
+							component={renderField}
+							type="text"
+							placeholder="Fuel Grade"
+							label="Fuel Grade"
+						/>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="fuel_consumption"
-									component={ renderField }
-									format={ format }
-									label="Fuel consumption"
-								/>
-							</Col>
-						</InputGroup>
+						<Field
+							name="fuel_consumption"
+							component={ renderField }
+							format={ format }
+							label="Fuel consumption"
+							placeholder="Fuel consumption"
+						/>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="tank_capacity"
-									component={ renderField }
-									format={ format }
-									label="Tank capacity"
-								/>
-							</Col>
-						</InputGroup>
+						<Field
+							name="tank_capacity"
+							component={ renderField }
+							format={ format }
+							label="Tank capacity"
+							placeholder="Tank capacity"
+						/>
 					</Col>
 				</Row>
 			</Card>
