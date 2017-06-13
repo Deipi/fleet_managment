@@ -83,7 +83,7 @@ class VehiclesListComponent extends Component {
 		if(create){
 			btnCreate = (
 				<Button onClick={ this.cleanVehicleStore } >
-					<Link tag={Link} color="info" to='/formulario'> Create </Link>
+					<Link tag={Link} color="info" to='/unidades'> Create </Link>
 				</Button>
 			);
 		}
@@ -96,7 +96,7 @@ class VehiclesListComponent extends Component {
 		if (edit) {
 			btnEdit = (
 				<Button>
-					<Link tag={Link} color="info" to='/formulario'> Edit </Link>
+					<Link tag={Link} color="info" to='/unidades'> Edit </Link>
 				</Button>
 			);
 		}
