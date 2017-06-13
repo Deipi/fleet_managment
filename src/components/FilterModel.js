@@ -34,8 +34,8 @@ export class FilterModel extends Component {
 	render() {
 		const { fil }=this.props;
 		return (
-			<Container>
-				<Row>
+			
+				
 					<InputGroup>
 					<InputGroupAddon>Model</InputGroupAddon>
 						<Input
@@ -44,8 +44,8 @@ export class FilterModel extends Component {
 							onChange={ this.props.onTextUpdate }
 						/>
 					</InputGroup>
-				</Row>
-			</Container>
+				
+			
 		);
 	}
 }
