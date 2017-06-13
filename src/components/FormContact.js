@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import { Input, Row, Col, Container, Button, InputGroup, InputGroupAddon } from 'reactstrap'
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -22,7 +22,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 		{ errorSpan }
 		<InputGroup>
 		<InputGroupAddon> {label}</InputGroupAddon>
-		<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={label} />
+		<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={placeholder} />
 		</InputGroup>
 		</div>
 	);
@@ -46,7 +46,7 @@ const SimpleFormContac = (props) => {
 								<div>
 									<label>ABOUT US?</label>
 									<div>
-										<p> DEIPI is an application development agency dedicated to providing
+										<p style={{ textalign:'justify'}}> DEIPI is an application development agency dedicated to providing
 										Internet e-business solutions for companies looking to reduce costs,
 										increase revenue and improve business competitiveness.</p>
 									</div>
@@ -54,7 +54,7 @@ const SimpleFormContac = (props) => {
 								<div>
 									<label>SERVICES</label>
 									<div>
-										<p> We offer information technology services focused on internet and
+										<p style={{ textalign:'justify'}}> We offer information technology services focused on internet and
 										mobile devices, in the form of SaaS (Software as a Service) and
 										development of projects tailored to the needs of your organization.
 										We have a proprietary platform that allows us to develop new projects
@@ -64,61 +64,46 @@ const SimpleFormContac = (props) => {
 							</Col>
 
 							<Col className="col-sm-6">
+							  	<Field
+							  		name="nombre"
+							  		component={renderField}
+							  		type="text"
+							  		label="First Name"
+							  		placeholder="First Name"
+							  	/><br/>
 
-								  	<InputGroup>
-								  	<InputGroupAddon>First Name</InputGroupAddon>
-									  	<Field
-									  		name="nombre"
-									  		component="input"
-									  		type="text"
-									  	/>
+							  	<Field
+							  		name="apellidos"
+							  		component={renderField}
+							  		type="text"
+							  		label="Last Name"
+						  			placeholder="Last Name"
+							  	/><br/>
 
-									</InputGroup>
-							  		<br/>
+							  	<Field
+								  	name="email"
+								  	component={renderField}
+								  	type="email"
+								  	label="E-mail"
+							  		placeholder="E-mail"
+							  	/><br/>
 
-									<InputGroup>
-									<InputGroupAddon>Last Name</InputGroupAddon>
+							  	<Field
+							  		name="telefono"
+							  		component={renderField}
+							  		type="telefono"
+							  		label="Phone"
+						  			placeholder="Phone"
+							  	/><br/>
 
-										  	<Field
-										  		name="apellidos"
-										  		component="input"
-										  		type="text"
-										  	/>
+							  	<Field
+							  		name="comentario"
+							  		component="textarea"
+							  		label="Commentary"
+						  			placeholder="Commentary"
+							  	/><br/><br/>
 
-									</InputGroup>
-							  		<br/>
-
-									<InputGroup>
-									<InputGroupAddon>Email</InputGroupAddon>
-										  <Field
-										  	name="email"
-										  	component="input"
-										  	type="email"
-										  />
-
-									</InputGroup>
-						  			<br/>
-
-							 		<InputGroup>
-								  	<InputGroupAddon>Phone</InputGroupAddon>
-										  	<Field
-										  		name="telefono"
-										  		component="input"
-										  		type="telefono"
-										  	/>
-									</InputGroup>
-							  		<br/>
-
-							  		<InputGroup>
-								  	<InputGroupAddon>Commentary</InputGroupAddon>
-										  	<Field
-										  		name="comentario"
-										  		component="textarea"
-										  	/>
-									</InputGroup>
-							  	<br/>
-
-							  	<Col className="col-sm-12">
+							  	<Col className="col-sm-12 offset-4">
 									<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
 									<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 								</Col>

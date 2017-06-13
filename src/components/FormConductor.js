@@ -114,7 +114,7 @@ var CreatableTAG=React.createClass({
 });
 
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -134,7 +134,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 			{ errorSpan }
 			<InputGroup>
 				<InputGroupAddon> {label}</InputGroupAddon>
-				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={placeholder} />
 			</InputGroup>
 		</div>
 	);
@@ -152,77 +152,57 @@ const FormConductorComponent = (props) => {
 							<br/><br/><tr>SUMMARY</tr><br/>
 						</center>
 
-						<InputGroup>
-							<InputGroupAddon>Last Name</InputGroupAddon>
-							<Field
-								name="last_name"
-								component="input"
-								type="text"
-								placeholder="Last Name"
-							/>
-						</InputGroup>
+						<Field
+							name="last_name"
+							component={renderField}
+							type="text"
+							placeholder="Last Name"
+							label="Last Name"
+						/>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="first_name"
-									component={ renderField }
-									type="text"
-									label="First Name"
-								/>
-							</Col>
-						</InputGroup>
+						<Field
+							name="first_name"
+							component={ renderField }
+							type="text"
+							label="First Name"
+							placeholder="First Name"
+						/>
 
-						<InputGroup>
-							<InputGroupAddon>Middle Name</InputGroupAddon>
-							<Field
-								name="middle_name"
-								component="input"
-								type="text"
-								placeholder="Middle Name"
-							/>
-						</InputGroup>
+						<Field
+							name="middle_name"
+							component={renderField}
+							type="text"
+							placeholder="Middle Name"
+							label="Middle Name"
+						/>
 
-						<div>
-							<Col className="col-sm-12">
-								<label>Tracker</label>
-								<Field
-									name="tracker"
-									component={ CreatableTR }
-								/>
-							</Col>
-						</div>
+						<label>Tracker</label>
+						<Field
+							name="tracker"
+							component={ CreatableTR }
+						/>
 
-						<div>
-							<Col className="col-sm-12">
-								<label>Department</label>
-								<Field
-									name="department"
-									component={ CreatableDEP }
-								/>
-							</Col>
-						</div>
 
-						<InputGroup>
-							<InputGroupAddon>Hardware key</InputGroupAddon>
-							<Field
-								name="hardware_key"
-								component="input"
-								type="text"
-								placeholder="Hardware Key"
-							/>
-						</InputGroup>
+						<label>Department</label>
+						<Field
+							name="department"
+							component={ CreatableDEP }
+						/>
 
-						<div>
-							<Col className="col-sm-12">
-								<label>Tags</label>
-								<Field
-									name="tags"
-									component={ CreatableTAG }
-									onChangeAction={ onChangeAction }
-								/>
-							</Col>
-						</div>
+						<Field
+							name="hardware_key"
+							component={renderField}
+							type="text"
+							placeholder="Hardware Key"
+							label="Hardware Key"
+						/>
+
+						<label>Tags</label>
+						<Field
+							name="tags"
+							component={ CreatableTAG }
+							onChangeAction={ onChangeAction }
+						/>
 					</Col>
 
 					<Col className="col-sm-6">
@@ -230,10 +210,10 @@ const FormConductorComponent = (props) => {
 						<FormLicenciaConductor/><br/>
 					</Col>
 
-						<Col className="offset-5"><br/>
-			        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
-			        		<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
-			      		</Col>
+					<Col className="offset-5"><br/>
+		        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+		        		<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
+		      		</Col>
 			    </Row>
 			</form>
 		</Container>

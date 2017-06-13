@@ -4,7 +4,7 @@ import { Field } from 'redux-form/immutable'
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import { Container, Row, Col, Card } from 'reactstrap'
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -24,7 +24,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 			{ errorSpan }
 			<InputGroup>
 				<InputGroupAddon> {label}</InputGroupAddon>
-				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={placeholder} />
 			</InputGroup>
 		</div>
 	);
@@ -71,66 +71,66 @@ const SimpleFormD = (props) => {
 							<br/><tr>DIMENSIONS</tr><br/>
 						</center>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="cargo_capacity"
-									component={ renderField }
-									format={ format }
-									type="text"
-									normalize={ minimo }
-									label="Cargo Capacity"
-								/>
-							</Col>
-						</InputGroup>
+						<Col className="col-sm-12">
+							<Field
+								name="cargo_capacity"
+								component={ renderField }
+								format={ format }
+								type="text"
+								normalize={ minimo }
+								label="Cargo Capacity"
+								placeholder="Cargo Capacity"
+							/>
+						</Col>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Row>
-									<Col className="col-sm-6">
-										<Field
-											name="cargo_l"
-											component={ renderField }
-											format={ formato }
-											type="text"
-											normalize={ minimo }
-											label="Cargo Bay"
-										/>
-									</Col>
-									<Col className="col-sm-3">
-										<Field
-											name="cargo_w"
-											component={ renderField }
-											format={ formato }
-											type="text"
-											normalize={ minimo }
-										/>
-									</Col>
-									<Col className="col-sm-3">
-										<Field
-											name="cargo_h"
-											component={ renderField }
-											format={ formato }
-											type="text"
-											normalize={ minimo }
-										/>
-									</Col>
-								</Row>
-							</Col>
-						</InputGroup>
+						<Col className="col-sm-12">
+							<Field
+							    component={ renderField }
+								name="cargo_l"
+								format={ formato }
+								type="text"
+								normalize={ minimo }
+								label="Cargo Bay L"
+								placeholder="Cargo Bay L"
+							/>
+						</Col>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="number_of_passengers"
-									component={ renderField }
-									format={ people }
-									type="text"
-									normalize={ minimo }
-									label="Number of passengers"
-								/>
-							</Col>
-						</InputGroup>
+						<Col className="col-sm-12">
+							<Field
+								component={ renderField }
+								name="cargo_w"
+								format={ formato }
+								type="text"
+								normalize={ minimo }
+								label="Cargo Bay W"
+								placeholder="Cargo Bay W"
+							/>
+						</Col>
+
+						<Col className="col-sm-12">
+							<Field
+								component={ renderField }
+								name="cargo_h"
+								format={ formato }
+								type="text"
+								normalize={ minimo }
+								label="Cargo Bay H"
+								placeholder="cargo Bay H"
+
+							/>
+						</Col>
+
+						<Col className="col-sm-12">
+							<Field
+								name="number_of_passengers"
+								component={ renderField }
+								format={ people }
+								type="text"
+								normalize={ minimo }
+								label="Number of passengers"
+								placeholder="Number of passengers"
+							/>
+						</Col>
 					</Col>
 				</Row>
 			</Card>
