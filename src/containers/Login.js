@@ -18,7 +18,7 @@ class LoginComponent extends React.Component {
     const { login } = nextProps;
 
     if (login.size) {
-      push('/');
+      push('/pedidos');
     }
   }
 
