@@ -41,11 +41,11 @@ const SimpleFormRegistrar = (props) => {
 			<form onSubmit={handleSubmit(actionSubmit)}>
 				<Row>
 					<div className="col-sm-6">
-						<h2>Cree su cuenta</h2>
+						<h2>Create your account</h2>
 						<br/>
 						<div className="col-sm-12">
 							<i className="fa fa-envelope fa-4x"/>
-								<p style={{ position:'absolute', margin:'-3.2em 5em'}}> <strong>Ingrese</strong>  su correo electrónico y una contraseña segura para iniciar sesión.</p>
+								<p style={{ position:'absolute', margin:'-3.2em 5em'}}> <strong>Enter</strong> your email and a secure password to log in.</p>
 						</div>
 					</div>
 					<div className="col-sm-6">
@@ -60,7 +60,7 @@ const SimpleFormRegistrar = (props) => {
 											name="name"
 											component={renderField}
 											type="text"
-											placeholder="Nombre"
+											placeholder="First Name"
 											label="First Name"
 											className="fa fa-fw fa-user"
 										/>
@@ -71,7 +71,7 @@ const SimpleFormRegistrar = (props) => {
 											name="apellido"
 											component={renderField}
 											type="text"
-											placeholder="Apellido"
+											placeholder="Last Name"
 											label="Last Name"
 											className="fa fa-user-o"
 										/>
@@ -82,7 +82,7 @@ const SimpleFormRegistrar = (props) => {
 											name="telefono"
 											component={renderField}
 											type="telefono"
-											placeholder="Telefono"
+											placeholder="Phone"
 											label="Phone"
 											className="fa fa-phone"
 										/>
