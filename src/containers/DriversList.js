@@ -138,7 +138,6 @@ class DriversListComponent extends Component {
 					<RowDefinition>
 					  	<ColumnDefinition id="last_name" title="Last Name" visible/>
 					  	<ColumnDefinition id="first_name" title="First Name" visible/>
-				      	<ColumnDefinition id="tracker.label" title="Tracker" visible/>
 				      	<ColumnDefinition id="phone" title="Phone" visible/>
 				      	<ColumnDefinition id="email" title="Email" visible/>
 				      	<ColumnDefinition id="hardware_key" title="Hardware key" visible/>
