@@ -72,7 +72,7 @@ const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 
 class Menu extends React.Component {
-  constructor(props) {
+  constructor(props) {Collapse
     super(props);
 
     this.toggle = this.toggle.bind(this);
@@ -85,7 +85,7 @@ class Menu extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  
+
   render() {
   	const { login } = this.props;
 
@@ -103,10 +103,6 @@ class Menu extends React.Component {
           }
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-	           
-	            <NavItem>
-	                <NavLink><Link to='flotilla'>Fleets</Link></NavLink>
-	            </NavItem>
 	            <NavItem>
 	                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
 	            </NavItem>
@@ -136,7 +132,6 @@ class Menu extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-        
     );
   }
 }
@@ -153,7 +148,7 @@ ReactDOM.render(
 	    <div>
   		<MenuConnect/>
 
-	      <h2> PROYECTO </h2>
+	      	<br/><h4> DEIPI.COM S.A de C.V. </h4>
 
 	      <hr/>
 	      <Switch>
