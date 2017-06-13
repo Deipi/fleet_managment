@@ -102,7 +102,7 @@ const SimpleFormLogin = (props) => {
                             </Col>
                                  <Row>
                                 <div className="col-sm-12 offset-2">
-                                <Button type="submit" disabled={pristine || submitting}>
+                                <Button type="submit" disabled={ pristine || submitting }>
                                     Sign Up
                                 </Button>
                                 <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>

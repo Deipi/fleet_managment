@@ -115,25 +115,14 @@ class DriversListComponent extends Component {
 			);
 		}
 
-		let btnGroup = (
-			<Button>
-				New Group
-			</Button>
-		);
-		if (group) {
-			btnGroup = (
-				<Button>
-					<Link tag={Link} color="info" to=''> New Gruop </Link>
-				</Button>
-			);
-		}
+		
 
 		return (
 			<div>
 				{ btnCreate }
 				{ btnEdit }
 				{ btnRemove }
-				{ btnGroup }
+				
 				<br/>
 				<br/>
 				<Griddle data={ conductores ? conductores.toJS() : [] }
