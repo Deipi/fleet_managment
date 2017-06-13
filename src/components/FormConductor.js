@@ -51,9 +51,9 @@ var CreatableDEP=React.createClass({
 	getInitialState(){
 		return{
 			optionsDEP: [
-				{ value: 'des', label: 'Desarrollo'},
-				{ value: 'dis', label: 'Diseño'},
-				{ value: 'ven', label: 'Ventas'}
+				{ value: 'des', label: 'Development'},
+				{ value: 'dis', label: 'Design'},
+				{ value: 'ven', label: 'Sales'}
 			]
 		};
 	},
