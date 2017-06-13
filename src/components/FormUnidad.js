@@ -250,7 +250,7 @@ const format = value => {
   }
 }
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -270,7 +270,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 			{ errorSpan }
 			<InputGroup>
 				<InputGroupAddon> {label}</InputGroupAddon>
-				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}placeholder={placeholder}  />
 			</InputGroup>
 		</div>
 	);
@@ -290,158 +290,115 @@ const FormUnidadComponent = (props) => {
 						<br/><br/><tr>SUMMARY</tr><br/>
 					</center>
 
-					<InputGroup>
-					
-						<Col className="col-sm-12">
-							<Field
-								name="label"
-								component={renderField}
-								type="text"
-								label="label*"
-							/>
-						</Col>
-					</InputGroup>
+					<Field
+						name="label"
+						component={renderField}
+						type="text"
+						label="Label*"
+						placeholder="Label"
+					/>
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Tracker</label>
-							<Field
-								name="tracker"
-								component={ CreatableTR }
-							/>
-						</Col>
-					</div>
+					<label>Tracker</label>
+					<Field
+						name="tracker"
+						component={ CreatableTR }
+					/>
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Department</label>
-							<Field
-								name="department"
-								component={ CreatableDEP }
-							/>
-						</Col>
-					</div>
+					<label>Department</label>
+					<Field
+						name="department"
+						component={ CreatableDEP }
+					/>
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Status</label>
-							<Field
-								name="status"
-								component={ CreatableSTA }
-							/>
-						</Col>
-					</div>
+					<label>Status</label>
+					<Field
+						name="status"
+						component={ CreatableSTA }
+					/>
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Fleet</label>
-							<Field
-								name="fleet"
-								component={ CreatableFLE }
-							/>
-						</Col>
-					</div>
+					<label>Fleet</label>
+					<Field
+						name="fleet"
+						component={ CreatableFLE }
+					/>
 
-					<InputGroup>
-					<InputGroupAddon>Coordenadas</InputGroupAddon>
-						<Field
-							name="latitud"
-							component="input"
-							type="number"
-							placeholder="Latitud"
-						/>
-						<Field
-							name="longitud"
-							component="input"
-							type="number"
-							placeholder="Longitud"
-						/>
-					</InputGroup>
+					<Field
+						name="latitud"
+						component={renderField}
+						type="number"
+						placeholder="Latitude"
+						label="Latitude"
+					/>
+
+					<Field
+						name="longitud"
+						component={renderField}
+						type="number"
+						label="Longitude"
+						placeholder="Longitude"
+					/>
+
+					<label>Garage</label>
+					<Field
+						name="garage"
+						component={ CreatableGA }
+					/>
+
+					<Field
+						name="model"
+						component={renderField}
+						type="text"
+						placeholder="Model"
+						label="Model"
+					/>
+
+					<label>Type*</label>
+					<Field
+						name="type"
+						component={ CreatableTY }
+					/>
 
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Garage</label>
-							<Field
-								name="garage"
-								component={ CreatableGA }
-							/>
-						</Col>
-					</div>
+					<Field
+						name="vehicle_registration_plate"
+						component={renderField}
+						type="text"
+						placeholder="Vehicle registration plate"
+						label="Vehicle registration plate"
+					/>
 
-					<InputGroup>
-						<InputGroupAddon>Model</InputGroupAddon>
-						<Field
-							name="model"
-							component="input"
-							type="text"
-							placeholder="Model"
-						/>
-					</InputGroup>
+					<Field
+						name="vin"
+						component={renderField}
+						type="text"
+						placeholder="VIN"
+						label="VIN"
+					/>
 
-					<div>
-						<Col className="col-sm-12">
-							<label>Type*</label>
-							<Field
-								name="type"
-								component={ CreatableTY }
-							/>
-						</Col>
-					</div>
+					<Field
+						name="chassis_number"
+						component={renderField}
+						type="text"
+						placeholder="Chassis number"
+						label="Chassis number"
+					/>
 
-					<InputGroup>
-						<InputGroupAddon>Vehicle registration plate</InputGroupAddon>
-						<Field
-							name="vehicle_registration_plate"
-							component="input"
-							type="text"
-							placeholder="Vehicle"
-						/>
-					</InputGroup>
+					<Field
+						name="permited_speed"
+						component={renderField}
+						type="text"
+						format={format}
+						label="Permited speed"
+						placeholder="Permited speed"
+					/>
 
-					<InputGroup>
-						<InputGroupAddon>VIN</InputGroupAddon>
-						<Field
-							name="vin"
-							component="input"
-							type="text"
-							placeholder="VIN"
-						/>
-					</InputGroup>
 
-					<InputGroup>
-						<InputGroupAddon>Chassis number</InputGroupAddon>
-						<Field
-							name="chassis_number"
-							component="input"
-							type="text"
-							placeholder="Chassis number"
-						/>
-					</InputGroup>
-
-					<InputGroup>
-						<Col className="col-sm-12">
-							<Field
-								name="permited_speed"
-								component={renderField}
-								type="text"
-								format={format}
-								label="Permited speed"
-								placeholder="Permited speed"
-							/>
-						</Col>
-					</InputGroup>
-
-					<div>
-						<Col className="col-sm-12">
-							<label>Tags</label>
-							<Field
-								name="tags"
-								component={ CreatableTAG }
-								onChangeAction={ onChangeAction }
-							/>
-						</Col>
-					</div>
+					<label>Tags</label>
+					<Field
+						name="tags"
+						component={ CreatableTAG }
+						onChangeAction={ onChangeAction }
+					/>
 			  	</Col>
 
 			  	<Col className="col-sm-6">
