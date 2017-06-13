@@ -98,10 +98,27 @@ class MapContainer extends Component {
 		return (
 
 			<div style={{ height: '60vh' }}>
-			<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
-			<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
-			<FilterMapState  maps={this.onChangeS}/>
-			<FilterMapUnit />
+
+			<Col className="col-sm-12">
+				<Row>
+					<Col sm="4">
+						<Row>
+
+								<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
+
+								<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
+
+								<FilterMapState  maps={this.onChangeS}/>
+
+						</Row>
+					</Col>
+					<Col className="col-sm-8">
+						<FilterMapUnit />
+					</Col>
+				</Row>
+
+			</Col>
+			<br/>
 
 				<Map
 					containerElement={
