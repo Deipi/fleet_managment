@@ -33,8 +33,7 @@ export class FilterLabel extends Component {
 	render() {
 
 	return (
-		<Container>
-			<Row>
+	
 				<InputGroup>
 				<InputGroupAddon>Label</InputGroupAddon>
 					<Input 
@@ -42,8 +41,8 @@ export class FilterLabel extends Component {
 						name="label"
 						onChange={ this.props.onTextUpdate } />
 				</InputGroup>
-			</Row>
-		</Container>
+			
+		
 		);
 	}
 }
