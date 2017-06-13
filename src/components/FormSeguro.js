@@ -16,9 +16,36 @@ const DataField=({input, meta:{touched, error}, ...rest})=>(
 		{...rest}
 		selected={input.value ? moment(input.value) : null}
 		dateFormat="YYYY-MM-DD"
+		className="form-control largo"
 		/>
 	</div>
 );
+
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}placeholder={placeholder}  />
+			</InputGroup>
+		</div>
+	);
+};
 
 const FormSeguro=(props)=>{
 	const { handleSubmit } = props
@@ -31,15 +58,13 @@ const FormSeguro=(props)=>{
 							<br/><tr>INSURANCE</tr><br/>
 						</center>
 
-						<InputGroup>
-							<InputGroupAddon>Insurance policy number</InputGroupAddon>
 							<Field
 								name="insurance_policy_number"
-								component="input"
+								component={renderField}
 								type="text"
-
+								label="Insurance policy number"
+								placeholder="Insurance policy number"
 							/>
-						</InputGroup>
 
 						<InputGroup>
 							<InputGroupAddon>Insurance valid</InputGroupAddon>
@@ -49,14 +74,13 @@ const FormSeguro=(props)=>{
 							/>
 						</InputGroup>
 
-						<InputGroup>
-							<InputGroupAddon>Insurance 2 policy number</InputGroupAddon>
 							<Field
 								name="insurance_2_policy_number"
-								component="input"
+								component={renderField}
 								type="text"
+								label="Insurance 2 policy number"
+								placeholder="Insurance 2 policy number"
 							/>
-						</InputGroup>
 
 						<InputGroup>
 							<InputGroupAddon>Insurance 2 valid</InputGroupAddon>
