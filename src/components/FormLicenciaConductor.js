@@ -15,9 +15,36 @@ const DataField=({input, meta:{touched, error}, ...rest})=>(
 		{...rest}
 		selected={input.value ? moment(input.value) : null}
 		dateFormat="YYYY-MM-DD"
+		className="form-control largo"
 		/>
 	</div>
 );
+
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}placeholder={placeholder}  />
+			</InputGroup>
+		</div>
+	);
+};
 
 const FormLicenciaConductor=(props)=>{
 	const { handleSubmit }=props
@@ -30,25 +57,21 @@ const FormLicenciaConductor=(props)=>{
 							<br/><tr>DRIVER LICENSE</tr><br/>
 						</center>
 
-						<InputGroup>
-							<InputGroupAddon>Driver license number</InputGroupAddon>
 							<Field
 								name="driver_license_number"
-								component="input"
+								component={renderField}
 								type="number"
 								placeholder="Driver license number"
+								label="Driver license number"
 							/>
-						</InputGroup>
 
-						<InputGroup>
-							<InputGroupAddon>Driver license class</InputGroupAddon>
 							<Field
 								name="driver_license_class"
-								component="input"
+								component={renderField}
 								type="text"
 								placeholder="Driver license class"
+								label="Driver license class"
 							/>
-						</InputGroup>
 
 						<InputGroup>
 							<InputGroupAddon>Expiration date</InputGroupAddon>
