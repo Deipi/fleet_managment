@@ -4,6 +4,32 @@ import { Field } from 'redux-form/immutable'
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import { Container, Row, Col, Card } from 'reactstrap'
 
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
+	const styleError = {};
+	let errorSpan = null;
+
+	const ERROR_STYLE = {
+		position: 'absolute',
+		zIndex: '3',
+		right: '11px',
+		top: '-9px',
+	};
+
+	if (touched && error) {
+		errorSpan = <span className="badge badge-danger" style={ ERROR_STYLE }>{ error }</span>;
+		styleError.borderColor = 'darkred';
+	}
+	return(
+		<div style={ { position: 'relative' } }>
+			{ errorSpan }
+			<InputGroup>
+				<InputGroupAddon> {label}</InputGroupAddon>
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}placeholder={placeholder}  />
+			</InputGroup>
+		</div>
+	);
+};
+
 const FormInfocontacto=(props)=>{
 	const { handleSubmit } = props
 	return(
@@ -15,26 +41,22 @@ const FormInfocontacto=(props)=>{
 							<br/><tr>CONTACT INFO</tr><br/>
 						</center>
 
-						<InputGroup>
-							<InputGroupAddon>Phone</InputGroupAddon>
-							<Field
-								name="phone"
-								component="input"
-								type="number"
-								min="10"
-								placeholder="Phone"
-							/>
-						</InputGroup>
+						<Field
+							name="phone"
+							component={renderField}
+							type="number"
+							min="10"
+							placeholder="Phone"
+							label="Phone"
+						/>
 
-						<InputGroup>
-							<InputGroupAddon>E-mail</InputGroupAddon>
-							<Field
-								name="email"
-								component="input"
-								type="email"
-								placeholder="E-mail"
-							/>
-						</InputGroup>
+						<Field
+							name="email"
+							component={renderField}
+							type="email"
+							placeholder="E-mail"
+							label="E-mail"
+						/>
 					</Col>
 				</Row>
 			</Card>
