@@ -122,7 +122,7 @@ class VehiclesListComponent extends Component {
 		if (group) {
 			btnGroup = (
 				<Button>
-					<Link tag={Link} color="info" to=''> New Group </Link>
+					<Link tag={Link} color="info" to='/flotilla'> New Group </Link>
 				</Button>
 			);
 		}
