@@ -53,15 +53,15 @@ const SimpleFormLogin = (props) => {
             <form onSubmit={handleSubmit(actionSubmit)}>
                 <Row>
                     <div className="col-sm-6">
-                        <h3>Ingrese a su cuenta</h3>
+                        <h3>Access your account</h3>
                         <br/>
                         <div>
                             <i className="fa fa-envelope fa-4x"/>
-                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Por favor introduzca su <strong>correo electrónico</strong> y <strong>contraseña</strong>  para ingresar al sistema.</p>
+                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Please enter your <strong>email</strong> and <strong>password</strong>  to enter the system.</p>
                         </div><br/><br/>
                         <div>
                             <i className="fa fa-check fa-4x"/>
-                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Por favor introduzca su <strong>correo electrónico</strong> y <strong>contraseña</strong>  para ingresar al sistema.</p>
+                                <p style={{ position:'absolute', margin:'-3.2em 5em'}}>You can use the option of <strong>not logging out</strong> to avoid having to enter your password at each visit.</p>
                         </div>
                     </div>
                     <div className="col-sm-6">
@@ -109,7 +109,7 @@ const SimpleFormLogin = (props) => {
                                     <Link tag={Link} color="info" to='login'>Clear Values</Link>
                                 </Button>
                                 <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>
-                                    <Link  tag={Link} color="info" to='registrar'>Registrar</Link>
+                                    <Link  tag={Link} color="info" to='registrar'>Register</Link>
                                 </Button>
                                 </div>
                                 </Row>
