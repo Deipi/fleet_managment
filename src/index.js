@@ -103,38 +103,34 @@ class Menu extends React.Component {
           }
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+	           
 	            <NavItem>
-	                <NavLink><Link to='unidades'>Registro Unidades</Link></NavLink>
+	                <NavLink><Link to='flotilla'>Fleets</Link></NavLink>
 	            </NavItem>
 	            <NavItem>
-	                <NavLink><Link to='flotilla'>Registro Flotillas</Link></NavLink>
+	                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
 	            </NavItem>
-	            <NavItem>
-	                <NavLink><Link to='vehicles'>Unidades</Link></NavLink>
-	            </NavItem>
-	            <NavItem>
-		        	<NavLink><Link to='conductores'>Registro Conductores</Link></NavLink>
-		        </NavItem>
+	         
 		        <NavItem>
 		        	<NavLink><Link to='monitoreo'>Monitoreo</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='drivers'>Conductores</Link></NavLink>
+		        	<NavLink><Link to='drivers'>Drivers</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='contact'>Contacto</Link></NavLink>
+		        	<NavLink><Link to='contact'>Contact</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='historial'>Historial</Link></NavLink>
+		        	<NavLink><Link to='historial'>History</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='pedidos'>Pedidos</Link></NavLink>
+		        	<NavLink><Link to='pedidos'>Orders</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
 		        	<NavLink><Link to='entregas'>Entregas</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='geocercas'>Geocercas</Link></NavLink>
+		        	<NavLink><Link to='geocercas'>Geofences</Link></NavLink>
 		        </NavItem>
 		        
             </Nav>
