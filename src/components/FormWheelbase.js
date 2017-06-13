@@ -7,7 +7,7 @@ import { Container, Row, Col, Card } from 'reactstrap'
 
 const minimo = value => parseFloat(value.split(' ')[0]) > 0 ? value: -1 * parseFloat(value.split(' ')[0])
 
-const renderField = ({ onChangeAction, index, input, label, type, meta: { touched, error } }) => {
+const renderField = ({ onChangeAction, index, input, label, type, placeholder, meta: { touched, error } }) => {
 	const styleError = {};
 	let errorSpan = null;
 
@@ -27,7 +27,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 			{ errorSpan }
 			<InputGroup>
 				<InputGroupAddon> {label}</InputGroupAddon>
-				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type}  />
+				<Input { ...input } style={ styleError }  name={ input.name } id="inputs" type={type} placeholder={placeholder} />
 			</InputGroup>
 		</div>
 	);
@@ -44,44 +44,38 @@ const FormWheelbase=(props)=>{
 							<br/><tr>WHEELBASE</tr><br/>
 						</center>
 
-						<div>
-							<label>Wheel arrangement</label>
-							<Field
-								name="wheel_front"
-								component="input"
-								type="number"
-								normalize={ minimo}
-								label="Wheel arrangement"
-							/>X
-							<Field
-								name="wheel_rear"
-								component="input"
-								type="number"
-								normalize={minimo}
-							/>
-						</div>
+						<Field
+							name="wheel_front"
+							component={renderField}
+							type="number"
+							normalize={ minimo}
+							label="Wheel arrangement"
+							placeholder="Wheel arrangement"
+						/>X
+						<Field
+							name="wheel_rear"
+							component="input"
+							type="number"
+							normalize={minimo}
+							placeholder="Wheel arrangement"
+						/>
 
-						<InputGroup>
-							<InputGroupAddon>Tyre Size</InputGroupAddon>
-							<Field
-								name="tyre_size"
-								component="input"
-								type="text"
-								placeholder="Tyre Size"
-							/>
-						</InputGroup>
+						<Field
+							name="tyre_size"
+							component={renderField}
+							type="text"
+							placeholder="Tyre Size"
+							label="Tyre Size"
+						/>
 
-						<InputGroup>
-							<Col className="col-sm-12">
-								<Field
-									name="tyres_number"
-									component={ renderField }
-									type="number"
-									normalize={ minimo }
-									label="Tyres Number"
-								/>
-							</Col>
-						</InputGroup>
+						<Field
+							name="tyres_number"
+							component={ renderField }
+							type="number"
+							normalize={ minimo }
+							label="Tyres Number"
+							placeholder="Tyres Number"
+						/>
 					</Col>
 				</Row>
 			</Card>
