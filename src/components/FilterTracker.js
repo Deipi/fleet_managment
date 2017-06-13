@@ -33,8 +33,8 @@ export class FilterTracker extends Component {
 	render() {
 
 	return (
-		<Container>
-			<Row>
+		
+			
 				<InputGroup>
 				<InputGroupAddon>Tracker</InputGroupAddon>
 					<Input
@@ -43,8 +43,8 @@ export class FilterTracker extends Component {
 						onChange={ this.props.onTextUpdate } 
 					/>
 				</InputGroup>
-			</Row>
-		</Container>
+			
+		
 		);
 	}
 }
