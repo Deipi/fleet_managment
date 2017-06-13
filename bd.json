@@ -229,32 +229,8 @@
   ],
   "conductores": [
     {
-      "driver_license_class": "AB",
-      "hardware_key": "wert",
-      "phone": "1234",
-      "department": {
-        "value": "dis",
-        "label": "Diseño"
-      },
-      "last_name": "Martinez",
-      "middle_name": "Alberto",
-      "tracker": {
-        "value": "martin",
-        "label": "Martin"
-      },
-      "tags": [
-        "bien",
-        "ok",
-        "oc"
-      ],
-      "first_name": "Sofia",
-      "email": "ser@gmail.com",
-      "driver_license_number": "23123",
-      "id": 2
-    },
-    {
-      "driver_license_class": "AB",
-      "hardware_key": "qwaszx",
+      "driver_license_class": "Automovilist",
+      "hardware_key": "CLANDA",
       "phone": "7861234567",
       "department": {
         "value": "dis",
@@ -270,13 +246,14 @@
         "Perfecto"
       ],
       "first_name": "Claudia",
+      "id": 3,
       "email": "clau@gmail.com",
-      "driver_license_number": "12345678",
-      "id": 3
+      "driver_license_number": "123456",
+      "expiration_date": "2017-07-31"
     },
     {
-      "driver_license_class": "ASD",
-      "hardware_key": "ASDF123",
+      "driver_license_class": "Driver",
+      "hardware_key": "ASD123",
       "phone": "7861162457",
       "department": {
         "value": "des",
@@ -296,12 +273,13 @@
         "bad"
       ],
       "first_name": "Alfredo",
+      "id": 4,
       "email": "alf@gmail.com",
-      "driver_license_number": "123",
-      "id": 4
+      "driver_license_number": "123567",
+      "expiration_date": "2017-06-23"
     },
     {
-      "driver_license_class": "ASB",
+      "driver_license_class": "Driver",
       "hardware_key": "BNM123",
       "phone": "1234567890",
       "department": {
@@ -319,13 +297,14 @@
         "bien"
       ],
       "first_name": "Tony",
+      "id": 5,
       "email": "ruf@adm.com",
-      "driver_license_number": "3",
-      "id": 5
+      "driver_license_number": "312345",
+      "expiration_date": "2017-06-30"
     },
     {
-      "driver_license_class": "ACB",
-      "hardware_key": "CVBB",
+      "driver_license_class": "Driver",
+      "hardware_key": "JUAHEZ",
       "phone": "234567890",
       "department": {
         "value": "ven",
@@ -341,10 +320,79 @@
         "OK"
       ],
       "first_name": "Juanes",
+      "id": 6,
       "email": "nmnmnm@gmail.com",
-      "driver_license_number": "123",
-      "expiration_date": "2017-06-22",
-      "id": 6
+      "driver_license_number": "123098",
+      "expiration_date": "2017-06-22"
+    },
+    {
+      "driver_license_class": "Driver",
+      "hardware_key": "LOPCOM",
+      "phone": "7861891212",
+      "department": {
+        "value": "des",
+        "label": "Development"
+      },
+      "last_name": "Lopez",
+      "middle_name": "Ear",
+      "tracker": {
+        "value": "pepe",
+        "label": "Pepe"
+      },
+      "tags": [
+        "GOOD",
+        "GREAT"
+      ],
+      "first_name": "Adrian",
+      "email": "adrian@gmail.com",
+      "driver_license_number": "123456",
+      "expiration_date": "2017-07-15",
+      "id": 7
+    },
+    {
+      "driver_license_class": "Driver",
+      "hardware_key": "ALDCOM",
+      "phone": "7861234567",
+      "department": {
+        "value": "des",
+        "label": "Development"
+      },
+      "last_name": "Plaza",
+      "middle_name": "Serius",
+      "tracker": {
+        "value": "luis",
+        "label": "Luis"
+      },
+      "first_name": "Aldo",
+      "email": "aldo@gmail.com",
+      "driver_license_number": "789012",
+      "expiration_date": "2017-08-17",
+      "id": 8
+    },
+    {
+      "driver_license_class": "Driver",
+      "hardware_key": "ALECOM",
+      "phone": "7864561122",
+      "department": {
+        "value": "ven",
+        "label": "Sales"
+      },
+      "last_name": "Ortiz",
+      "middle_name": "Ale",
+      "tracker": {
+        "value": "martin",
+        "label": "Martin"
+      },
+      "tags": [
+        "GOOD",
+        "GREAT",
+        "BAD"
+      ],
+      "first_name": "Alejandra",
+      "email": "alejandra@gmail.com",
+      "driver_license_number": "345678",
+      "expiration_date": "2017-07-01",
+      "id": 9
     }
   ],
   "employes_contac": [
