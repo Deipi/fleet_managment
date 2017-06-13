@@ -110,9 +110,9 @@ class Menu extends React.Component {
 	            <NavItem>
 	                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
 	            </NavItem>
-	         
+
 		        <NavItem>
-		        	<NavLink><Link to='monitoreo'>Monitoreo</Link></NavLink>
+		        	<NavLink><Link to='monitoreo'>Monitoring</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
 		        	<NavLink><Link to='drivers'>Drivers</Link></NavLink>
@@ -127,15 +127,16 @@ class Menu extends React.Component {
 		        	<NavLink><Link to='pedidos'>Orders</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
-		        	<NavLink><Link to='entregas'>Entregas</Link></NavLink>
+		        	<NavLink><Link to='entregas'>Deliveries</Link></NavLink>
 		        </NavItem>
 		        <NavItem>
 		        	<NavLink><Link to='geocercas'>Geofences</Link></NavLink>
 		        </NavItem>
-		        
+
             </Nav>
           </Collapse>
         </Navbar>
+        
     );
   }
 }
@@ -208,6 +209,7 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<Entregas/></Component> } />
 	      </Switch>
+	      
 	    </div>
   		</Router>
   	</Provider>,
