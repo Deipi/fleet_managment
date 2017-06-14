@@ -27,11 +27,24 @@ class MapContainer extends Component {
  		this.onChangeD = this.onChangeD.bind(this);
  		this.onChangeF = this.onChangeF.bind(this);
  		this.onChangeS = this.onChangeS.bind(this);
+ 		this.monitorAction = this.monitorAction.bind(this);
 	}
 
 	componentWillMount() {
 		const { dispatch } = this.props;
 		dispatch(getVehicles());
+	}
+
+	monitorAction(id) {
+		const { dispatch } = this.props;
+		const markersFilter = this.state.allMarkers.filter(marker => marker.item.get('id') === id );
+
+		this.setState({ markers: markersFilter });
+
+		dispatch({
+			type: 'INITIAL_MONITOR',
+			payload: id,
+		});
 	}
 
 	onChangeD(event) {
@@ -43,13 +56,13 @@ class MapContainer extends Component {
 	onChangeF(event){
 		const { target: { value, name } } = event;
 		const markersFilterF = this.state.allMarkers.filter(marker => marker.item.getIn([ 'fleet', 'label' ] ) === value);
-		this.setState({ markers: markersFilterF});
+		this.setState({ markers: markersFilterF });
 	}
 
 	onChangeS(event){
 		const { target: { value, name } } = event;
 		const markersFilterS = this.state.allMarkers.filter(marker => marker.item.getIn([ 'status', 'label' ] ) === value);
-		this.setState({ markers: markersFilterS});
+		this.setState({ markers: markersFilterS });
 	}
 
 	onClickFilter(){
@@ -59,9 +72,17 @@ class MapContainer extends Component {
 
 	componentWillReceiveProps(nextProps) {
 
-		const { vehicles } = nextProps;
+		const { vehicles, currentVehicle } = nextProps;
 		const { dispatch } = this.props;
- 
+
+		if (currentVehicle.get('monitorID') && currentVehicle.get('monitorCounter') < 10) {
+			setTimeout(() => dispatch({
+				type: 'MONITOR_COUNTER',
+				payload: currentVehicle.get('monitorCounter') + 1,
+			}), 10000);
+			setTimeout(() => alert('hi'), 10000);
+		}
+
 		const markers = vehicles.map((item, index) => {
 
 			return {
@@ -90,7 +111,9 @@ class MapContainer extends Component {
 
 		});
 
-		this.setState({ markers, allMarkers: markers });
+		if (!currentVehicle.size || currentVehicle.get('monitorCounter') === 0) {
+			this.setState({ markers, allMarkers: markers });
+		}
 	}
 
 	render() {
@@ -133,7 +156,7 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-			<DataTable/>
+			<DataTable monitorAction={ this.monitorAction } />
 			</div>
 		);
 	}
@@ -142,5 +165,6 @@ class MapContainer extends Component {
 export default connect(state => {
 	return {
 		vehicles: state.get('vehiclesStore'),
+		currentVehicle: state.get('currentVehicle'),
 	};
 })(MapContainer)
