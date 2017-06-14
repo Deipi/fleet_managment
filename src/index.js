@@ -103,32 +103,62 @@ class Menu extends React.Component {
           }
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-	            <NavItem>
-	                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
-	            </NavItem>
-
+            	{
+          			login && login.size ? (
+			            <NavItem>
+			                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
+			            </NavItem>
+			        ) : null
+			    }
+			    {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='monitoreo'>Monitoring</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='drivers'>Drivers</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='contact'>Contact</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='historial'>History</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='pedidos'>Orders</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='entregas'>Deliveries</Link></NavLink>
 		        </NavItem>
+		        	) : null
+			    }
+		        {
+          			login && login.size ? (
 		        <NavItem>
 		        	<NavLink><Link to='geocercas'>Geofences</Link></NavLink>
 		        </NavItem>
-
+		        	) : null
+			    }
             </Nav>
           </Collapse>
         </Navbar>
