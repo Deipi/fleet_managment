@@ -19,10 +19,16 @@ export default (state=Immutable.fromJS([]), action) => {
 	}
 }
 
-export const currentVehicle = (state=Immutable.Map(), action) => {
+export const currentVehicle = (state=Immutable.Map(Immutable.fromJS({
+	monitorCounter: 0,
+})), action) => {
 	switch(action.type) {
 		case CURRENT_MARKER:
-			return Immutable.fromJS(action.payload);
+			return state.merge(Immutable.fromJS(action.payload));
+		case 'INITIAL_MONITOR':
+			return state.merge(Immutable.fromJS({ monitorID: action.payload }))
+		case 'MONITOR_COUNTER':
+			return state.merge(Immutable.fromJS({ monitorCounter: action.payload }))
 		default:
 			return state;
 	}

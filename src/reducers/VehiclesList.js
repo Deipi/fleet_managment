@@ -15,7 +15,7 @@ export default (state=Immutable.List(), action) => {
 
 		case UPDATE_VEHICLES:
 			return state.merge(Immutable.List(action.payload));
-			
+
 		default:
 			return state;
 	}
