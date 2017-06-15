@@ -83,7 +83,7 @@ class DriversListComponent extends Component {
 		);
 		if(create){
 			btnCreate = (
-				<Link tag={Link} to='/conductores'>
+				<Link tag={Link} to='/conductores' className="mr-3">
 					<Button color="info"  onClick={ this.cleanDriverStore } >
 						Create
 					</Button>
@@ -92,13 +92,13 @@ class DriversListComponent extends Component {
 		}
 
 		let btnEdit = (
-			<Button disabled>
+			<Button disabled  className="mr-3">
 				Edit
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
-				<Link tag={Link} to='/conductores'>
+				<Link tag={Link} to='/conductores' className="mr-3">
 					<Button color="success" >
 						 Edit
 					</Button>
