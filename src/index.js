@@ -176,9 +176,13 @@ ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
 	    <div>
+	    <Alerts />
   		<MenuConnect/>
-  			<Alerts />
-	      	<br/><h4> DEIPI.COM S.A de C.V. </h4>
+		<br/>
+		<h4>
+			<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
+			DEIPI.COM S.A de C.V.
+		</h4>
 
 	      <hr/>
 	      <Switch>
