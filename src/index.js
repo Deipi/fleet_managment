@@ -24,7 +24,7 @@ import Registrar from './containers/Registrar';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
-
+import Alerts from './containers/Alertas';
 
 import {
 	BrowserRouter as Router,
@@ -177,7 +177,7 @@ ReactDOM.render(
   		<Router>
 	    <div>
   		<MenuConnect/>
-
+  			<Alerts />
 	      	<br/><h4> DEIPI.COM S.A de C.V. </h4>
 
 	      <hr/>
