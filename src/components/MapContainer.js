@@ -160,7 +160,7 @@ class MapContainer extends Component {
 
 						</Row>
 					</Col>
-					<Col className="col-sm-8">
+					<Col className="col-sm-8" style={{zIndex:0}}>
 						<FilterMapUnit />
 					</Col>
 				</Row>
