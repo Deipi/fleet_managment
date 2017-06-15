@@ -144,7 +144,7 @@ const renderField = ({ onChangeAction, index, input, label, type, placeholder, m
 const FormConductorComponent = (props) => {
 	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return(
-		<Container>
+		<Container style={{zIndex:0}}>
 			<form onSubmit={handleSubmit(actionSubmit)}>
 				<Row>
 					<Col className="col-sm-6">
