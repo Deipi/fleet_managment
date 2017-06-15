@@ -56,7 +56,7 @@ const SimpleFormLogin = (props) => {
                         <h3>Access your account</h3>
                         <br/>
                         <div>
-                            <i className="fa fa-envelope fa-4x"/>
+                            <i className="fa fa-trash fa-4x"/>
                                 <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Please enter your <strong>email</strong> and <strong>password</strong>  to enter the system.</p>
                         </div><br/><br/>
                         <div>
