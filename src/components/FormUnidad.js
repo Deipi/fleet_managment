@@ -281,7 +281,7 @@ const FormUnidadComponent = (props) => {
 	const { onChangeAction, handleSubmit, pristine, reset, submitting, actionSubmit } = props
 
 	return (
-	<Container>
+	<Container style={{ zIndex:0 }}>
 		<form onSubmit={ handleSubmit(actionSubmit) }>
 			<Row>
 				<Col className="col-sm-6">
