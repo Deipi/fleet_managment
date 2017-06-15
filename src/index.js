@@ -25,6 +25,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
+import Alertas from './components/Alertas'
 
 import {
 	BrowserRouter as Router,
@@ -105,6 +106,13 @@ class Menu extends React.Component {
             <Nav className="ml-auto" navbar>
             	{
           			login && login.size ? (
+		        <NavItem>
+		        	<NavLink><Link to='pedidos'>Orders</Link></NavLink>
+		        </NavItem>
+		        	) : null
+			    }
+            	{
+          			login && login.size ? (
 			            <NavItem>
 			                <NavLink><Link to='vehicles'>Vehicles</Link></NavLink>
 			            </NavItem>
@@ -113,14 +121,28 @@ class Menu extends React.Component {
 			    {
           			login && login.size ? (
 		        <NavItem>
+		        	<NavLink><Link to='drivers'>Drivers</Link></NavLink>
+		        </NavItem>
+		        	) : null
+			    }
+			    {
+          			login && login.size ? (
+		        <NavItem>
+		        	<NavLink><Link to='entregas'>Deliveries</Link></NavLink>
+		        </NavItem>
+		        	) : null
+			    }
+			    {
+          			login && login.size ? (
+		        <NavItem>
 		        	<NavLink><Link to='monitoreo'>Monitoring</Link></NavLink>
 		        </NavItem>
 		        	) : null
 			    }
-		        {
+			    {
           			login && login.size ? (
 		        <NavItem>
-		        	<NavLink><Link to='drivers'>Drivers</Link></NavLink>
+		        	<NavLink><Link to='geocercas'>Geofences</Link></NavLink>
 		        </NavItem>
 		        	) : null
 			    }
@@ -141,21 +163,7 @@ class Menu extends React.Component {
 		        {
           			login && login.size ? (
 		        <NavItem>
-		        	<NavLink><Link to='pedidos'>Orders</Link></NavLink>
-		        </NavItem>
-		        	) : null
-			    }
-		        {
-          			login && login.size ? (
-		        <NavItem>
-		        	<NavLink><Link to='entregas'>Deliveries</Link></NavLink>
-		        </NavItem>
-		        	) : null
-			    }
-		        {
-          			login && login.size ? (
-		        <NavItem>
-		        	<NavLink><Link to='geocercas'>Geofences</Link></NavLink>
+		        	<NavLink><a href='./login'>Log out</a></NavLink>
 		        </NavItem>
 		        	) : null
 			    }
@@ -178,10 +186,10 @@ ReactDOM.render(
 	    <div>
   		<MenuConnect/>
 
-	      	<br/><h4> DEIPI.COM S.A de C.V. </h4>
-
-	      <hr/>
-	      <Switch>
+      		<br/><h4> DEIPI.COM S.A de C.V. </h4>
+      		<Alertas/>
+	    <hr/>
+	    <Switch>
 	      	<Route path="/registrar" component={ props =>
 	      		<Component {...props}>
 	      		<Registrar/></Component> } />
@@ -234,7 +242,6 @@ ReactDOM.render(
 	      		<Component {...props}>
 	      		<Entregas/></Component> } />
 	      </Switch>
-	      
 	    </div>
   		</Router>
   	</Provider>,
