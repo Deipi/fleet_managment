@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import { fetchEntregas, FETCHED_ENTREGAS } from '../actions/indexPedidos';
+import {Container} from 'reactstrap';
 
 const NewLayout = ({ Table }) => (
 	<div>
@@ -23,7 +24,7 @@ class EntregasList extends Component {
 		const { props: { entregas } } = this;
 
 		return(
-			<div>
+			<Container>
 				<center>
 					<h3>DELIVERIES</h3>
 				</center>
@@ -51,7 +52,7 @@ class EntregasList extends Component {
 				      <ColumnDefinition id="fechaL" title="Arrival Date" visible order={9}/>
 				 	</RowDefinition>
 				</Griddle>
-			</div>
+			</Container>
 		);
 	}
 }
