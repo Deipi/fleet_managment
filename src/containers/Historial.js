@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import { fetchDrivers } from '../actions/IndexDrivers';
+import {Container} from 'reactstrap'
 
 const NewLayout = ({ Table }) => (
 	<div>
@@ -23,7 +24,7 @@ class DriversList extends Component {
 		const { props: { conductores } } = this;
 
 		return (
-			<div>
+			<Container style={{zIndex:0}}>
 				<center>
 					<h3>DRIVER HISTORY</h3>
 				</center><br/>
@@ -50,7 +51,7 @@ class DriversList extends Component {
 				      <ColumnDefinition id="driver_license_number" title="Driver License Number" visible/>
 				 	</RowDefinition>
 				</Griddle>
-			</div>
+			</Container>
 		);
 	}
 }

@@ -1,7 +1,7 @@
 export const POSTED_ALERTAS =  'POSTED_ALERTAS';
 export const FETCHED_ALERTAS = 'FETCHED_ALERTAS';
 
-export default data => (dispatch, getStore) => fetch('http://localhost:3004/conductores', {
+export default data => (dispatch, getStore) => fetch('http://localhost:3004/alertas', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json'
@@ -12,12 +12,12 @@ export default data => (dispatch, getStore) => fetch('http://localhost:3004/cond
 	payload: alert
 })));
 
-export const fetchAlertas = data => (dispatch, getStore)=> fetch(`http://localhost:3004/conductores/?id=${ data.id }}`, {
+export const fetchAlertas = userID => (dispatch, getStore)=> fetch(`http://localhost:3004/alertas/${ userID }/`, {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
 	},
-}).then(result=>result.json().then(conductores=>dispatch({
+}).then(result=>result.json().then(alertas => dispatch({
 	type: FETCHED_ALERTAS,
-	payload: conductores
+	payload: alertas
 })));

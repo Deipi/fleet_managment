@@ -1,4 +1,28 @@
 {
+  "alertas": [
+    {
+      "id": 1,
+      "list": [
+        {
+          "message": "Alerta 1"
+        },
+        {
+          "message": "Alerta 2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "list": [
+        {
+          "message": "Usuario Mensaje"
+        },
+        {
+          "message": "Usuario Mensaje 2"
+        }
+      ]
+    }
+  ],
   "unidades": [
     {
       "permited_speed": "120 Km/h ",

@@ -32,8 +32,7 @@ const renderField = ({ onChangeAction, index, input, label, type, meta: { touche
 const SimpleFormF = (props) => {
 	const { handleSubmit, pristine, reset, submitting, actionSubmit } = props
 	return (
-		<Container>
-
+		<Container style={{zIndex:0}}>
 				<Card block>
 					<form onSubmit = {handleSubmit(actionSubmit)}>
 						<Row>

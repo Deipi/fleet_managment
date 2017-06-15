@@ -26,6 +26,7 @@ import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
 import Alertas from './components/Alertas'
+import Alerts from './containers/Alertas';
 
 import {
 	BrowserRouter as Router,
@@ -51,7 +52,8 @@ import vehiclesEdit from './reducers/EditUnit';
 import vehiclesReducer, { currentVehicle } from './reducers/Map';
 import vehiclesFilterReducer from './reducers/receipt';
 import loginReducer from './reducers/Login';
-import entrega from './reducers/Entregas'
+import entrega from './reducers/Entregas';
+import alertas from './reducers/Alertas';
 
 const initialState = immutable.Map();
 
@@ -65,8 +67,8 @@ const rootReducer = combineReducers({
 	vehiclesFilter: vehiclesFilterReducer,
 	currentVehicle: currentVehicle,
 	login: loginReducer,
-	Entregas: entrega
-
+	Entregas: entrega,
+	alertas,
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
@@ -184,12 +186,24 @@ ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
 	    <div>
+	    <Alerts />
   		<MenuConnect/>
+<<<<<<< HEAD
 
       		<br/><h4> DEIPI.COM S.A de C.V. </h4>
       		<Alertas/>
 	    <hr/>
 	    <Switch>
+=======
+		<br/>
+		<h4>
+			<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
+			DEIPI.COM S.A de C.V.
+		</h4>
+
+	      <hr/>
+	      <Switch>
+>>>>>>> eb566ba318da70f746d157117377878a3449cf71
 	      	<Route path="/registrar" component={ props =>
 	      		<Component {...props}>
 	      		<Registrar/></Component> } />

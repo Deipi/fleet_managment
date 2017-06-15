@@ -75,12 +75,35 @@ class MapContainer extends Component {
 		const { vehicles, currentVehicle } = nextProps;
 		const { dispatch } = this.props;
 
-		if (currentVehicle.get('monitorID') && currentVehicle.get('monitorCounter') < 10) {
+		if (currentVehicle.get('monitorID') && currentVehicle.get('monitorCounter') < 15) {
 			setTimeout(() => dispatch({
 				type: 'MONITOR_COUNTER',
 				payload: currentVehicle.get('monitorCounter') + 1,
-			}), 10000);
-			setTimeout(() => alert('hi'), 10000);
+			}), 8000);
+
+			const vehicle = vehicles.find(v => v.get('id') === currentVehicle.get('monitorID'));
+			const lat = vehicle.getIn([ 'latitud' ]).toFixed(3) + currentVehicle.get('monitorCounter');
+			const lng = vehicle.getIn([ 'longitud' ]).toFixed(3) + currentVehicle.get('monitorCounter');
+
+			const markers = [
+				{
+					position: {
+					lat: parseFloat(lat),
+					lng: parseFloat(lng),
+					},
+					title: 'Monitor...',
+					key: currentVehicle.get('monitorCounter'),
+					icon: {
+						path: window.google.maps.Marker,
+						scale: 3,
+						fillColor: '#000080',
+						strokeColor: '#000080',
+						fillOpacity: 1,
+						strokeOpacity: 1,
+					},
+				}
+			]
+			this.setState({ markers, allMarkers: markers });
 		}
 
 		const markers = vehicles.map((item, index) => {
@@ -111,8 +134,10 @@ class MapContainer extends Component {
 
 		});
 
-		if (!currentVehicle.size || currentVehicle.get('monitorCounter') === 0) {
+		if (!currentVehicle.get('monitorID') && !this.state.markers.size) {
 			this.setState({ markers, allMarkers: markers });
+		} else if (this.state.markers.size) {
+			this.setState({ markers });
 		}
 	}
 
@@ -135,7 +160,7 @@ class MapContainer extends Component {
 
 						</Row>
 					</Col>
-					<Col className="col-sm-8">
+					<Col className="col-sm-8" style={{zIndex:0}}>
 						<FilterMapUnit />
 					</Col>
 				</Row>
