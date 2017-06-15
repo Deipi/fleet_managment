@@ -8,7 +8,7 @@ export default (state=fromJS([]), action) => {
 			return state.merge(fromJS([action.payload]));
 
 		case FETCHED_ALERTAS:
-			return fromJS(action.payload);
+			return fromJS(action.payload.list);
 
 		default:
 			return state;

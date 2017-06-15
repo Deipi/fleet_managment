@@ -50,7 +50,8 @@ import vehiclesEdit from './reducers/EditUnit';
 import vehiclesReducer, { currentVehicle } from './reducers/Map';
 import vehiclesFilterReducer from './reducers/receipt';
 import loginReducer from './reducers/Login';
-import entrega from './reducers/Entregas'
+import entrega from './reducers/Entregas';
+import alertas from './reducers/Alertas';
 
 const initialState = immutable.Map();
 
@@ -64,8 +65,8 @@ const rootReducer = combineReducers({
 	vehiclesFilter: vehiclesFilterReducer,
 	currentVehicle: currentVehicle,
 	login: loginReducer,
-	Entregas: entrega
-
+	Entregas: entrega,
+	alertas,
 });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));

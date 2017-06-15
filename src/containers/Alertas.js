@@ -45,7 +45,7 @@ class AlertasComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.actionSubmit = this.actionSubmit.bind(this);
-}
+  }
 
 	actionSubmit() {
 		alert('YA');
@@ -53,7 +53,7 @@ class AlertasComponent extends React.Component {
 	}
 
 	render() {
-		const { dispatch } = this.props;
+		const { dispatch, alertas } = this.props;
 		return (
 				<Menu
 					isOpen={ true }
@@ -61,12 +61,18 @@ class AlertasComponent extends React.Component {
 					styles={ styles }
 					left
 				>
-					<a id="home" className="menu-item" href="/">Home</a>
-					<a id="about" className="menu-item" href="/about">About</a>
-					<a id="contact" className="menu-item" href="/contact">Contact</a>
+					{
+						alertas.map(alert => (
+							<p>
+								{ alert.get('message') }
+							</p>
+						))
+					}
 				</Menu>
 		);
 	}
 }
 
-export default connect()(AlertasComponent);
+export default connect(state => ({
+  alertas: state.get('alertas'),
+}))(AlertasComponent);
