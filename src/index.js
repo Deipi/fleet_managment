@@ -189,8 +189,9 @@ ReactDOM.render(
 	    <Alerts />
   		<MenuConnect/>
 
-
 	    <hr/>
+	    <Switch>
+
 		<br/>
 		<h4>
 			<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
@@ -199,6 +200,7 @@ ReactDOM.render(
 
 	      <hr/>
 	      <Switch>
+
 	      	<Route path="/registrar" component={ props =>
 	      		<Component {...props}>
 	      		<Registrar/></Component> } />

@@ -105,10 +105,10 @@ const SimpleFormLogin = (props) => {
                                 <Button type="submit" disabled={ pristine || submitting }>
                                     Sign Up
                                 </Button>
-                                <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>
+                                <Button className="btn btn-primary" type="button" onClick={reset}>
                                     <Link tag={Link} color="info" to='login'>Clear Values</Link>
                                 </Button>
-                                <Button className="btn btn-primary" type="button" disabled={pristine || submitting} onClick={reset}>
+                                <Button className="btn btn-primary" type="button" onClick={reset}>
                                     <Link  tag={Link} color="info" to='registrar'>Register</Link>
                                 </Button>
                                 </div>

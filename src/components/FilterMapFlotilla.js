@@ -7,7 +7,7 @@ export class FilterMapFlotilla extends Component {
 			return (
 				<div>
 					<select className="selectpicker form-control" name='state' onChange={ mapf }>
-						<option value="">Flotillas</option>
+						<option value="">Fleets</option>
 						<option value="Andres">Andres</option>
 						<option value="Sergio">Sergio</option>
 						<option value="Manuel">Manuel</option>
