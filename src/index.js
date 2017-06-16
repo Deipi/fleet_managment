@@ -190,7 +190,6 @@ ReactDOM.render(
   		<MenuConnect/>
 
 	    <hr/>
-	    <Switch>
 
 		<br/>
 		<h4>
