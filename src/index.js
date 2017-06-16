@@ -25,7 +25,6 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
-import Alertas from './components/Alertas'
 import Alerts from './containers/Alertas';
 
 import {

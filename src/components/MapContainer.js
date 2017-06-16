@@ -103,7 +103,7 @@ class MapContainer extends Component {
 					},
 				}
 			]
-			this.setState({ markers, allMarkers: markers });
+			this.setState({ markers });
 		}
 
 		const markers = vehicles.map((item, index) => {
@@ -134,11 +134,13 @@ class MapContainer extends Component {
 
 		});
 
-		if (!currentVehicle.get('monitorID') && !this.state.markers.size) {
+		if ((!currentVehicle.get('monitorID') && !this.state.markers.size) || vehicles.size !== this.props.vehicles.size) {
 			this.setState({ markers, allMarkers: markers });
-		} else if (this.state.markers.size) {
-			this.setState({ markers });
 		}
+		// else if (this.state.markers.size) {
+		// 	debugger;
+		// 	this.setState({ markers: this.state.markers });
+		// }
 	}
 
 	render() {
@@ -147,27 +149,26 @@ class MapContainer extends Component {
 
 			<div style={{ height: '60vh' }}>
 
-			<Col className="col-sm-12">
-				<Row>
-					<Col sm="4">
-						<Row>
+				<Col className="col-sm-12">
+					<Row>
+						<Col sm="4">
+							<Row>
 
-								<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
+									<FilterMap  mapd={this.onChangeD} onClick={this.onClickFilter}/>
 
-								<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
+									<FilterMapFlotilla  mapf={this.onChangeF} onClick={this.onClickFilter}/>
 
-								<FilterMapState  maps={this.onChangeS}/>
+									<FilterMapState  maps={this.onChangeS}/>
 
-						</Row>
-					</Col>
-					<Col className="col-sm-8" style={{zIndex:0}}>
-						<FilterMapUnit />
-					</Col>
-				</Row>
+							</Row>
+						</Col>
+						<Col className="col-sm-8" style={{zIndex:0}}>
+							<FilterMapUnit />
+						</Col>
+					</Row>
 
-			</Col>
-			<br/>
-
+				</Col>
+				<br/>
 				<Map
 					containerElement={
 						<div style={{ height: '100%' }} />
@@ -181,7 +182,9 @@ class MapContainer extends Component {
 					markers={this.state.markers}
 					onMarkerRightClick={this.handleMarkerRightClick}
 				/>
-			<DataTable monitorAction={ this.monitorAction } />
+				<Col className="col-sm-12" style={{zIndex:0}}>
+					<DataTable monitorAction={ this.monitorAction } />
+				</Col>
 			</div>
 		);
 	}
