@@ -188,13 +188,9 @@ ReactDOM.render(
 	    <div>
 	    <Alerts />
   		<MenuConnect/>
-<<<<<<< HEAD
 
-      		<br/><h4> DEIPI.COM S.A de C.V. </h4>
-      		<Alertas/>
+
 	    <hr/>
-	    <Switch>
-=======
 		<br/>
 		<h4>
 			<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
@@ -203,7 +199,6 @@ ReactDOM.render(
 
 	      <hr/>
 	      <Switch>
->>>>>>> eb566ba318da70f746d157117377878a3449cf71
 	      	<Route path="/registrar" component={ props =>
 	      		<Component {...props}>
 	      		<Registrar/></Component> } />
