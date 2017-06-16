@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import { fetchVehicles, FETCHED_EDITED, CLEAN_VEHICLE, deleteVehicles } from '../actions/index';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { Button, Container } from 'reactstrap';
 import { Vehicles } from '../components/Vehicles';
 import createVehicle from '../actions/index';
 
@@ -82,53 +82,61 @@ class VehiclesListComponent extends Component {
 		);
 		if(create){
 			btnCreate = (
-				<Button onClick={ this.cleanVehicleStore } >
-					<Link tag={Link} color="info" to='/unidades'> Create </Link>
-				</Button>
+				<Link tag={Link}  to='/unidades'>
+					<Button onClick={ this.cleanVehicleStore } color="info" className="mr-2">
+						 Create
+					</Button>
+				</Link>
 			);
 		}
 
 		let btnEdit = (
-			<Button disabled>
+			<Button disabled className="mr-2">
 				Edit
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
-				<Button>
-					<Link tag={Link} color="info" to='/unidades'> Edit </Link>
-				</Button>
+				<Link tag={Link}  to='/unidades'>
+					<Button className="mr-2" color="success">
+						 Edit
+					</Button>
+				</Link>
 			);
 		}
 
 		let btnRemove = (
-			<Button disabled >
+			<Button disabled className="mr-2">
 				Delete
 			</Button>
 		);
 		if (remove) {
 			btnRemove = (
-				<Button onClick={ this.deleteVehicle } >
-					<Link  tag={Link} color="info" to="/vehicles">Delete</Link>
-				</Button>
+				<Link  tag={Link}  to="/vehicles">
+					<Button onClick={ this.deleteVehicle } color="danger" className="mr-2" >
+						Delete
+					</Button>
+				</Link>
 			);
 		}
 
 		let btnGroup = (
-			<Button>
+			<Button className="mr-2">
 				New Group
 			</Button>
 		);
 		if (group) {
 			btnGroup = (
-				<Button>
-					<Link tag={Link} color="info" to='/flotilla'> New Group </Link>
-				</Button>
+				<Link tag={Link}  to='/flotilla'>
+					<Button className="mr-2" color="info">
+						 New Group
+					</Button>
+				</Link>
 			);
 		}
 
 		return (
-			<div>
+			<Container >
 				{ btnCreate }
 				{ btnEdit }
 				{ btnRemove }
@@ -163,7 +171,7 @@ class VehiclesListComponent extends Component {
 						type = { descriptionVehicles.type.label }
 					/> ) : null
 				}
-			</div>
+			</Container>
 		);
 	}
 }

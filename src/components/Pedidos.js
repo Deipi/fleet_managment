@@ -50,7 +50,7 @@ const SimpleFormPedidos = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
 	<Container>
-		<Card block>
+		<Card block style={{ zIndex:0 }}>
 			<form onSubmit={handleSubmit}>
 				<Row>
 					<div className="col-sm-12 offset-4">

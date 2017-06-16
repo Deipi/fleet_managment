@@ -1,4 +1,28 @@
 {
+  "alertas": [
+    {
+      "id": 1,
+      "list": [
+        {
+          "message": "Alerta 1"
+        },
+        {
+          "message": "Alerta 2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "list": [
+        {
+          "message": "Usuario Mensaje"
+        },
+        {
+          "message": "Usuario Mensaje 2"
+        }
+      ]
+    }
+  ],
   "unidades": [
     {
       "permited_speed": "120 Km/h ",
@@ -483,6 +507,14 @@
       "email": "mora@gmail.com",
       "password": "asd",
       "id": 3
+    },
+    {
+      "name": "andrea",
+      "apellido": "camacho",
+      "telefono": "7861114991",
+      "email": "andy@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ],
   "flotillas": [

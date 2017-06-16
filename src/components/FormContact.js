@@ -63,7 +63,7 @@ const SimpleFormContac = (props) => {
 								</div>
 							</Col>
 
-							<Col className="col-sm-6">
+							<Col className="col-sm-6" style={{ zIndex:0}}>
 							  	<Field
 							  		name="nombre"
 							  		component={renderField}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Griddle, { ColumnDefinition, RowDefinition, plugins } from 'griddle-react';
 import { fetchDrivers, FETCHED_EDITED, CLEAN_DRIVER, deleteDrivers } from '../actions/IndexDrivers';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { Button, Container } from 'reactstrap';
 import { Driver } from '../components/Driver';
 import createDriver from '../actions/IndexDrivers';
  
@@ -83,22 +83,26 @@ class DriversListComponent extends Component {
 		);
 		if(create){
 			btnCreate = (
-				<Button onClick={ this.cleanDriverStore } >
-					<Link tag={Link} color="info" to='/conductores'> Create </Link>
-				</Button>
+				<Link tag={Link} to='/conductores' className="mr-3">
+					<Button color="info"  onClick={ this.cleanDriverStore } >
+						Create
+					</Button>
+				</Link>
 			);
 		}
 
 		let btnEdit = (
-			<Button disabled>
+			<Button disabled  className="mr-3">
 				Edit
 			</Button>
 		);
 		if (edit) {
 			btnEdit = (
-				<Button>
-					<Link tag={Link} color="info" to='/conductores'> Edit </Link>
-				</Button>
+				<Link tag={Link} to='/conductores' className="mr-3">
+					<Button color="success" >
+						 Edit
+					</Button>
+				</Link>
 			);
 		}
 
@@ -109,20 +113,19 @@ class DriversListComponent extends Component {
 		);
 		if (remove) {
 			btnRemove = (
-				<Button onClick={ this.deleteDriver }>
-					<Link tag={Link} color="info" to='/drivers'> Delete </Link>
-				</Button>
+				<Link tag={Link}  to='/drivers'>
+					<Button color="danger" onClick={ this.deleteDriver }>
+						Delete
+					</Button>
+				</Link>
 			);
 		}
 
-		
-
 		return (
-			<div>
+			<Container>
 				{ btnCreate }
 				{ btnEdit }
 				{ btnRemove }
-				
 				<br/>
 				<br/>
 				<Griddle data={ conductores ? conductores.toJS() : [] }
@@ -156,7 +159,7 @@ class DriversListComponent extends Component {
 						driver_license_number = { descriptionDrivers.driver_license_number }
 					/> ) : null
 				}
-			</div>
+			</Container>
 		);
 	}
 }

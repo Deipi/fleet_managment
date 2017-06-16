@@ -49,14 +49,14 @@ const SimpleFormLogin = (props) => {
     const {handleSubmit, pristine, reset, submitting, actionSubmit} = props
     return (
     <Container>
-        <Col className="col-sm-12">
+        <Col className="col-sm-12" style={{ zIndex:2 }}>
             <form onSubmit={handleSubmit(actionSubmit)}>
                 <Row>
                     <div className="col-sm-6">
                         <h3>Access your account</h3>
                         <br/>
                         <div>
-                            <i className="fa fa-envelope fa-4x"/>
+                            <i className="fa fa-trash fa-4x"/>
                                 <p style={{ position:'absolute', margin:'-3.2em 5em'}}>Please enter your <strong>email</strong> and <strong>password</strong>  to enter the system.</p>
                         </div><br/><br/>
                         <div>
