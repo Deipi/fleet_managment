@@ -6,7 +6,7 @@ const SimpleFormAlertas = (props) => {
     const { handleSubmit, pristine, reset, submitting } = props
     return (
         <div>
-            <h3>Hola</h3>
+           
             <Alertas/>
         </div>
     )
