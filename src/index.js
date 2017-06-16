@@ -185,7 +185,7 @@ const MenuConnect = connect(state => {
 ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
-<<<<<<< HEAD
+
 		    <div>
 		    <Alerts />
 	  		<MenuConnect/>
@@ -259,7 +259,7 @@ ReactDOM.render(
 
 		      </Switch>
 		    </div>
-=======
+
 	    <div>
 	    <Alerts />
   		<MenuConnect/>
@@ -329,7 +329,6 @@ ReactDOM.render(
 	      		<Entregas/></Component> } />
 	      </Switch>
 	    </div>
->>>>>>> 091cbe40da2af037f0e059747734173705c9e5f5
   		</Router>
   	</Provider>,
   	document.getElementById('root')
