@@ -18,7 +18,7 @@
       "wheel_rear": "2",
       "tyre_size": "23",
       "cargo_l": "122 mm ",
-      "model": "Veyron",
+      "model": "Ford",
       "number_of_passengers": "3 people ",
       "tyres_number": "4",
       "fuel_grade": "ALTO",
@@ -38,11 +38,12 @@
         "label": "Offline"
       },
       "cargo_w": "122 mm ",
-      "label": "Xbox",
+      "label": "Lobo",
       "longitud": -101.203244,
       "tracker": {
-        "value": "luis",
-        "label": "Luis"
+        "value": "Jose",
+        "label": "Jose",
+        "className": "Select-create-option-placeholder"
       },
       "tags": [
         "veloz",
@@ -54,13 +55,13 @@
         "label": "Car"
       },
       "vin": "M34NBYHG56",
-      "cargo_capacity": "300 kg ",
-      "id": 2
+      "id": 2,
+      "cargo_capacity": "300 kg "
     },
     {
       "permited_speed": "100 Km/h ",
       "chassis_number": "LJCPCBLCXI1000237",
-      "vehicle_registration_plate": "SBA 1234A",
+      "vehicle_registration_plate": "SBA123",
       "fuel_type": {
         "value": "diesel",
         "label": "Diesel"
@@ -95,7 +96,7 @@
         "label": "Online"
       },
       "cargo_w": "122 mm ",
-      "label": "Jonny",
+      "label": "NP300",
       "longitud": -101.188825,
       "tracker": {
         "value": "luis",
@@ -110,13 +111,13 @@
         "label": "Car"
       },
       "vin": "JMZMA18P200411817",
-      "cargo_capacity": "1000 kg ",
-      "id": 3
+      "id": 3,
+      "cargo_capacity": "1000 kg "
     },
     {
       "permited_speed": "100 Km/h ",
       "chassis_number": "123ASD",
-      "vehicle_registration_plate": "FEYO123",
+      "vehicle_registration_plate": "FEY123",
       "fuel_type": {
         "value": "diesel",
         "label": "Diesel"
@@ -151,7 +152,7 @@
         "label": "Offline"
       },
       "cargo_w": "122 mm ",
-      "label": "na",
+      "label": "Rubicon",
       "longitud": -101.160367,
       "tracker": {
         "value": "martin",
@@ -166,8 +167,8 @@
         "label": "Car"
       },
       "vin": "asd",
-      "cargo_capacity": "1000 kg ",
-      "id": 4
+      "id": 4,
+      "cargo_capacity": "1000 kg "
     },
     {
       "permited_speed": "100 Km/h ",
@@ -228,29 +229,6 @@
     }
   ],
   "conductores": [
-    {
-      "driver_license_class": "Automovilist",
-      "hardware_key": "CLANDA",
-      "phone": "7861234567",
-      "department": {
-        "value": "dis",
-        "label": "Diseño"
-      },
-      "last_name": "Cruz",
-      "middle_name": "Fernanda",
-      "tracker": {
-        "value": "Bmw",
-        "label": "Bmw"
-      },
-      "tags": [
-        "Perfecto"
-      ],
-      "first_name": "Claudia",
-      "id": 3,
-      "email": "clau@gmail.com",
-      "driver_license_number": "123456",
-      "expiration_date": "2017-07-31"
-    },
     {
       "driver_license_class": "Driver",
       "hardware_key": "ASD123",
@@ -419,63 +397,63 @@
       "apellido": "Correa",
       "telefono": "789456123",
       "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "direccion": "Pino 88",
+      "pedido": "Macbook",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 1
     },
     {
-      "nombre": "Alfredo",
-      "apellido": "Correa",
+      "nombre": "Juan",
+      "apellido": "Perez",
       "telefono": "789456123",
-      "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "email": "juan@gmail.com",
+      "direccion": "Encino 88",
+      "pedido": "Smartphone",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 2
     },
     {
-      "nombre": "Alfredo",
-      "apellido": "Correa",
+      "nombre": "Roberto",
+      "apellido": "Trejo",
       "telefono": "789456123",
-      "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "email": "roberto@gmail.com",
+      "direccion": "Roble 88",
+      "pedido": "Laptop",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 3
     },
     {
-      "nombre": "Alfredo",
-      "apellido": "Correa",
+      "nombre": "Alexis",
+      "apellido": "Olivares",
       "telefono": "789456123",
-      "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "email": "alex@gmail.com",
+      "direccion": "Nicolas 88",
+      "pedido": "Lentes",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 4
     },
     {
-      "nombre": "Alfredo",
-      "apellido": "Correa",
+      "nombre": "Sebastian",
+      "apellido": "Gonzalez",
       "telefono": "789456123",
-      "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "email": "sebas@gmail.com",
+      "direccion": "Villas 88",
+      "pedido": "Ropa",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 5
     },
     {
-      "nombre": "Alfredo",
-      "apellido": "Correa",
+      "nombre": "Eduardo",
+      "apellido": "Villegas",
       "telefono": "789456123",
-      "email": "alfred@gmail.com",
-      "direccion": "zinc 88",
-      "pedido": "audifonos",
+      "email": "villegas@gmail.com",
+      "direccion": "Fresno 88",
+      "pedido": "Xbox One",
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 6
