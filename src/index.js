@@ -184,16 +184,16 @@ const MenuConnect = connect(state => {
 ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
-<<<<<<< HEAD
+
 
 		    <div>
-		    
+
 	  		<MenuConnect/>
 	      	<br/>
 	      			<h4> DEIPI.COM S.A de C.V. </h4>
 	      	<Alertas/>
 		    <hr/>
-		    
+
 
 			<br/>
 			<h4>
@@ -259,7 +259,7 @@ ReactDOM.render(
 
 		      </Switch>
 		    </div>
-=======
+
 	    <div>
 	    <Alerts />
   		<MenuConnect/>
@@ -328,7 +328,7 @@ ReactDOM.render(
 	      		<Entregas/></Component> } />
 	      </Switch>
 	    </div>
->>>>>>> 5c726fc6a4b135a0f97ca71aeb761bf5d1f013c4
+
   		</Router>
   	</Provider>,
   	document.getElementById('root')
