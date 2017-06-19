@@ -211,7 +211,7 @@ const FormConductorComponent = (props) => {
 					</Col>
 
 					<Col className="offset-5"><br/>
-		        		<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+		        		<Button type="submit" color="primary" onClick={()=>alert('Guardado')} disabled={pristine || submitting}>Save</Button>
 		        		<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 		      		</Col>
 			    </Row>

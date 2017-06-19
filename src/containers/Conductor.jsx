@@ -3,6 +3,7 @@ import FormConductor from '../components/FormConductor';
 import { connect } from 'react-redux';
 import { change } from 'redux-form/immutable';
 import createConductor, { updateConductores } from '../actions/indexConductores';
+import { reset } from 'redux-form'
 
 class ConductorComponent extends React.Component {
 	constructor(props) {
@@ -15,8 +16,10 @@ class ConductorComponent extends React.Component {
 		const { dispatch, info } = this.props;
 		if(info.get('id')){
 			dispatch(updateConductores(info.get('id'), values.toJS()));
+			// dispatch(reset('formDriver'));
 		} else {
 			dispatch(createConductor(values.toJS()));
+			// dispatch(reset('formDriver'));
 		}
 	}
 

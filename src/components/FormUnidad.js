@@ -410,7 +410,7 @@ const FormUnidadComponent = (props) => {
 
 
 			   	<Col className="offset-5">
-					<Button type="submit" color="primary" disabled={pristine || submitting}>Save</Button>
+					<Button type="submit" color="primary" onClick={()=>alert('Guardado')} disabled={pristine || submitting}>Save</Button>
 					<Button type="button" color="primary" disabled={pristine || submitting} onClick={reset}>Clear</Button>
 			  	</Col><br/><br/><br/>
 			</Row>

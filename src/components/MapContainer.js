@@ -36,6 +36,7 @@ class MapContainer extends Component {
 	}
 
 	monitorAction(id) {
+		
 		const { dispatch } = this.props;
 		const markersFilter = this.state.allMarkers.filter(marker => marker.item.get('id') === id );
 

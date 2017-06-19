@@ -17,6 +17,7 @@ const selector = state => {
 };
 
 const Monitor = monitorAction => ({ value }) => {
+
 	return (
 		<Button
 			color="primary"

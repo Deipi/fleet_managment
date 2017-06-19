@@ -25,6 +25,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Entregas from './containers/Entregas';
 import Geocercas from './components/Geocercas';
 
+import Alertas from './components/Alertas'
 import Alerts from './containers/Alertas';
 
 import {
@@ -184,74 +185,80 @@ const MenuConnect = connect(state => {
 ReactDOM.render(
   	<Provider store={ store }>
   		<Router>
-	    <div>
-	    <Alerts />
-  		<MenuConnect/>
 
-	    <hr/>
+		    <div>
+<Alerts/>
+	  		<MenuConnect/>
+	      	<br/>
+	      			<h4> DEIPI.COM S.A de C.V. </h4>
+	      	
+		    <hr/>
 
-		<br/>
-		<h4>
-			<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
-			DEIPI.COM S.A de C.V.
-		</h4>
 
-	      <hr/>
-	      <Switch>
+			<br/>
+			<h4>
+				<i className="fa fa-bars boton-menu ml-3 p-1" aria-hidden="true"></i>
+				DEIPI.COM S.A de C.V.
+			</h4>
 
-	      	<Route path="/registrar" component={ props =>
-	      		<Component {...props}>
-	      		<Registrar/></Component> } />
+		     <hr/>
 
-	      	<Route path="/login" component={ props =>
-	      		<Component {...props}>
-	      		<Login/></Component> } />
+		      <Switch>
 
-	      	<Route path="/unidades" component={ props =>
-	      		<Component {...props}>
-	      		<Unidad/></Component> } />
+		      	<Route path="/registrar" component={ props =>
+		      		<Component {...props}>
+		      		<Registrar/></Component> } />
 
-	      	<Route path="/flotilla" component={ props =>
-	      		<Component {...props}>
-	      		<SimpleFormFlotilla/></Component> } />
+		      	<Route path="/login" component={ props =>
+		      		<Component {...props}>
+		      		<Login/></Component> } />
 
-	      	<Route path="/vehicles" component={ props =>
-	      		<Component {...props}>
-	      		<VehiclesList/></Component> } />
+		      	<Route path="/unidades" component={ props =>
+		      		<Component {...props}>
+		      		<Unidad/></Component> } />
 
-	      	<Route path="/conductores" component={ props =>
-	      		<Component {...props}>
-	      		<Conductor /></Component> } />
+		      	<Route path="/flotilla" component={ props =>
+		      		<Component {...props}>
+		      		<SimpleFormFlotilla/></Component> } />
 
-	      	<Route path="/monitoreo" component={ props =>
-	      		<Component {...props}>
-	      		<MapContainer /></Component> } />
+		      	<Route path="/vehicles" component={ props =>
+		      		<Component {...props}>
+		      		<VehiclesList/></Component> } />
 
-	      	<Route path="/drivers" component={ props =>
-	      		<Component {...props}>
-	      		<DriversList/></Component> } />
+		      	<Route path="/conductores" component={ props =>
+		      		<Component {...props}>
+		      		<Conductor /></Component> } />
 
-	      	<Route path="/contact" component={ props =>
-	      		<Component {...props}>
-	      		<Contact/></Component> } />
+		      	<Route path="/monitoreo" component={ props =>
+		      		<Component {...props}>
+		      		<MapContainer /></Component> } />
 
-	      	<Route path="/historial" component={ props =>
-	      		<Component {...props}>
-	      		<Historial/></Component> } />
+		      	<Route path="/drivers" component={ props =>
+		      		<Component {...props}>
+		      		<DriversList/></Component> } />
 
-	      	<Route path="/pedidos" component={ props =>
-	      		<Component {...props}>
-	      		<Pedidos/></Component> } />
+		      	<Route path="/contact" component={ props =>
+		      		<Component {...props}>
+		      		<Contact/></Component> } />
 
-	      	<Route path="/geocercas" component={ props =>
-	      		<Component {...props}>
-	      		<Geocercas/></Component> } />
+		      	<Route path="/historial" component={ props =>
+		      		<Component {...props}>
+		      		<Historial/></Component> } />
 
-	      	<Route path="/entregas" component={ props =>
-	      		<Component {...props}>
-	      		<Entregas/></Component> } />
-	      </Switch>
-	    </div>
+		      	<Route path="/pedidos" component={ props =>
+		      		<Component {...props}>
+		      		<Pedidos/></Component> } />
+
+		      	<Route path="/geocercas" component={ props =>
+		      		<Component {...props}>
+		      		<Geocercas/></Component> } />
+
+		      	<Route path="/entregas" component={ props =>
+		      		<Component {...props}>
+		      		<Entregas/></Component> } />
+
+		      </Switch>
+		    </div>
   		</Router>
   	</Provider>,
   	document.getElementById('root')
