@@ -62,7 +62,7 @@
         "label": "Offline"
       },
       "cargo_w": "122 mm ",
-      "label": "Lobo",
+      "label": "Lobo F-150",
       "longitud": -101.203244,
       "tracker": {
         "value": "Jose",
@@ -274,7 +274,7 @@
         "very",
         "bad"
       ],
-      "first_name": "Alfredo",
+      "first_name": "Juan",
       "id": 4,
       "email": "alf@gmail.com",
       "driver_license_number": "123567",
@@ -289,7 +289,7 @@
         "label": "Ventas"
       },
       "last_name": "Perez",
-      "middle_name": "Alias",
+      "middle_name": "Tony",
       "tracker": {
         "value": "luis",
         "label": "Luis"
@@ -298,9 +298,9 @@
         "OC",
         "bien"
       ],
-      "first_name": "Tony",
+      "first_name": "Antonio",
       "id": 5,
-      "email": "ruf@adm.com",
+      "email": "tony@gmail.com",
       "driver_license_number": "312345",
       "expiration_date": "2017-06-30"
     },
@@ -395,6 +395,30 @@
       "driver_license_number": "345678",
       "expiration_date": "2017-07-01",
       "id": 9
+    },
+    {
+      "driver_license_class": "Driver",
+      "hardware_key": "IVACOM",
+      "phone": "7861446116",
+      "department": {
+        "value": "des",
+        "label": "Development"
+      },
+      "last_name": "Cambron",
+      "middle_name": "van",
+      "tracker": {
+        "value": "no tracker",
+        "label": "No Tracker"
+      },
+      "tags": [
+        "Tall",
+        "simpatic"
+      ],
+      "first_name": "Ivan",
+      "id": 10,
+      "email": "ivan@gmail.com",
+      "driver_license_number": "890123",
+      "expiration_date": "2017-07-01"
     }
   ],
   "employes_contac": [
@@ -481,11 +505,21 @@
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 6
+    },
+    {
+      "nombre": "Alfredo",
+      "apellido": "Correa",
+      "telefono": "7861162457",
+      "email": "correa@gmail.com",
+      "direccion": "Zinc 239, El porvenir",
+      "fecha": "2017-06-19",
+      "pedido": "Dragon Balls",
+      "id": 7
     }
   ],
   "registrar": [
     {
-      "name": "pepe",
+      "name": "Pepe",
       "apellido": "gonzalez",
       "telefono": "123456789",
       "email": "pepe@gmail.com",
@@ -493,7 +527,7 @@
       "id": 1
     },
     {
-      "name": "Juanito",
+      "name": "Juan",
       "apellido": "Lopez",
       "telefono": "12334587",
       "email": "juan@gmail.com",
@@ -509,12 +543,28 @@
       "id": 3
     },
     {
-      "name": "andrea",
-      "apellido": "camacho",
+      "name": "Andrea",
+      "apellido": "Camacho",
       "telefono": "7861114991",
       "email": "andy@gmail.com",
       "password": "12345",
       "id": 4
+    },
+    {
+      "name": "Alfredo",
+      "apellido": "Correa",
+      "telefono": "7861162457",
+      "email": "alf@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "Juan",
+      "apellido": "Magan",
+      "telefono": "7861162489",
+      "email": "juan@gmail.com",
+      "password": "123",
+      "id": 6
     }
   ],
   "flotillas": [
