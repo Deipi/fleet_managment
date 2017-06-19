@@ -16,9 +16,7 @@ class MapContainer extends Component {
 			<div style={{ height: '70vh' }}>
 				<Col className="col-sm-6">
 					<InputGroup>
-						<Button color='primary' >New Geofence</Button>
-						<Button color='primary' >Edit</Button>
-						<Button color='primary' >Remove</Button>
+						
 					</InputGroup>
 				</Col>
 				<Mapa
