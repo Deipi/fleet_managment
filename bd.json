@@ -262,7 +262,7 @@
         "label": "Desarrollo"
       },
       "last_name": "Correa",
-      "middle_name": "Feyo",
+      "middle_name": "Feyito",
       "tracker": {
         "value": "martin",
         "label": "Martin"
@@ -303,29 +303,6 @@
       "email": "ruf@adm.com",
       "driver_license_number": "312345",
       "expiration_date": "2017-06-30"
-    },
-    {
-      "driver_license_class": "Driver",
-      "hardware_key": "JUAHEZ",
-      "phone": "234567890",
-      "department": {
-        "value": "ven",
-        "label": "Ventas"
-      },
-      "last_name": "Sanchez",
-      "middle_name": "Jonny",
-      "tracker": {
-        "value": "pepe",
-        "label": "Pepe"
-      },
-      "tags": [
-        "OK"
-      ],
-      "first_name": "Juanes",
-      "id": 6,
-      "email": "nmnmnm@gmail.com",
-      "driver_license_number": "123098",
-      "expiration_date": "2017-06-22"
     },
     {
       "driver_license_class": "Driver",
@@ -481,6 +458,36 @@
       "fecha": "2017-06-08",
       "fechaL": "2017-06-08",
       "id": 6
+    },
+    {
+      "nombre": "luis",
+      "apellido": "perez",
+      "telefono": "789",
+      "email": "luis@hotmail.com",
+      "direccion": "cd hidalgo",
+      "pedido": "lap",
+      "fecha": "2017-06-16",
+      "id": 7
+    },
+    {
+      "nombre": "luis",
+      "apellido": "perez",
+      "telefono": "789",
+      "email": "luis@hotmail.com",
+      "direccion": "cd hidalgo",
+      "pedido": "lap",
+      "fecha": "2017-06-16",
+      "id": 8
+    },
+    {
+      "nombre": "luis",
+      "apellido": "perez",
+      "telefono": "789",
+      "email": "luis@hotmail.com",
+      "direccion": "cd hidalgo",
+      "pedido": "lap",
+      "fecha": "2017-06-16",
+      "id": 9
     }
   ],
   "registrar": [
@@ -515,6 +522,14 @@
       "email": "andy@gmail.com",
       "password": "12345",
       "id": 4
+    },
+    {
+      "name": "Oscar",
+      "apellido": "Delgado",
+      "telefono": "78612158899",
+      "email": "oscar@hotmail.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "flotillas": [
@@ -523,6 +538,12 @@
       "supervisor": "Andres",
       "garage": "garage",
       "id": 2
+    },
+    {
+      "nombre": "Grandes",
+      "supervisor": "Andres",
+      "garage": "no garage",
+      "id": 3
     }
   ],
   "geocercas": [
